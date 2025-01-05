@@ -95,7 +95,8 @@
                             
                             <div>
                                 <label class="font-lato font-semibold text-edblue block mb-[12px]">Photo</label>
-                                <input type="file" name="image"   class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none">
+                                <input id="imageInput" name="image" type="file"  class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none" placeholder="Type something" required />
+                                <small id="imageError" style="color: red; display: none;">The image must be square (equal width and height).</small>
                             </div>
 
                             <div>
@@ -174,4 +175,24 @@
         </section>
         <!-- CONTACT SECTION END -->
     </main>
+
+    <script>
+        document.getElementById('imageInput').addEventListener('change', function () {
+            const file = this.files[0];
+            const imageError = document.getElementById('imageError');
+    
+            if (file) {
+                const img = new Image();
+                img.src = URL.createObjectURL(file);
+                img.onload = function () {
+                    if (img.width !== img.height) {
+                        imageError.style.display = 'block';
+                        document.getElementById('imageInput').value = ''; // Clear the input
+                    } else {
+                        imageError.style.display = 'none';
+                    }
+                };
+            }
+        });
+    </script>
 @endsection

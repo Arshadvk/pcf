@@ -45,4 +45,36 @@ class AdminController extends Controller
             return back();
         }
     }
+
+    public function profile () 
+    {
+        $user = Auth::user();
+        return view('auth.profile', compact('user'));
+
+    }
+
+    public function password(Request $request) 
+   {
+    /** @var User $user */
+    $user = Auth::user(); // Explicitly tell IntelliSense the type
+    if ($user === null) {
+        Alert::error('Error','User not authenticated.');
+        return back();
+    }
+
+  
+    if (Hash::check($request->old_password, $user->password)) {
+        $user->password = Hash::make($request->new_password);
+        $user->save();
+
+        Alert::success('Success', 'Password Changed Successfully');
+        return back();
+    } else {
+        Alert::error('Error', 'Old Password is Incorrect');
+        return back();
+    }
+}
+
+
+    
 }

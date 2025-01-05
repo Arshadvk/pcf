@@ -66,7 +66,8 @@
                                         <div class="col-md-6">
                                             <div class="mb-3">
                                                 <label class="form-label">Photo <span style="color: red">*</span></label>
-                                                <input name="image" type="file" class="form-control"  placeholder="Type something" required />
+                                                <input id="imageInput" name="image" type="file" class="form-control" placeholder="Type something" required />
+                                                <small id="imageError" style="color: red; display: none;">The image must be square (equal width and height).</small>
                                             </div>
                                         </div>
                                     </div>
@@ -210,4 +211,24 @@
             </div>
         </div>
     </div>
+    
+    <script>
+        document.getElementById('imageInput').addEventListener('change', function () {
+            const file = this.files[0];
+            const imageError = document.getElementById('imageError');
+    
+            if (file) {
+                const img = new Image();
+                img.src = URL.createObjectURL(file);
+                img.onload = function () {
+                    if (img.width !== img.height) {
+                        imageError.style.display = 'block';
+                        document.getElementById('imageInput').value = ''; // Clear the input
+                    } else {
+                        imageError.style.display = 'none';
+                    }
+                };
+            }
+        });
+    </script>
 @endsection

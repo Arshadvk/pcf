@@ -23,27 +23,37 @@
 
                                         <div class="mb-3">
                                             <label class="form-label">Title <span style="color: red">*</span></label>
-                                            <input type="text" name="title" class="form-control" required
+                                            <input type="text" name="title" value="{{$news->title}}" class="form-control" required
                                                 placeholder="Enter title here" />
                                         </div>
 
                                         <div class="mb-3">
                                             <label class="form-label">Short Description <span
                                                     style="color: red">*</span></label>
-                                            <input type="text" name="short_description" class="form-control" required
+                                            <input type="text" name="short_description" value="{{$news->short_description}}" class="form-control" required
                                                 placeholder="Enter Short Description" />
                                         </div>
 
                                         <div class="mb-3">
                                             <label class="form-label">Image <span style="color: red">*</span></label>
+                                            
+                                            <!-- File Input -->
                                             <input name="image" type="file" class="form-control" required />
+                                        
+                                            <!-- Preview of Existing Image -->
+                                            @if (!empty($news->image))
+                                                <div class="mt-2">
+                                                    <img src="{{$news->image}}" alt="Current Image" style="max-width: 150px; height: auto; border: 1px solid #ccc; padding: 5px;" />
+                                                </div>
+                                            @endif
                                         </div>
+                                        
 
 
                                         <div class="mb-3">
                                             <label class="form-label">Description <span style="color: red">*</span> </label>
                                             <div>
-                                                <textarea name="description" placeholder="Enter Description" required class="form-control" rows="5"></textarea>
+                                                <textarea name="description" placeholder="Enter Description" required class="form-control" rows="5">{{ $news->description }}</textarea>
                                             </div>
                                         </div>
 

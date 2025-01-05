@@ -69,7 +69,8 @@
                                             <th>ID</th>
                                             <th>Name</th>
                                             <th>Email</th>
-                                            <th>Status</th>
+                                            <th>Type</th>
+                                            <th>Issued</th>
                                             <th>Expiry</th>
                                             <th>View</th>
 
@@ -87,26 +88,21 @@
                                                         {{ $member->name }}</td>
                                                 <td>{{ $member->email }}</td>
                                                 <td>
-                                                    @if ($member->status === 'pending')
-                                                    <b style="background-color: rgb(255, 0, 0);" class="p-2 text-white rounded-1"> {{ $member->status }} </b>
-                                                    @elseif ($member->status === 'approved') 
-                                                    <b style="background-color: rgb(255, 196, 0);" class="p-2 text-white rounded-1"> {{ $member->status }} </b>
+                                                    @if ($member->membership_type === 'primary')
+                                                    <b style="background-color: #D0C22F;" class="p-2 text-white rounded-1"> 
+                                                        <a class="text-white" href="{{ route('single.user', $member->id) }}">{{ $member->membership_type }}</a></b>
+                                                    </b>
                                                     @else
-                                                    <b style="background-color: rgb(9, 172, 0);" class="p-2 text-white rounded-1"> {{ $member->status }} </b>
+                                                    <b style="background-color: #C0C0C0;" class="p-2 text-white rounded-1" >
+                                                        <a class="text-white" href="{{ route('single.user', $member->id) }}">{{ $member->membership_type }}</a></b>
                                                     @endif
-
-
                                                 </td>
+                                                <td>{{ $member->issued }}</td>
                                                 <td>{{ $member->expiry }}</td>
                                                 <td>
                                                    <button class="btn btn-primary waves-effect waves-light me-1">
-                                                       <a class="text-white" href="{{ route('single.user', $member->id) }}">view</a>
+                                                       <a class="text-white" href="{{ route('edit.user', $member->id) }}">view</a>
                                                     </button>
-
-                                                   <button class="btn btn-dark waves-effect waves-light" >
-                                                        <a class="text-white" href="{{ route('edit.user', $member->id) }}">edit</a>
-                                                   </button>
-
                                                 </td>
                                             </tr>
                                         @endforeach
@@ -128,7 +124,7 @@
                     <div class="col-sm-6">
                         <script>
                             document.write(new Date().getFullYear())
-                        </script> © La Bistro One Caffe
+                        </script> © P C F -  People Culture Forum
                     </div>
                 </div>
             </div>

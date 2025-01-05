@@ -14,9 +14,9 @@
                         <div class="pt-[390px] md:pt-[300px] xs:pt-[280px] pb-[205px] bg-[url('../assets/img/banner-bg-1.jpg')] bg-no-repeat bg-center bg-cover relative z-[1] before:absolute before:-z-[1] before:inset-0 before:bg-edblue/70 before:pointer-events-none">
                             <div class="mx-[10%] md:mx-[15px]">
                                 <div class="text-white w-[48%] xl:w-[60%] md:w-[70%] sm:w-[80%] xs:w-full">
-                                    <!-- <h6 class="font-medium uppercase tracking-[3px] mb-[16px]">Welcome to School in <span class="text-edyellow">NY</span></h6> -->
+                                    <h6 class="font-medium uppercase tracking-[3px] mb-[16px]"><span class="text-edyellow">( P C F )</span>  PEOPLE'S CULTURAL FORUM</h6> 
                                     <h2 class="font-bold text-[50px] leading-[1.13] mb-[15px]  text-chilanka">ജന സേവനം <br>  ജീവിത ദൗത്യം</h2>
-                                    <!-- <p class="leading-[1.75] mb-[41px]">Smply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p> -->
+                                    <p class="leading-[1.75] mb-[41px]">അബ്ദുൾ നാസർ മഅ്ദനി അധ്യക്ഷനായ <br> പീപ്പിൾസ് ഡെമോക്രാറ്റിക് പാർട്ടിയുടെ <br> (പിഡിപി) പ്രവാസി സംഘടനയാണ് പിസിഎഫ്</p> 
                                     <div class="flex items-center gap-[20px]">
                                         <a href="/register" class="ed-btn">Apply now</a>
                                         <a href="/about" class="ed-btn !bg-transparent border border-white hover:!bg-white hover:text-edpurple">About us</a>
@@ -31,13 +31,13 @@
                         <div class="pt-[390px] md:pt-[300px] xs:pt-[280px] pb-[205px] bg-[url('../assets/img/banner-bg-2.jpg')] bg-no-repeat bg-center bg-cover relative z-[1] before:absolute before:-z-[1] before:inset-0 before:bg-edblue/70 before:pointer-events-none">
                             <div class="mx-[10%] md:mx-[15px]">
                                 <div class="text-white w-[48%] xl:w-[60%] md:w-[70%] sm:w-[80%] xs:w-full">
-                                    <!-- <h6 class="font-medium uppercase tracking-[3px] mb-[16px]">Welcome to School in <span class="text-edyellow">NY</span></h6> -->
+                                    <h6 class="font-medium uppercase tracking-[3px] mb-[16px]"><span class="text-edyellow">( P C F )</span>  PEOPLE'S CULTURAL FORUM</h6> 
                                     <h2 class="font-bold text-[50px] leading-[1.13] mb-[15px] text-chilanka">അവർണ്ണന് അധികാരം <br />
                                     പീഡിതർക്ക് മോചനം</h2>
-                                    <!-- <p class="leading-[1.75] mb-[41px]">Smply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p> -->
+                                    <p class="leading-[1.75] mb-[41px]">പ്രവാസി സമൂഹം നേരിടുന്ന വിവിധങ്ങളായ പ്രശ്നങ്ങൾ <br> ഏറ്റെടുത്തു കൊണ്ടാണ് യുഎഇയിൽ ഉൾപ്പടെ മറ്റെല്ലാ ജിസിസി നാടുകളിലും <br> പി.സി.എഫ്. പ്രവർത്തിക്കുന്നത്.</p> 
                                     <div class="flex items-center gap-[20px]">
-                                        <a href="#" class="ed-btn">Apply now</a>
-                                        <a href="#" class="ed-btn !bg-transparent border border-white hover:!bg-white hover:text-edpurple">About us</a>
+                                        <a href="/register" class="ed-btn">Apply now</a>
+                                        <a href="/about" class="ed-btn !bg-transparent border border-white hover:!bg-white hover:text-edpurple">About us</a>
                                     </div>
                                 </div>
                             </div>
@@ -48,13 +48,9 @@
                         <div class="pt-[390px] md:pt-[300px] xs:pt-[280px] pb-[205px] bg-[url('../assets/img/banner-bg-3.jpg')] bg-no-repeat bg-center bg-cover relative z-[1] before:absolute before:-z-[1] before:inset-0 before:bg-edblue/70 before:pointer-events-none">
                             <div class="mx-[10%] md:mx-[15px]">
                                 <div class="text-white w-[48%] xl:w-[60%] md:w-[70%] sm:w-[80%] xs:w-full">
-                                    <!-- <h6 class="font-medium uppercase tracking-[3px] mb-[16px]">Welcome to School in <span class="text-edyellow">NY</span></h6> -->
-                                    <h2 class="font-bold text-[50px] leading-[1.13] mb-[15px] text-chilanka"  >സാമൂഹ്യ നീതി  <br> സമഗ്ര വികസനം <br/> സമാധാന സമൂഹം </h2>
-                                    <!-- <p class="leading-[1.75] mb-[41px]">Smply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled</p> -->
-                                    <div class="flex items-center gap-[20px]">
-                                        <a href="#" class="ed-btn">Apply now</a>
-                                        <a href="#" class="ed-btn !bg-transparent border border-white hover:!bg-white hover:text-edpurple">About us</a>
-                                    </div>
+                                    <h6 class="font-medium uppercase tracking-[3px] mb-[16px]"><span class="text-edyellow">( P C F )</span>  PEOPLE'S CULTURAL FORUM</h6> 
+                                    <h2 class="font-bold text-[50px] leading-[1.13] mb-[10px] text-chilanka"  >സാമൂഹ്യ നീതി  <br> സമഗ്ര വികസനം <br/> സമാധാന സമൂഹം </h2>
+                                     <p class="leading-[1.75] mb-[41px]">അബ്ദുൾ നാസർ മഅ്ദനി അധ്യക്ഷനായ <br> പീപ്പിൾസ് ഡെമോക്രാറ്റിക് പാർട്ടിയുടെ <br> (പിഡിപി) പ്രവാസി സംഘടനയാണ് പിസിഎഫ്</p> 
                                 </div>
                             </div>
                         </div>
@@ -156,7 +152,7 @@
                     <!-- single teacher -->
                     <div class="ed-teacher group">
                         <div class="ed-teacher__img rounded-[16px] overflow-hidden">
-                            <img src="assets/img/teacher-1.jpeg" alt="Team Member Image" class="w-full aspect-[370/375] duration-[400ms] group-hover:scale-110">
+                            <img src="assets/img/pcf/1.jpg" alt="Team Member Image" class="w-full aspect-[370/375] duration-[400ms] group-hover:scale-110">
                         </div>
 
                         <div class="ed-teacher__txt bg-white relative z-[1] mx-[25px] lg:mx-[20px] md:mx-[15px] xs:mx-[5px] -mt-[44px] md:-mt-[15px] xs:mt-0 rounded-[16px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] px-[25px] xl:px-[20px] md:px-[15px] pb-[30px] lg:pb-[25px] md:pb-[20px] before:w-full before:absolute before:-z-[1] before:h-full before:bg-white before:left-0 before:rounded-[16px] before:-top-[33px] before:skew-y-[4deg]">
@@ -169,7 +165,7 @@
                     <!-- single teacher -->
                     <div class="ed-teacher group">
                         <div class="ed-teacher__img rounded-[16px] overflow-hidden">
-                            <img src="assets/img/teacher-2.jpeg" alt="Team Member Image" class="w-full aspect-[370/375] duration-[400ms] group-hover:scale-110">
+                            <img src="assets/img/pcf/2.jpg" alt="Team Member Image" class="w-full aspect-[370/375] duration-[400ms] group-hover:scale-110">
                         </div>
 
                         <div class="ed-teacher__txt bg-white relative z-[1] mx-[25px] lg:mx-[20px] md:mx-[15px] xs:mx-[5px] -mt-[44px] md:-mt-[15px] xs:mt-0 rounded-[16px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] px-[25px] xl:px-[20px] md:px-[15px] pb-[30px] lg:pb-[25px] md:pb-[20px] before:w-full before:absolute before:-z-[1] before:h-full before:bg-white before:left-0 before:rounded-[16px] before:-top-[33px] before:skew-y-[4deg]">
@@ -183,7 +179,7 @@
                     <!-- single teacher -->
                     <div class="ed-teacher group">
                         <div class="ed-teacher__img rounded-[16px] overflow-hidden">
-                            <img src="assets/img/teacher-3.jpeg" alt="Team Member Image" class="w-full aspect-[370/375] duration-[400ms] group-hover:scale-110">
+                            <img src="assets/img/pcf/3.jpg" alt="Team Member Image" class="w-full aspect-[370/375] duration-[400ms] group-hover:scale-110">
                         </div>
 
                         <div class="ed-teacher__txt bg-white relative z-[1] mx-[25px] lg:mx-[20px] md:mx-[15px] xs:mx-[5px] -mt-[44px] md:-mt-[15px] xs:mt-0 rounded-[16px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] px-[25px] xl:px-[20px] md:px-[15px] pb-[30px] lg:pb-[25px] md:pb-[20px] before:w-full before:absolute before:-z-[1] before:h-full before:bg-white before:left-0 before:rounded-[16px] before:-top-[33px] before:skew-y-[4deg]">

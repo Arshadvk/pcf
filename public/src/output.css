@@ -5464,7 +5464,7 @@ aspect-ratio: 1.5 / 1;
 
 .before\:bg-edblue\/70::before {
   content: var(--tw-content);
-  background-color: rgb(36 20 66 / 0.7);
+  background-color: rgba(15, 14, 14, 0.7);
 }
 
 .before\:bg-edpurple::before {

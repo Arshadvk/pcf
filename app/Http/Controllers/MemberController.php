@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Member;
 use App\Actions\UploadHelper;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -183,7 +184,17 @@ class MemberController extends Controller
         return redirect()->back();
     }
 
-
+    public function editUser($id)
+    {
+        $user = Auth::user();
+        $member = Member::findOrFail($id);
+        if ($user->emirate) { 
+            $user->type = 'admin' ;
+        }else {
+            $user->type = 'super' ;
+        }
+        return view('dashboard.site.edit-user', compact('member', 'user'));
+    }
 
     public function destroy($id)
     {

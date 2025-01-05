@@ -36,7 +36,7 @@
                                     </div>
                                     <!-- end row -->
                                     <h4 class="font-size-18 text-muted mt-4 text-center">Reset Password</h4>
-                                    {{-- <p class="mb-5 text-center">Reset your Password with Upzet.</p> --}}
+                                    {{-- <p class="mb-5 text-center">Reset your Password with PCF.</p> --}}
                                     <form class="form-horizontal" action="/">
                                         <div class="row">
                                             <div class="col-md-12">

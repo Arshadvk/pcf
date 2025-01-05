@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Blog;
 use App\Models\Emirate;
 use App\Models\Member;
-use App\Models\Team;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class FrontendController extends Controller
@@ -72,12 +69,6 @@ class FrontendController extends Controller
 
 
     /// admin dashboard code
-
-
-
-
-
-
     public function dashboard()
     {
         $user = Auth::user();
@@ -88,7 +79,7 @@ class FrontendController extends Controller
             $emirates = Emirate::orderby('id', 'asc')->get();
         }
 
-        return view('dashboard.site.dashboard', compact('emirates' , 'user'));
+        return view('dashboard.site.dashboard', compact('emirates', 'user'));
     }
 
     public function user_requests()
@@ -99,22 +90,20 @@ class FrontendController extends Controller
         if ($user->emirate) {
             // Use where with multiple conditions
             $members = Member::where('emirates', $user->emirate)
-            ->where('status', 'pending')
-            ->get();
-            $user->type = 'admin' ;
+                ->where('status', 'pending')
+                ->get();
+            $user->type = 'admin';
         } else {
             // Fetch all members ordered by ID if no emirate is set
-            $user->type = 'super' ;
+            $user->type = 'super';
             $members = Member::where('status', 'approved')
-            ->orderBy('id', 'asc')
-            ->get();
+                ->orderBy('id', 'asc')
+                ->get();
         }
 
         // Return the view with the members data
-        return view('dashboard.site.user-requests', compact('members' ,'user' ));
+        return view('dashboard.site.user-requests', compact('members', 'user'));
     }
-
-
 
     public function addBlog()
     {
@@ -122,35 +111,20 @@ class FrontendController extends Controller
         return view('dashboard.site.add-blog', compact('user'));
     }
 
-    public function listBlog()
-    {
-        $user = Auth::user();
-        $blogs = Blog::orderby('id', 'desc')->get();
-        return view('dashboard.site.list-blog', compact('blogs' , 'user'));
-    }
 
     public function addUser()
     {
         $user = Auth::user();
-        return view('dashboard.site.add-user' , compact('user'));
+        return view('dashboard.site.add-user', compact('user'));
     }
     public function listUser()
     {
-        $users = Member::orderby('id', 'desc')->get();
+        $users = Member::where('status', 'verified')
+            ->orderby('id', 'desc')
+            ->get();
+            
         $user = Auth::user();
-        return view('dashboard.site.list-user', compact('users' , 'user'));
-    }
-
-    public function editUser($id)
-    {
-        $user = Auth::user();
-        $member = Member::findOrFail($id);
-        if ($user->emirate) { 
-            $user->type = 'admin' ;
-        }else {
-            $user->type = 'super' ;
-        }
-        return view('dashboard.site.edit-user', compact('member', 'user'));
+        return view('dashboard.site.list-user', compact('users', 'user'));
     }
 
     public function singleUser($id)
@@ -161,15 +135,4 @@ class FrontendController extends Controller
         return view('dashboard.site.user-id', compact('member', 'user'));
     }
 
-    public function listTeam()
-    {
-        $teams = Team::orderby('id', 'desc')->get();
-        $user = Auth::user();
-        return view('dashboard.site.list-team', compact('teams' , 'user'));
-    }
-    public function addTeam()
-    {
-        $user = Auth::user();
-        return view('dashboard.site.add-team' , compact('user'));
-    }
 }

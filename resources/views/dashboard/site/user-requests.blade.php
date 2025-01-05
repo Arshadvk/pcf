@@ -92,11 +92,14 @@
                                                     @if ($member->status === 'pending' && $user->type === 'admin')
                                                         <div class="dropdown">
                                                             <!-- Dropdown Button -->
-                                                            <button class="btn btn-warning waves-effect waves-light dropdown-toggle"
+                                                            <button
+                                                                class="btn btn-warning waves-effect waves-light dropdown-toggle"
                                                                 type="button" id="dropdownMenuButton"
                                                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <a class="dropdown-item" href="{{ route('update_status', ['id' => $member->id, 'status' => 'approved']) }}">Approve</a>                                                            </button>
-                        
+                                                                <a class="dropdown-item"
+                                                                    href="{{ route('update_status', ['id' => $member->id, 'status' => 'approved']) }}">Approve</a>
+                                                            </button>
+
                                                         </div>
                                                     @elseif ($member->status === 'approved' && $user->type === 'super')
                                                         <!-- Dropdowns for Verify and Reject -->
@@ -135,6 +138,30 @@
                                                     </button>
                                                 </td>
                                             </tr>
+
+                                            <div class="modal fade" id="rejectModal" tabindex="-1" aria-labelledby="rejectModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <form action="{{ route('update_status', ['id' => $member->id, 'status' => 'rejected']) }}" method="POST">
+                                                        @csrf
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="rejectModalLabel">Reason for Rejection</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="mb-3">
+                                                                    <label for="reason" class="form-label">Reason</label>
+                                                                    <textarea class="form-control" id="reason" name="reason" rows="4" required></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-danger">Submit</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
                                         @endforeach
 
                                     </tbody>
@@ -154,7 +181,7 @@
                     <div class="col-sm-6">
                         <script>
                             document.write(new Date().getFullYear())
-                        </script> © La Bistro One Caffe
+                        </script> © P C F -  People Culture Forum
                     </div>
                 </div>
             </div>
@@ -165,29 +192,7 @@
 <!-- END layout-wrapper -->
 
 <!-- Reject Modal -->
-<div class="modal fade" id="rejectModal" tabindex="-1" aria-labelledby="rejectModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <form action="{{ route('update_status', ['id' => $member->id, 'status' => 'rejected']) }}" method="POST">
-            @csrf
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="rejectModalLabel">Reason for Rejection</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="reason" class="form-label">Reason</label>
-                        <textarea class="form-control" id="reason" name="reason" rows="4" required></textarea>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-danger">Submit</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
+
 
 <!-- SweetAlert Script -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
