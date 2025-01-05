@@ -1,0 +1,177 @@
+@extends('base')
+@section('title')
+
+@endsection
+@section('content')
+
+<main>
+        <!-- BREADCRUMB SECTION START -->
+        <section class="pt-[327px] xl:pt-[287px] lg:pt-[237px] sm:pt-[200px] xxs:pt-[180px] pb-[158px] xl:pb-[118px] lg:pb-[98px] sm:pb-[68px] xs:pb-[48px] text-center bg-[url('../assets/img/breadcrumb-bg.jpg')] bg-no-repeat bg-cover bg-center relative z-[1] overflow-hidden before:absolute before:-z-[1] before:inset-0 before:bg-edblue/70 before:pointer-events-none">
+            <div class="mx-[19.71%] xxxl:mx-[14.71%] xxl:mx-[9.71%] xl:mx-[5.71%] md:mx-[12px]">
+                <h1 class="font-semibold text-[clamp(35px,6vw,56px)] text-white">Register</h1>
+    
+            </div>
+
+            <div class="vectors">
+                <img src="assets/img/breadcrumb-vector-1.svg" alt="vector" class="absolute -z-[1] pointer-events-none bottom-[34px] left-0 xl:left-auto xl:right-[90%]">
+                <img src="assets/img/breadcrumb-vector-2.svg" alt="vector" class="absolute -z-[1] pointer-events-none bottom-0 right-0 xl:right-auto xl:left-[60%]">
+            </div>
+        </section>
+        <!-- BREADCRUMB SECTION END -->
+
+
+        <!-- CONTACT SECTION START -->
+        <section class="py-[120px] xl:py-[80px] md:py-[60px]">
+            <div class="container mx-auto max-w-[1200px] px-[12px] xl:max-w-full">
+                <div class="grid grid-cols-12 md:grid-cols-12 gap-[60px] xl:gap-[40px] items-center">
+                    <!-- left side contact infos -->
+                  
+                    <!-- right side contact form -->
+                    <div>
+                            <div class="flex items-center justify-center">
+                                <img style="height: 90px;" src="assets/img/logo.png" alt="" srcset="">
+                            </div>
+
+                        <h2 class="text-[40px] md:text-[35px] sm:text-[30px] xxs:text-[28px] text-center font-semibold text-edblue mb-[40px]">Application for Membership</h2>
+                        
+                        
+                        <p class="text-edgray font-normal text-[16px] mb-[10px]">1. Personal Info</p>
+                        <form method="POST" action="{{ route('postUser') }}" class="grid grid-cols-2 xxs:grid-cols-1 gap-[30px] xs:gap-[20px] text-[16px]" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+
+                            <div>
+                                <label  class="font-lato font-semibold text-edblue block mb-[12px]">Your Name</label>
+                                <input type="text" name="name" placeholder="Enter Your Name" class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none" required>
+                            </div>
+                            <div>
+                                <label  class="font-lato font-semibold text-edblue block mb-[12px]">Your Email</label>
+                                <input type="email" name="email"  placeholder="Enter Your Email" class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none" required>
+                            </div>
+
+                            <div>
+                                <label class="font-lato font-semibold text-edblue block mb-[12px]">Tel/Mob</label>
+                                <input type="number" name="mobile"  placeholder="Enter Your Tel/Mob" class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none" required>
+                            </div>
+                            <div>
+                                <label  class="font-lato font-semibold text-edblue block mb-[12px]">Date of Birth</label>
+                                <input type="text" name="dob"  placeholder="Enter Your Date of Birth" class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none" required>
+                            </div>
+
+                            
+                            <div>
+                                <label class="font-lato font-semibold text-edblue block mb-[12px]">WhatsApp No </label>
+                                <input type="text" name="whatsapp"  placeholder="Enter Your Whatsapp No" class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none" required>
+                            </div>
+                            <div>
+                                <label for="blood-group" class="font-lato font-semibold text-edblue block mb-[12px]">Blood Group</label>
+                                <select name="blood_group" id="blood_group" class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none" required>
+                                    <option value="" disabled selected>Select your blood group</option>
+                                    <option value="A+">A+</option>
+                                    <option value="A-">A-</option>
+                                    <option value="B+">B+</option>
+                                    <option value="B-">B-</option>
+                                    <option value="O+">O+</option>
+                                    <option value="O-">O-</option>
+                                    <option value="AB+">AB+</option>
+                                    <option value="AB-">AB-</option>
+                                </select>
+                            </div>
+                         
+
+
+                            <div>
+                                <label for="emirates" class="font-lato font-semibold text-edblue block mb-[12px]">Select Emirate</label>
+                                <select name="emirates" id="emirates" class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none">
+                                    <option value="" disabled selected>Select your Emirate</option>
+                                    <option value="Abu Dhabi">Abu Dhabi</option>
+                                    <option value="Dubai">Dubai</option>
+                                    <option value="Sharjah">Sharjah</option>
+                                    <option value="Ajman">Ajman</option>
+                                    <option value="Umm Al Quwain">Umm Al-Quwain</option>
+                                    <option value="Ras Al Khaimah">Ras Al Khaimah</option>
+                                    <option value="Fujairah">Fujairah</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="font-lato font-semibold text-edblue block mb-[12px]">Photo</label>
+                                <input type="file" name="image"   class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none">
+                            </div>
+
+                            <div>
+                                <label  class="font-lato font-semibold text-edblue block mb-[12px]">Profession</label>
+                                <input type="text" name="profession"  placeholder="Enter Your Profession" class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none" required>
+                            </div>
+
+                            <div>
+                                <label  class="font-lato font-semibold text-edblue block mb-[12px]">Zone / Area</label>
+                                <input type="text" name="zone"  placeholder="Enter Your Zone" class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none" required>
+                            </div>
+
+                            <div>
+                                <label for="membership_type" class="font-lato font-semibold text-edblue block mb-[12px]">Membership Type  </label>
+                                <select name="membership_type" id="membership_type" class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none">
+                                    <option value="" disabled selected>Select your Membership Type</option>
+                                    <option value="primary">Primary</option>
+                                    <option value="secondary">Secondary</option>
+
+                                </select>
+                            </div>
+
+                            <div></div>
+
+                            <div><p class="text-edgray font-normal text-[16px] mb-[10px]">2. Address in home country</p></div>
+
+                            <div></div>
+
+                            <div>
+                                <label  class="font-lato font-semibold text-edblue block mb-[12px]">House Name </label>
+                                <input type="text" name="house_name"  placeholder="Enter Your House Name" class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none" required>
+                            </div>
+
+
+                            <div>
+                                <label  class="font-lato font-semibold text-edblue block mb-[12px]">District</label>
+                                <input type="text" name="district"  placeholder="Enter Your District" class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none" required> 
+                            </div>
+
+                            <div>
+                                <label  class="font-lato font-semibold text-edblue block mb-[12px]">Panjayath</label>
+                                <input type="text" name="panjayath"  placeholder="Enter Your Panjayath" class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none" required>
+                            </div>
+
+                            <div>
+                                <label  class="font-lato font-semibold text-edblue block mb-[12px]">PIN</label>
+                                <input type="text" name="pin"  placeholder="Enter Your PIN" class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none" required>
+                            </div>
+
+                            <div>
+                                <label  class="font-lato font-semibold text-edblue block mb-[12px]">Mandalam</label>
+                                <input type="text" name="mandalam"  placeholder="Enter Your Mandalam" class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none" required>
+                            </div>
+
+                            
+
+                            <div>
+                                <label for="before_pdp" class="font-lato font-semibold text-edblue block mb-[12px]">Before In PDP </label>
+                                <select name="before_pdp" id="before_pdp" class="border border-[#ECECEC] h-[55px] px-[20px] xs:px-[15px] rounded-[4px] w-full focus:outline-none" required>
+                                    <option value="" disabled selected>Before in PDP</option>
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+
+                                </select>
+                            </div>
+
+                            <div>
+                                <button type="submit" class="bg-edpurple h-[55px] px-[24px] rounded-[10px] text-[16px] font-medium text-white hover:bg-edblue">Send Message <span class="icon pl-[10px]"><i class="fa-solid fa-arrow-right-long"></i></span></button>
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- CONTACT SECTION END -->
+    </main>
+@endsection

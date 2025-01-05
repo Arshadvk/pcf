@@ -1,0 +1,41 @@
+@import "main/breakpoints";
+@import "main/variables";
+@import "main/global";
+@import "main/components";
+
+// sections
+@import "sections/header";
+@import "sections/courses";
+
+
+// inner page
+.ed-countdown .number {
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(255 255 255 / 50%);
+}
+
+.ed-course-details {
+    &-tab-navs {
+        button {
+            &.active {
+                background-color: var(--ed-purple);
+                color: var(--white);
+            }
+        }
+    }
+
+    &-tabs {
+        .ed-tab {
+            overflow: hidden;
+            opacity: 0;
+            height: 0;
+            pointer-events: none;
+
+            &.active {
+                opacity: 1;
+                height: auto;
+                pointer-events: all;
+            }
+        }
+    }
+}
