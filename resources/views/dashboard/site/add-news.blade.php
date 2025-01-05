@@ -1,6 +1,6 @@
 @extends('dashboard.base')
 @section('title')
-    Add Blog | La Bistro Caffe
+    Add News | P C F -  People Culture Forum
 @endsection
 @section('content')
     <div id="layout-wrapper">

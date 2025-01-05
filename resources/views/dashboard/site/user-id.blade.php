@@ -1,6 +1,6 @@
 @extends('dashboard.base')
 @section('title')
-Add Team | La Bistro Caffe 
+Add Team | P C F -  People Culture Forum
 @endsection
 @section('content')
 
@@ -8,7 +8,7 @@ Add Team | La Bistro Caffe
         <div class="page-content">
             <div class="container-fluid">
 
-    <div id="capture" style="width: 16.2cm; height: 25.68cm; background-image: url('/assets/images/id.jpg'); background-size: cover; background-position: center;">
+    <div id="capture" style="width: 16.2cm; height: 25.68cm; background-image: url('/assets/images/{{$member->membership_type}}.jpg'); background-size: cover; background-position: center;">
         <div class="d-flex justify-content-center align-items-center">
             <div> 
                 <div class="d-flex justify-content-center align-items-center pt-5">
@@ -37,7 +37,7 @@ Add Team | La Bistro Caffe
 
                 <div style="padding-top: 30px" class="d-flex justify-content-center align-items-center text-center">
                     <span class="p-2" style="border-radius: 5px 0 0 5px; background-color: #d02f2f;color:#ffff;width:75px;font-size: 10px;">Membership  Number</span> 
-                    <span class="p-2" style="border-radius: 0 5px 5px 0; background-color: #D0C22F;color:#000000;width:120px; font-weight: bolder;font-size: 20px;text-transform:uppercase;">{{$member->membership_number}}</span> 
+                    <span class="p-2" style="border-radius: 0 5px 5px 0; background-color:{{$member->membership_type == 'primary' ? '#D0C22F' : '#C0C0C0' }};color:#000000;width:120px; font-weight: bolder;font-size: 20px;text-transform:uppercase;">{{$member->membership_number}}</span> 
                 </div>
 
                 <div style="padding-top: 50px" class="d-flex justify-content-between">
@@ -54,8 +54,8 @@ Add Team | La Bistro Caffe
 
             </div>
         </div>
-        <p style="background-color: #D0C22F;color:#000000; margin-top: 84px; padding: 7px;" class="text-center">This Card is only used for PCF organization</p>
-    </div>
+        <p style="background-color: {{$member->membership_type == 'primary' ? '#D0C22F' : '#C0C0C0' }}; color:#000000; margin-top: 84px; padding: 7px;" class="text-center"> This Card is only used for PCF organization</p>
+            </div>
 
     
     <button class="btn btn-dark waves-effect waves-light m-4" id="screenshotBtn">Download Card</button>

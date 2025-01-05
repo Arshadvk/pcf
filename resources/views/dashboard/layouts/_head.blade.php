@@ -6,7 +6,7 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="La Bistro Caffe Admin Dashboard" name="description" />
+    <meta content="P C F -  People Culture Forum Admin Dashboard" name="description" />
     <meta content="Arshad" name="author" />
     <meta name="robots" content="noindex, nofollow">
     <!-- App favicon -->

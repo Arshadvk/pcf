@@ -105,7 +105,9 @@ class FrontendController extends Controller
         } else {
             // Fetch all members ordered by ID if no emirate is set
             $user->type = 'super' ;
-            $members = Member::orderBy('id', 'asc')->get();
+            $members = Member::where('status', 'approved')
+            ->orderBy('id', 'asc')
+            ->get();
         }
 
         // Return the view with the members data
@@ -143,7 +145,11 @@ class FrontendController extends Controller
     {
         $user = Auth::user();
         $member = Member::findOrFail($id);
-
+        if ($user->emirate) { 
+            $user->type = 'admin' ;
+        }else {
+            $user->type = 'super' ;
+        }
         return view('dashboard.site.edit-user', compact('member', 'user'));
     }
 

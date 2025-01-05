@@ -1,6 +1,6 @@
 @extends('dashboard.base')
 @section('title')
-Dashboard | La Bistro Caffe 
+Dashboard | P C F -  People Culture Forum
 @endsection
 @section('content')
 

@@ -1,6 +1,6 @@
 @extends('dashboard.base')
 @section('title')
-    Add Menu | La Bistro Caffe 
+    Add Menu | P C F -  People Culture Forum 
 @endsection
 @section('content')
     <div id="layout-wrapper">
@@ -206,11 +206,13 @@
                                                 </div>
                                             </div>
                                         <div>
-                                            
+                                            @if ($user->type === 'admin')
                                             <div>
                                                 <button type="submit" class="btn btn-primary waves-effect waves-light me-1">Submit</button>
                                                 <button type="reset" class="btn btn-secondary waves-effect">Cancel</button>
                                             </div>
+                                            
+                                            @endif
                                         </div>
                                     </form>
 

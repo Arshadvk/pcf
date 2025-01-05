@@ -1,6 +1,6 @@
 @extends('dashboard.base')
 @section('title')
-Add Team | La Bistro Caffe 
+Add Team | P C F -  People Culture Forum
 @endsection
 @section('content')
 <div id="layout-wrapper">

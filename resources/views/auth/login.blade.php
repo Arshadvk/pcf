@@ -4,7 +4,7 @@
     <head>
         
         <meta charset="utf-8" />
-        <title>Login | La Bistro Caffe - Admin & Dashboard </title>
+        <title>Login | PCF - Admin & Dashboard </title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="" name="description" />
         <meta content="Arshad" name="author" />
@@ -39,7 +39,7 @@
                                     </div>
                                     <!-- end row -->
                                     <h4 class="font-size-18 text-muted mt-2 text-center">Welcome Back !</h4>
-                                    <p class="mb-5 text-center">Sign in to continue to <b>La Bistro Caffe</b></p>
+                                    <p class="mb-5 text-center">Sign in to continue to <b> People Culture Forum</b></p>
                                     <form class="form-horizontal" method="POST" action="{{route('postLogin')}}">
                                         {{ csrf_field() }}
 

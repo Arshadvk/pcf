@@ -96,7 +96,6 @@
                                                     @endif
 
 
-
                                                 </td>
                                                 <td>{{ $member->expiry }}</td>
                                                 <td>
