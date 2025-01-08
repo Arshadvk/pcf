@@ -134,5 +134,4 @@ class FrontendController extends Controller
 
         return view('dashboard.site.user-id', compact('member', 'user'));
     }
-
 }
