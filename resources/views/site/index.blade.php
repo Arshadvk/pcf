@@ -18,7 +18,7 @@
                                     <h2 class="font-bold text-[50px] leading-[1.13] mb-[15px]  text-chilanka">ജന സേവനം <br>  ജീവിത ദൗത്യം</h2>
                                     <p class="leading-[1.75] mb-[41px]">അബ്ദുൾ നാസർ മഅ്ദനി അധ്യക്ഷനായ <br> പീപ്പിൾസ് ഡെമോക്രാറ്റിക് പാർട്ടിയുടെ <br> (പിഡിപി) പ്രവാസി സംഘടനയാണ് പിസിഎഫ്</p> 
                                     <div class="flex items-center gap-[20px]">
-                                        <a href="/register" class="ed-btn">Apply now</a>
+                                        <a href="/register" class="ed-btn">Membership</a>
                                         <a href="/about" class="ed-btn !bg-transparent border border-white hover:!bg-white hover:text-edpurple">About us</a>
                                     </div>
                                 </div>
@@ -36,7 +36,7 @@
                                     പീഡിതർക്ക് മോചനം</h2>
                                     <p class="leading-[1.75] mb-[41px]">പ്രവാസി സമൂഹം നേരിടുന്ന വിവിധങ്ങളായ പ്രശ്നങ്ങൾ <br> ഏറ്റെടുത്തു കൊണ്ടാണ് യുഎഇയിൽ ഉൾപ്പടെ മറ്റെല്ലാ ജിസിസി നാടുകളിലും <br> പി.സി.എഫ്. പ്രവർത്തിക്കുന്നത്.</p> 
                                     <div class="flex items-center gap-[20px]">
-                                        <a href="/register" class="ed-btn">Apply now</a>
+                                        <a href="/register" class="ed-btn">Membership</a>
                                         <a href="/about" class="ed-btn !bg-transparent border border-white hover:!bg-white hover:text-edpurple">About us</a>
                                     </div>
                                 </div>
