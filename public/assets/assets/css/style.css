@@ -4674,7 +4674,7 @@ img {
 #2.5	latest-projects-section-s2
 --------------------------------------------------------------*/
 .latest-projects-section-s2 {
-  padding-bottom: 70px;
+  padding-bottom: 0px;
 }
 
 @media (max-width: 991px) {

@@ -31,7 +31,7 @@
                 </div>
                 <!-- end swiper-slide -->
 
-                <!-- <div class="swiper-slide">
+                <div class="swiper-slide">
                     <div class="slide-inner slide-bg-image flex justify-end items-center relative" style="background-image: url('assets/assets/images/slider/hero2.jpg'); background-size: cover;  background-position: center right;">
                         <div class="container">
                             <div data-swiper-parallax="300" class="slide-title">
@@ -51,7 +51,7 @@
             </div>
             <!-- end swiper-slide -->
 
-            <div class="swiper-slide">
+            {{-- <div class="swiper-slide">
                 <div class="slide-inner slide-bg-image flex justify-end items-center relative"
                     style="background-image: url('assets/assets/images/slider/hero3.jpg'); background-size: cover;  background-position: center right;">
                     <div class="container">
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                 </div> <!-- end slide-inner -->
-            </div>
+            </div> --}}
             <!-- end swiper-slide -->
         </div>
         <!-- end swiper-wrapper -->
@@ -173,7 +173,84 @@
     </section>
     <!-- end latest-projects-section-s2 -->
 
+    <section class="about-us-section-s3 section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="section-title">
+                    <h2 class="text-chilanka">സംഘടനയുടെ&nbsp;ലക്ഷ്യങ്ങൾ</h2>
+                </div>
 
+                <div class="col col-md-6">
+                    <div class="about-area">
+                        <div class="details">
+                            <div>
+                                <h4><i class="ti-arrow-circle-right"></i></h4>
+                                <p>മാതൃ രാജ്യത്തിൻ്റെ സർവ്വതോന്മുഖമായ പുരോഗതിക്ക് വേണ്ടി പ്രവർത്തിക്കുവാൻ തയ്യാറുള്ള ദലിത്
+                                    പിന്നാക്ക ന്യൂനപക്ഷ മർദ്ദിത ജനവിഭാഗങ്ങൾക്ക് കഴിയുന്ന വിധം സഹായങ്ങൾ നൽകുക.</p>
+                            </div>
+                            <div>
+                                <h4><i class="ti-arrow-circle-right"></i></h4>
+                                <p>ഈ പ്രവർത്തനങ്ങളുടെ ലക്ഷ്യങ്ങൾ സാക്ഷാത്കരിക്കുന്നതിന് പ്രത്യയശാസ്ത്ര പ്രചാരണങ്ങളും മറ്റ്
+                                    പ്രവർത്തനങ്ങളും നടത്തുകയും പ്രവാസികളെ പ്രസ്ഥാനത്തിലേക്ക് അടുപ്പിക്കുകയും ചെയ്യുക.</p>
+                            </div>
+
+                            <div>
+                                <h4><i class="ti-arrow-circle-right"></i></h4>
+                                <p>പ്രവാസി സമൂഹം നേരിടുന്ന വിവിധ പ്രശ്നങ്ങളിൽ ഇടപെടുകയും പ്രതികരിക്കുകയും ചെയ്യുക,
+                                    ആവശ്യമെങ്കിൽ മാതൃ സംഘടനയുമായി സഹകരിച്ച് പ്രക്ഷോഭ പരിപാടികൾ സംഘടിപ്പിക്കുക.</p>
+                            </div>
+
+                            <div>
+                                <h4><i class="ti-arrow-circle-right"></i></h4>
+                                <p>അന്യായമായി തടവിലാക്കപ്പെടുകയോ വിചാരണ നേരിടുകയോ ചെയ്യുന്ന പ്രവാസി ഇന്ത്യക്കാരുടെ
+                                    കുടുംബങ്ങളുടെ സംരക്ഷണത്തിനും കേസുകളുടെ നടത്തിപ്പിനും ആവശ്യമായ നിയമപരവും സാമ്പത്തികവുമായ
+                                    സഹായം നൽകുക.</p>
+                            </div>
+
+                            <div>
+                                <h4><i class="ti-arrow-circle-right"></i></h4>
+                                <p>ദളിത് പിന്നോക്ക ന്യൂനപക്ഷങ്ങളുടെ സാമൂഹികവും സാംസ്കാരികവും രാഷ്ട്രീയവും വിദ്യാഭ്യാസപരവുമായ
+                                    പുരോഗതി ലക്ഷ്യമാക്കി അബ്ദുന്നാസിർ മഅ്ദനിയുടെ നേതൃത്വത്തിൽ രൂപീകരിച്ച പീപ്പിൾസ്
+                                    ഡെമോക്രാറ്റിക് പാർട്ടിയുടെ പ്രവർത്തനങ്ങൾക്ക് പിന്തുണ നൽകുക.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col col-md-6">
+                    <div class="about-area">
+                        <div class="details">
+                            <div>
+                                <h4><i class="ti-arrow-circle-right"></i></h4>
+                                <p>മാതൃരാജ്യത്തെ ജനങ്ങളുടെ ക്ഷേമത്തിനായി പ്രവർത്തിക്കുന്നതിനൊപ്പം, ഓരോ പ്രവർത്തകനേയും അതത്
+                                    രാജ്യങ്ങളിലെ നിയമങ്ങൾ പാലിക്കാൻ പ്രേരിപ്പിക്കുകയും, ആ രാജ്യത്തിനും ജനങ്ങൾക്കും
+                                    വേണ്ടിയുള്ള സാമൂഹിക പ്രവർത്തനങ്ങളിൽ ഏർപ്പെടാൻ സജ്ജമാക്കുകയും ചെയ്യുക</p>
+
+                            </div>
+                            <div>
+                                <h4><i class="ti-arrow-circle-right"></i></h4>
+                                <p>അടിച്ചമർത്തപ്പെട്ട സമൂഹം നേരിടുന്ന വിവിധ വെല്ലുവിളികളെയും പ്രതിസന്ധികളെയും അടിസ്ഥാനമാക്കി
+                                    അസംഘടിതരായ മുഴുവൻ പ്രവാസികളെയും ബോധവൽക്കരിക്കുക.</p>
+                            </div>
+                            <div>
+                                <h4><i class="ti-arrow-circle-right"></i></h4>
+                                <p>അംഗങ്ങളുടെ ക്ഷേമത്തിനും സുരക്ഷയ്ക്കുമായി നിക്ഷേപ പദ്ധതികൾ ഉൾപ്പെടെയുള്ള സാമൂഹിക സുരക്ഷാ
+                                    പദ്ധതികൾ ആവിഷ്കരിക്കുക.</p>
+                            </div>
+                            <div>
+                                <h4><i class="ti-arrow-circle-right"></i></h4>
+                                <p>വിദേശത്ത് അപകടങ്ങളിലും മറ്റും മരണപ്പെടുന്ന പ്രവാസികളുടെ മൃതദേഹം നാട്ടിലെത്തിക്കാനും മറ്റ്
+                                    നിയമ കുരുക്കുകളിൽ കഴിയുന്ന നിസ്സഹായരായ പ്രവാസികൾക്ക് നിയമസഹായം നൽകാനുമുള്ള പ്രവർത്തനങ്ങൾ
+                                    നടത്തുക.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div> <!-- end container -->
+    </section>
 
     <!-- start team-section -->
     <section class="team-section section-padding p-t-0" style="background-color: whitesmoke;">
@@ -181,7 +258,7 @@
             <div class="row">
                 <div class="col col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
                     <div class="section-title-s4">
-                        <h2 style="padding-top: 20px;">Our P C F Leaders</h2>
+                        <h2 style="padding-top: 30px;">Our P C F Leaders</h2>
                     </div>
                 </div>
             </div>
