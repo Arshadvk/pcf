@@ -27,7 +27,7 @@
                 <div class="col col-lg-5 col-md-6 col-sm-8">
                     <div class="section-title">
                         
-                        <h2>Contact With Us <span>if you have any query</span></h2>
+                        <h2>Contact Us</h2>
                     </div>
                 </div>
             </div>

@@ -23,16 +23,16 @@
                             <h3>Important Links</h3>
                         </div>
                         <ul>
-                            <li><a href="#">About us</a></li>
-                            <li><a href="#">The team</a></li>
-                            <li><a href="#">Our services</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/about">About us</a></li>
+                            <li><a href="/our-leader"> PDP Leaders</a></li>
+                            <li><a href="/gallery">Gallery</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#">Provacu Policy</a></li>
+                            <li><a href="#">Policy</a></li>
                             <li><a href="#">FAQ</a></li>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="/news">News</a></li>
+                            <li><a href="/contact">Contact</a></li>
                         </ul>
                     </div>
                 </div>
