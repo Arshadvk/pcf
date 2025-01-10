@@ -32,7 +32,7 @@
                     <div class="card">
                         <div class="card-body email-leftbar">
                             <div class="d-grid">
-                                <a href="email-compose.html" class="btn btn-danger btn-rounded waves-effect waves-light"><i class="mdi mdi-plus me-1"></i> Compose</a>
+                                <a href="email-compose" class="btn btn-danger btn-rounded waves-effect waves-light"><i class="mdi mdi-plus me-1"></i> Compose</a>
                             </div>
 
                             <div class="mail-list mt-4">

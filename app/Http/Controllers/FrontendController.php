@@ -10,36 +10,36 @@ class FrontendController extends Controller
 {
     public function index()
     {
-        return view('site.index');
+        return view('new.site.index');
     }
 
     public function about()
     {
-        return view('site.about');
+        return view('new.site.about');
     }
 
     public function news()
     {
-        return view('site.news');
+        return view('new.site.news');
     }
 
     public function team()
     {
-        return view('site.team');
+        return view('new.site.team');
     }
 
     public function contact()
     {
-        return view('site.contact');
+        return view('new.site.contact');
     }
     public function register()
     {
-        return view('site.register');
+        return view('old.site.register');
     }
 
     public function gallery()
     {
-        return view('site.gallery');
+        return view('new.site.gallery');
     }
 
     public function login()
