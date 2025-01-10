@@ -23,8 +23,8 @@
                             </div>
                             <div class="clearfix"></div>
                             <div data-swiper-parallax="500" class="slide-btns">
-                                <a href="#" class="theme-btn">Our industry</a>
-                                <a href="#" class="theme-btn-s2">Contact us</a>
+                                <a href="/register" class="theme-btn">Member ship</a>
+                                <a href="/contact" class="theme-btn-s2">Contact us</a>
                             </div>
                         </div>
                     </div> <!-- end slide-inner -->
@@ -42,8 +42,8 @@
                             </div>
                             <div class="clearfix"></div>
                             <div data-swiper-parallax="500" class="slide-btns">
-                                <a href="#" class="theme-btn">Our industry</a>
-                                <a href="#" class="theme-btn-s2">Contact us</a>
+                                <a href="/register" class="theme-btn">Member ship</a>
+                                <a href="/contact" class="theme-btn-s2">Contact us</a>
                             </div>
                         </div>
                     </div>
