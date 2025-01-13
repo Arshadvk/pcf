@@ -20,7 +20,8 @@
     .main-head {
         padding-top: 350px!important; 
         font-size: 30px!important; 
-        color: #000!important; 
+        /* color: #000!important;  */
+        font-weight: bolder !important; 
     }
     }
 </style>
