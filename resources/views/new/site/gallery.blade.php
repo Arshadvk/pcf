@@ -27,72 +27,13 @@
                 <div class="col col-xs-12">
                     <div class="service-grids clearfix">
 
+                        @foreach ($gallery as $gallery)
                         <div class="grid">
                             <div class="img-holder">
-                                <img src="assets/img/events/1.jpg" alt>
+                                <img  src="{{ $gallery->image }}" alt>
                             </div>
                         </div>
-
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="assets/img/events/2.jpg" alt>
-                            </div>
-                        </div>
-
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="assets/img/events/4.jpg" alt>
-                            </div>
-                        </div>
-
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="assets/img/events/5.jpg" alt>
-                            </div>
-                        </div>
-
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="assets/img/events/7.jpg" alt>
-                            </div>
-                        </div>
-
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="assets/img/events/8.jpg" alt>
-                            </div>
-                        </div>
-
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="assets/img/events/12.jpg" alt>
-                            </div>
-                        </div>
-
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="assets/img/events/10.jpg" alt>
-                            </div>
-                        </div>
-
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="assets/img/events/11.jpg" alt>
-                            </div>
-                        </div>
-
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="assets/img/events/13.jpg" alt>
-                            </div>
-                        </div>
-
-                        <div class="grid">
-                            <div class="img-holder">
-                                <img src="assets/img/events/14.jpg" alt>
-                            </div>
-                        </div>
-
+                        @endforeach
 
                     </div>
                 </div>

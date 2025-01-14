@@ -61,7 +61,7 @@
                     </div>
             </div>
 
-            {{-- <div class="swiper-slide">
+            <div class="swiper-slide">
                 <div class="slide-inner slide-bg-image flex justify-end items-center relative"
                     style="background-image: url('assets/assets/images/slider/hero3.jpg'); background-size: cover;  background-position: center right;">
                     <div class="container">
@@ -71,13 +71,9 @@
                         </div>
 
                         <div class="clearfix"></div>
-                        <div data-swiper-parallax="500" class="slide-btns">
-                            <a href="#" class="theme-btn">Our industry</a>
-                            <a href="#" class="theme-btn-s2">Contact us</a>
-                        </div>
                     </div>
                 </div> <!-- end slide-inner -->
-            </div> --}}
+            </div>
             <!-- end swiper-slide -->
         </div>
         <!-- end swiper-wrapper -->

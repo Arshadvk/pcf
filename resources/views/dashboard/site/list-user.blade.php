@@ -31,9 +31,10 @@
 </head>
 
 <style>
-.text-warning {
-    color: #FFA500;  /* Orange color for expiry in the next month */
-}
+    .text-warning {
+        color: #FFA500;
+        /* Orange color for expiry in the next month */
+    }
 </style>
 
 <!-- <body data-layout="horizontal" data-topbar="dark"> -->
@@ -48,12 +49,12 @@
     @include('dashboard.layouts._sidebar')
 
     <div class="main-content">
-        
+
 
         <div class="page-content">
             <div class="container-fluid">
 
-               
+
 
                 <!-- start page title -->
                 <div class="row">
@@ -76,6 +77,7 @@
                                             <th>ID</th>
                                             <th>Name</th>
                                             <th>Email</th>
+                                            <th>Gender</th>
                                             <th>Type</th>
                                             <th>Issued</th>
                                             <th>Expiry</th>
@@ -91,53 +93,73 @@
                                                 <td>
                                                     <img src="{{ $member->image }}" class="img-thumbnail"
                                                         style="width:60px;" alt="Blog">
-                                                        <br>
-                                                        {{ $member->name }}</td>
+                                                    <br>
+                                                    {{ $member->name }}
+                                                </td>
                                                 <td>{{ $member->email }}</td>
+                                                <td>{{ $member->gender }}</td>
                                                 <td>
                                                     @if ($member->membership_type === 'primary')
-                                                    <b style="background-color: #D0C22F;" class="p-2 text-white rounded-1"> 
-                                                        <a class="text-white" href="{{ route('single.user', $member->id) }}">{{ $member->membership_type }}</a></b>
-                                                    </b>
+                                                        <a class="text-black"
+                                                            href="{{ route('single.user', $member->id) }}">
+                                                            <span
+                                                                style="background-color: #D0C22F;border-radius:50%;width:5px; padding:5px; color:#D0C22F">22</span>
+                                                            <b>{{ $member->membership_type }}</b>
+                                                        </a>
                                                     @else
-                                                    <b style="background-color: #C0C0C0;" class="p-2 text-white rounded-1" >
-                                                        <a class="text-white" href="{{ route('single.user', $member->id) }}">{{ $member->membership_type }}</a></b>
+                                                        <a class="text-black"
+                                                            href="{{ route('single.user', $member->id) }}">
+                                                            <span
+                                                                style="background-color: #C0C0C0;border-radius:50%;width:5px; padding:5px; color:#D0C22F">22</span>
+                                                            <b>{{ $member->membership_type }}</b>
+                                                        </a>
                                                     @endif
                                                 </td>
                                                 <td>{{ $member->issued }}</td>
                                                 @php
-                                                try {
-                                                    $expiryDate = \Carbon\Carbon::createFromFormat('d/m/Y', $member->expiry);
-                                                } catch (\Carbon\Exceptions\InvalidFormatException $e) {
-                                                    $expiryDate = null;
-                                                }
-                                            @endphp
-                                            
-                                            @if ($expiryDate && $expiryDate->isBetween(\Carbon\Carbon::now(), \Carbon\Carbon::now()->addMonth()))
+                                                    try {
+                                                        $expiryDate = \Carbon\Carbon::createFromFormat(
+                                                            'd/m/Y',
+                                                            $member->expiry,
+                                                        );
+                                                    } catch (\Carbon\Exceptions\InvalidFormatException $e) {
+                                                        $expiryDate = null;
+                                                    }
+                                                @endphp
+
+                                                @if ($expiryDate && $expiryDate->isBetween(\Carbon\Carbon::now(), \Carbon\Carbon::now()->addMonth()))
+                                                    <td>
+                                                        <span
+                                                            style="background-color: #ef8809;border-radius:50%;width:5px; padding:5px; color:#2fd02f">22</span>
+                                                        <span>
+                                                            {{ $member->expiry }}
+                                                        </span>
+                                                    </td>
+                                                @elseif ($expiryDate && $expiryDate->isPast())
+                                                    <td>
+                                                        <span
+                                                            style="background-color: #d02f2f;border-radius:50%;width:5px; padding:5px; color:#2fd02f">22</span>
+                                                        <span class="p-2 rounded-1">
+                                                            {{ $member->expiry }}
+                                                        </span>
+                                                    </td>
+                                                @else
+                                                    <td>
+                                                        <span
+                                                            style="background-color: #2fd02f;border-radius:50%;width:5px; padding:5px; color:#2fd02f">22</span>
+                                                        <span class="p-2 rounded-1">
+                                                            {{ $member->expiry }}
+                                                        </span>
+
+                                                    </td>
+                                                @endif
+
+
+
                                                 <td>
-                                                    <b style="background-color: #ef8809;" class="p-2 text-white rounded-1">
-                                                        {{ $member->expiry }}
-                                                    </b>
-                                                </td>
-                                            @elseif ($expiryDate && $expiryDate->isPast())
-                                                <td>
-                                                    <b style="background-color: #d02f2f;" class="p-2 text-white rounded-1">
-                                                        {{ $member->expiry }}
-                                                    </b>
-                                                </td>
-                                            @else
-                                                <td>
-                                                    <b style="background-color: #2fd02f;" class="p-2 text-white rounded-1">
-                                                        {{ $member->expiry }}
-                                                    </b>
-                                                </td>
-                                            @endif
-                                            
-                                            
-                                                
-                                                <td>
-                                                   <button class="btn btn-primary waves-effect waves-light me-1">
-                                                       <a class="text-white" href="{{ route('edit.user', $member->id) }}">view</a>
+                                                    <button class="btn btn-primary waves-effect waves-light me-1">
+                                                        <a class="text-white"
+                                                            href="{{ route('edit.user', $member->id) }}">view</a>
                                                     </button>
                                                 </td>
                                             </tr>
@@ -150,13 +172,14 @@
                         </div>
                     </div> <!-- end col -->
                 </div>
-                
+
                 <div class="d-flex justify-content-between mb-3">
                     <form action="{{ route('upload') }}" method="POST" enctype="multipart/form-data">
                         <div class="d-flex justify-content-between">
                             @csrf
                             <input class="form-control" type="file" placeholder="upload Excel File" name="file" />
-                            <button style="margin-left: 10px" class="btn btn-success" type="submit">Upload&nbsp;Excel</button>
+                            <button style="margin-left: 10px" class="btn btn-success"
+                                type="submit">Upload&nbsp;Excel</button>
                         </div>
                     </form>
 
@@ -179,10 +202,10 @@
                             </button>
                         </div>
                     </form>
-                    
+
 
                 </div>
-                
+
                 <!-- end row -->
             </div> <!-- container-fluid -->
         </div>
@@ -194,7 +217,7 @@
                     <div class="col-sm-6">
                         <script>
                             document.write(new Date().getFullYear())
-                        </script> © P C F -  People Culture Forum
+                        </script> © P C F - People Culture Forum
                     </div>
                 </div>
             </div>

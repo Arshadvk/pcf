@@ -20,7 +20,7 @@
 
 
     <!-- start about-us-section -->
-    <section class="about-us-section-s2 section-padding p-t-5">
+    {{-- <section class="about-us-section-s2 section-padding p-t-5">
         <div class="container">
             <div class="row">
                 <div class="col col-md-5">
@@ -55,7 +55,7 @@
                 </div>
             </div>
         </div> <!-- end container -->
-    </section>
+    </section> --}}
     <!-- end about-us-section -->
 
 
@@ -178,6 +178,47 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col col-xs-12">
+                    <div class="team-grids">
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img src="assets/assets/img/pcf/1.jpg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>Abdulkadher Kothachira</h3>
+                                <span>President</span>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img src="assets/assets/img/pcf/3.jpg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>KPA Rafeek</h3>
+                                <span>Secretary</span>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img src="assets/assets/img/pcf/2.jpg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>Ismail Arikkadi</h3>
+                                <span>Treasurer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col col-xs-12">
                     <div class="team-grids">
@@ -219,4 +260,6 @@
             </div>
         </div> <!-- end container -->
     </section>
+
+
 @endsection

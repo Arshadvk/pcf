@@ -28,8 +28,7 @@ class GalleryController extends Controller
         if (!isset($request->id)) {
 
             $request->validate([
-                "title" => "required",
-                "image" => "required|mimes:jpeg,jpg,png,gif,heic,webp|max:2048",
+                "cropped_image" => "required|mimes:jpeg,jpg,png,gif,heic,webp|max:2048",
             ]);
         }
 
@@ -45,8 +44,8 @@ class GalleryController extends Controller
 
         if (isset($request->title))
             $gallery->title = $request->title;
-        if (isset($request->image))
-            $gallery->image = $uploadHelper->store('gallery', $request->image);
+        if (isset($request->cropped_image))
+            $gallery->image = $uploadHelper->store('gallery', $request->cropped_image);
         $gallery->save();
 
 

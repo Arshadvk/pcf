@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Emirate;
+use App\Models\Gallery;
 use App\Models\Member;
 use App\Models\News;
 use Illuminate\Support\Facades\Auth;
@@ -41,7 +42,8 @@ class FrontendController extends Controller
 
     public function gallery()
     {
-        return view('new.site.gallery');
+        $gallery = Gallery::orderby('id', 'asc')->get();
+        return view('new.site.gallery' ,compact('gallery'));
     }
 
     public function login()

@@ -47,12 +47,11 @@
                                             <tr>
                                                 <td>{{ $gallery->id }}</td>
                                                 <td>{{ $gallery->title }}</td>
-                                                <td><img src="{{ $gallery->image }}" class="img-thumbnail"
-                                                        style="width:60px;" alt="gallery"></td>
+                                                <td><img src="{{ $gallery->image }}" class="img-thumbnail" style="height: 150px" alt="gallery"></td>
                                                  <td>{{ $gallery->created_at->format('F j Y') }}</td>
                                                 <td>
                                                      <button class="btn btn-primary waves-effect waves-light me-1">
-                                                        <a class="text-white" href="{{ route('edit-gallery', $gallery->id) }}">view</a>
+                                                        <a class="text-white" href="{{ route('delete-gallery', $gallery->id) }}">view</a>
                                                      </button>
                                                 </td>
                                             </tr>
