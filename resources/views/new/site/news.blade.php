@@ -46,12 +46,6 @@
                         </div>
 
                     </div>
-                    <div class="grid">
-                        <div class="entry-media">
-                            <img src="assets/assets/img/news/news-5.jpg" alt>
-                        </div>
-
-                    </div>
                 </div>
             </div>
         </div>

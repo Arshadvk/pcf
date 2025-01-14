@@ -92,13 +92,10 @@
                                                     @if ($member->status === 'pending' && $user->type === 'admin')
                                                         <div class="dropdown">
                                                             <!-- Dropdown Button -->
-                                                            <button
-                                                                class="btn btn-warning waves-effect waves-light dropdown-toggle"
-                                                                type="button" id="dropdownMenuButton"
-                                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <a class="dropdown-item"
+                                             
+                                                                <a class="btn btn-warning waves-effect waves-light dropdown-toggle"
                                                                     href="{{ route('update_status', ['id' => $member->id, 'status' => 'approved']) }}">Approve</a>
-                                                            </button>
+                                                       
 
                                                         </div>
                                                     @elseif ($member->status === 'approved' && $user->type === 'super')

@@ -34,7 +34,7 @@ class FrontendController extends Controller
     }
     public function register()
     {
-        return view('old.site.register');
+        return view('new.site.register');
     }
 
     public function gallery()

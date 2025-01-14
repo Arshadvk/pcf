@@ -19,6 +19,7 @@ class CreateMembersTable extends Migration
             $table->string('image');
             $table->string('mobile');
             $table->string('dob')->nullable();
+            $table->string('gender')->nullable();
             $table->string('zone')->nullable();
             $table->string('email')->nullable();
             $table->string('issued')->nullable();

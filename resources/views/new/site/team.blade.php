@@ -2,6 +2,38 @@
 @section('title')
 
 @endsection
+<style>
+
+.container {
+    text-align: center;
+}
+
+.chairman {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+     /* Stack image and text vertically */
+}
+
+
+.img-holder {
+    overflow: hidden; /* Ensures image doesn't overflow the container */
+    position: relative;
+    border-radius: 20px; /* Optional: Makes the image circular */
+}
+
+.img-holder img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.img-holder:hover img {
+    transform: scale(1.1); /* Scales up the image */
+}
+
+
+
+</style>
 @section('content')
         <!-- start page-title -->
         <section class="page-title">
@@ -19,9 +51,33 @@
         </section>        
         <!-- end page-title -->
 
+        
 
+        <section class="team-section section-padding flex justify-center items-center">
+            <div class="container text-center">
+                <h1 class="text-center text-chilanka" style="padding-bottom: 40px">ചെയർമാൻ</h1>
+        
+                <div class="row justify-center">
+                    <div class="col col-xs-12">
+                        <div class="chairman">
+                            <div class="grid">
+                                <div class="img-social">
+                                    <div class="img-holder">
+                                        <img style="height: 300px" src="assets/img/leader/chairman.jpg" alt>
+                                    </div>
+                                </div>
+                                <div class="details">
+                                    <h3 class="text-center text-chilanka">അബ്ദുന്നാസർ മഅദനി</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end container -->
+        </section>
+        
         <!-- start team-section -->
-        <section class="team-section section-padding">
+        <section class="team-section">
             <div class="container">
                 <h1 class="text-center text-chilanka" style="padding-bottom: 40px">വൈസ് ചെയർമാൻമാർ</h1>
 

@@ -57,7 +57,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/edit-user/{id}', [MemberController::class, 'editUser'])->name('edit.user');
     Route::get('/list-member', [FrontendController::class, 'listUser'])->name('list-user');
     Route::get('/update-status/{id}/{status}', [MemberController::class, 'update_status'])->name('update_status');
-    
+    Route::post('/export-users', [MemberController::class, 'exportUsers'])->name('export.users');
+
+    Route::get('/upload', [MemberController::class, 'showForm']);
+    Route::post('/upload', [MemberController::class, 'upload'])->name('upload');
+
 
     Route::get('/user/{id}', [FrontendController::class, 'singleUser'])->name('single.user');
     Route::get('/user-requests', [FrontendController::class, 'user_requests'])->name('user_requests');

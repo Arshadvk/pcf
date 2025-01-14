@@ -30,7 +30,11 @@
 
 </head>
 
-
+<style>
+.text-warning {
+    color: #FFA500;  /* Orange color for expiry in the next month */
+}
+</style>
 
 <!-- <body data-layout="horizontal" data-topbar="dark"> -->
 
@@ -44,9 +48,12 @@
     @include('dashboard.layouts._sidebar')
 
     <div class="main-content">
+        
 
         <div class="page-content">
             <div class="container-fluid">
+
+               
 
                 <!-- start page title -->
                 <div class="row">
@@ -98,7 +105,36 @@
                                                     @endif
                                                 </td>
                                                 <td>{{ $member->issued }}</td>
-                                                <td>{{ $member->expiry }}</td>
+                                                @php
+                                                try {
+                                                    $expiryDate = \Carbon\Carbon::createFromFormat('d/m/Y', $member->expiry);
+                                                } catch (\Carbon\Exceptions\InvalidFormatException $e) {
+                                                    $expiryDate = null;
+                                                }
+                                            @endphp
+                                            
+                                            @if ($expiryDate && $expiryDate->isBetween(\Carbon\Carbon::now(), \Carbon\Carbon::now()->addMonth()))
+                                                <td>
+                                                    <b style="background-color: #ef8809;" class="p-2 text-white rounded-1">
+                                                        {{ $member->expiry }}
+                                                    </b>
+                                                </td>
+                                            @elseif ($expiryDate && $expiryDate->isPast())
+                                                <td>
+                                                    <b style="background-color: #d02f2f;" class="p-2 text-white rounded-1">
+                                                        {{ $member->expiry }}
+                                                    </b>
+                                                </td>
+                                            @else
+                                                <td>
+                                                    <b style="background-color: #2fd02f;" class="p-2 text-white rounded-1">
+                                                        {{ $member->expiry }}
+                                                    </b>
+                                                </td>
+                                            @endif
+                                            
+                                            
+                                                
                                                 <td>
                                                    <button class="btn btn-primary waves-effect waves-light me-1">
                                                        <a class="text-white" href="{{ route('edit.user', $member->id) }}">view</a>
@@ -113,7 +149,41 @@
                             </div>
                         </div>
                     </div> <!-- end col -->
-                </div> <!-- end row -->
+                </div>
+                
+                <div class="d-flex justify-content-between mb-3">
+                    <form action="{{ route('upload') }}" method="POST" enctype="multipart/form-data">
+                        <div class="d-flex justify-content-between">
+                            @csrf
+                            <input class="form-control" type="file" placeholder="upload Excel File" name="file" />
+                            <button style="margin-left: 10px" class="btn btn-success" type="submit">Upload&nbsp;Excel</button>
+                        </div>
+                    </form>
+
+                    <form action="{{ route('export.users') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="d-flex justify-content-between mb-3">
+                            <select name="emirates" id="emirates" class="form-control" required>
+                                <option value="all" disabled selected>All Emirates</option>
+                                <option value="all">All Emirates</option>
+                                <option value="Abu Dhabi">Abu Dhabi</option>
+                                <option value="Dubai">Dubai</option>
+                                <option value="Sharjah">Sharjah</option>
+                                <option value="Ajman">Ajman</option>
+                                <option value="Umm Al Quwain">Umm Al-Quwain</option>
+                                <option value="Ras Al Khaimah">Ras Al Khaimah</option>
+                                <option value="Fujairah">Fujairah</option>
+                            </select>
+                            <button style="margin-left: 10px" class="btn btn-success">
+                                Download&nbsp;Excel
+                            </button>
+                        </div>
+                    </form>
+                    
+
+                </div>
+                
+                <!-- end row -->
             </div> <!-- container-fluid -->
         </div>
         <!-- End Page-content -->

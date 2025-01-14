@@ -8,9 +8,32 @@ use App\Actions\UploadHelper;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\UsersExport;
+use App\Imports\UsersImport;
 
 class MemberController extends Controller
 {
+
+    public function exportUsers(Request $request)
+    {
+        $emirates = $request->input('emirates');  // Get the selected emirate
+
+        return Excel::download(new UsersExport($emirates), 'users.xlsx');
+    }
+    public function upload(Request $request)
+    {
+        // Validate the file
+        $request->validate([
+            'file' => 'required|mimes:xlsx,csv',
+        ]);
+
+        // Import the Excel file
+        Excel::import(new UsersImport, $request->file('file'));
+
+        return back()->with('success', 'Data imported successfully!');
+    }
+
     public function index()
     {
         $members = Member::all();
@@ -120,10 +143,10 @@ class MemberController extends Controller
         return view('members.show', compact('member'));
     }
 
-    public function update_status($id , $status)
+    public function update_status($id, $status)
     {
         $member = Member::findOrFail($id);
-        $member->status = $status ;
+        $member->status = $status;
         if ($member->save()) {
             Alert::success('Success', 'Member updated successfully!');
         } else {
@@ -131,28 +154,11 @@ class MemberController extends Controller
         }
 
         return redirect()->back();
-
     }
 
     public function update(Request $request, $id)
     {
-        $request->validate([
-            "name" => "required",
-            "email" => "required",
-            "mobile" => "required",
-            "dob" => "required",
-            "whatsapp" => "required",
-            "profession" => "required",
-            "membership_number" => "required",
-            "issued" => "required",
-            "expiry" => "required",
-            "zone" => "required",
-            "house_name" => "required",
-            "district" => "required",
-            "panjayath" => "required",
-            "pin" => "required",
-            "mandalam" => "required",
-        ]);
+        
 
         $member = Member::find($id);
         if (!$member) {
@@ -188,10 +194,10 @@ class MemberController extends Controller
     {
         $user = Auth::user();
         $member = Member::findOrFail($id);
-        if ($user->emirate) { 
-            $user->type = 'admin' ;
-        }else {
-            $user->type = 'super' ;
+        if ($user->emirate) {
+            $user->type = 'admin';
+        } else {
+            $user->type = 'super';
         }
         return view('dashboard.site.edit-user', compact('member', 'user'));
     }
