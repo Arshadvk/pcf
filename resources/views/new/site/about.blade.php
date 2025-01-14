@@ -220,44 +220,99 @@
             </div>
 
             <div class="row">
+                <div class="col col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
+                    <div class="section-title-s4">
+                        <h2 style="padding-top: 20px;">വൈസ് പ്രസിഡന്റ്</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col col-xs-12">
                     <div class="team-grids">
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img src="assets/assets/img/pcf/1.jpg" alt>
+                                    <img  src="assets/img/pcf/4.jpeg" alt>
                                 </div>
                             </div>
                             <div class="details">
-                                <h3>Abdulkadher Kothachira</h3>
-                                <span>President</span>
+                                <h3>മുഹമ്മദ് സാഹിബ്</h3>
+                                <span>വൈസ് പ്രസിഡന്റ്</span>
                             </div>
                         </div>
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img src="assets/assets/img/pcf/3.jpg" alt>
+                                    <img src="assets/img/pcf/5.jpeg" alt>
                                 </div>
                             </div>
                             <div class="details">
-                                <h3>KPA Rafeek</h3>
-                                <span>Secretary</span>
+                                <h3>ഷാരിസ് കള്ളിയത്ത്:</h3>
+                                <span>വൈസ് പ്രസിഡന്റ്</span>
                             </div>
                         </div>
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img src="assets/assets/img/pcf/2.jpg" alt>
+                                    <img src="assets/img/pcf/6.jpeg" alt>
                                 </div>
                             </div>
                             <div class="details">
-                                <h3>Ismail Arikkadi</h3>
-                                <span>Treasurer</span>
+                                <h3>റാഷിദ് സുൽത്താൻ</h3>
+                                <span>വൈസ് പ്രസിഡന്റ്</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
+                    <div class="section-title-s4">
+                        <h2 style="padding-top: 20px;">വൈസ് പ്രസിഡന്റ്</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-xs-12">
+                    <div class="team-grids">
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img  src="assets/img/pcf/4.jpeg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>മുഹമ്മദ് സാഹിബ്</h3>
+                                <span>വൈസ് പ്രസിഡന്റ്</span>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img src="assets/img/pcf/5.jpeg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>ഷാരിസ് കള്ളിയത്ത്:</h3>
+                                <span>വൈസ് പ്രസിഡന്റ്</span>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img src="assets/img/pcf/6.jpeg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>റാഷിദ് സുൽത്താൻ</h3>
+                                <span>വൈസ് പ്രസിഡന്റ്</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div> <!-- end container -->
     </section>
 
