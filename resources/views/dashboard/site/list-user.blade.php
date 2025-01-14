@@ -161,6 +161,11 @@
                                                         <a class="text-white"
                                                             href="{{ route('edit.user', $member->id) }}">view</a>
                                                     </button>
+
+                                                    <button class="btn btn-primary waves-effect waves-light me-1">
+                                                        <a class="text-white"
+                                                            href="{{ route('single.user', $member->id) }}">id</a>
+                                                    </button>
                                                 </td>
                                             </tr>
                                         @endforeach

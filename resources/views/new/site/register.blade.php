@@ -103,7 +103,7 @@
                     </div>
 
                     <div>
-                        <label for="gender" class="font-lato font-semibold text-edblue block mb-[12px]">Gender  </label>
+                        <label for="gender" class="font-lato font-semibold text-edblue block mb-[12px]">Gender </label>
                         <select name="gender" id="gender" class="form-control">
                             <option value="" disabled selected>Select your Gender</option>
                             <option value="male">Male</option>

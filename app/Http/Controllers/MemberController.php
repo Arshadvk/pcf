@@ -166,6 +166,7 @@ class MemberController extends Controller
         }
 
         $member->name = $request->name;
+        $member->gender = $request->gender;
         $member->email = $request->email;
         $member->mobile = $request->mobile;
         $member->dob = $request->dob;

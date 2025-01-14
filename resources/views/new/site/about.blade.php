@@ -222,7 +222,7 @@
             <div class="row">
                 <div class="col col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
                     <div class="section-title-s4">
-                        <h2 style="padding-top: 20px;">വൈസ് പ്രസിഡന്റ്</h2>
+                        <h2 class="text-chilanka" style="padding-top: 20px;">വൈസ്&nbsp;പ്രസിഡന്റ്</h2>
                     </div>
                 </div>
             </div>
@@ -243,7 +243,7 @@
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img src="assets/img/pcf/5.jpeg" alt>
+                                    <img src="assets/img/pcf/8.jpeg" alt>
                                 </div>
                             </div>
                             <div class="details">
@@ -254,7 +254,7 @@
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img src="assets/img/pcf/6.jpeg" alt>
+                                    <img src="assets/img/pcf/5.jpeg" alt>
                                 </div>
                             </div>
                             <div class="details">
@@ -269,7 +269,67 @@
             <div class="row">
                 <div class="col col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
                     <div class="section-title-s4">
-                        <h2 style="padding-top: 20px;">വൈസ് പ്രസിഡന്റ്</h2>
+                        <h2 class="text-chilanka" style="padding-top: 20px;">ജോ: സെക്രട്ടറി</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-xs-12">
+                    <div class="team-grids-4">
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img  src="assets/img/pcf/6.jpeg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>ജംഷാദ് ഇല്ലിക്കൽ</h3>
+                                <span>ജോ: സെക്രട്ടറി</span>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img src="assets/img/pcf/7.jpeg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>ഇബ്രാഹിം പട്ടിശ്ശേര</h3>
+                                <span>ജോ: സെക്രട്ടറി</span>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img src="assets/img/pcf/10.jpeg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>റഹീസ് കാർത്തികപ്പള്ളി</h3>
+                                <span>ജോ: സെക്രട്ടറി</span>
+                            </div>
+                        </div>
+
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img src="assets/img/pcf/9.jpeg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>ഇസ്മയിൽ സി.പി നന്നബ</h3>
+                                <span>ജോ: സെക്രട്ടറി</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
+                    <div class="section-title-s4">
+                        <h2 class="text-chilanka" style="padding-top: 20px;">ഗ്ലോബൽ അംഗം</h2>
                     </div>
                 </div>
             </div>
@@ -279,36 +339,26 @@
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img  src="assets/img/pcf/4.jpeg" alt>
+                                    <img style="border-radius:50%"  src="assets/img/pcf/11.jpeg" alt>
                                 </div>
                             </div>
                             <div class="details">
-                                <h3>മുഹമ്മദ് സാഹിബ്</h3>
-                                <span>വൈസ് പ്രസിഡന്റ്</span>
+                                <h3>ഇസ്മയിൽ നാട്ടിക</h3>
+                                <span>ഗ്ലോബൽ അംഗം</span>
                             </div>
                         </div>
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img src="assets/img/pcf/5.jpeg" alt>
+                                    <img style="border-radius:50%" src="assets/img/pcf/13.jpeg" alt>
                                 </div>
                             </div>
                             <div class="details">
-                                <h3>ഷാരിസ് കള്ളിയത്ത്:</h3>
-                                <span>വൈസ് പ്രസിഡന്റ്</span>
+                                <h3>അസീസ് സേട്ട്</h3>
+                                <span>ഗ്ലോബൽ അംഗം</span>
                             </div>
                         </div>
-                        <div class="grid">
-                            <div class="img-social">
-                                <div class="img-holder">
-                                    <img src="assets/img/pcf/6.jpeg" alt>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <h3>റാഷിദ് സുൽത്താൻ</h3>
-                                <span>വൈസ് പ്രസിഡന്റ്</span>
-                            </div>
-                        </div>
+                    
                     </div>
                 </div>
             </div>
