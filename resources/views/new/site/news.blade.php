@@ -29,23 +29,19 @@
         <div class="row">
             <div class="col col-xs-12">
                 <div class="blog-grids">
+                    @foreach ($news as $news)
                     <div class="grid">
                         <div class="entry-media">
-                            <img src="assets/assets/img/news/news-1.jpg" alt>
+                            <img src="{{ $news->image }}" alt>
                         </div>
-                        <!-- <div class="details">
+                        {{-- <div class="details">
                             <h3><a href="#">Garment sector set to take an environmental turn arround the
                                     world</a></h3>
                             <p>small, lay peacefully between its four familiar walls. A collection of textile
                                 samples lay spread</p>
-                        </div> -->
+                        </div>  --}}
                     </div>
-                    <div class="grid">
-                        <div class="entry-media">
-                            <img src="assets/assets/img/news/news-2.jpg" alt>
-                        </div>
-
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

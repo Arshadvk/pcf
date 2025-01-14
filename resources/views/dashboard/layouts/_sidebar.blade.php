@@ -42,6 +42,17 @@
                      </li>
 
                      <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="mdi mdi-file-upload"></i>
+                            <span>Gallery</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="/add-gallery">Add Gallery</a></li>
+                            <li><a href="/list-gallery">List Gallery</a></li>
+                        </ul>
+                    </li>
+
+                     <li>
                          <a href="javascript: void(0);" class="has-arrow waves-effect">
                              <i class="mdi mdi-account-group"></i>
                              <span>Leader</span>

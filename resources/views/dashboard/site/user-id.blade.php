@@ -8,7 +8,14 @@
             <div class="container-fluid">
 
                 <div id="capture"
-                    style="width: 16.2cm; height: 25.68cm; background-image: url('/assets/images/{{ $member->membership_type }}.jpg'); background-size: cover; background-position: center;">
+                    style="width: 16.2cm; height: 25.68cm;background-image: url(
+                    @if ($member->gender == 'female') '/assets/images/women.jpg' 
+                @else 
+                '/assets/images/{{ $member->membership_type }}.jpg' 
+                @endif
+        ); 
+        background-size: cover; 
+        background-position: center;">
                     <div class="d-flex justify-content-center align-items-center">
                         <div>
                             <div class="d-flex justify-content-center align-items-center pt-5">
@@ -47,7 +54,7 @@
                                     style="border-radius: 5px 0 0 5px; background-color: #d02f2f;color:#ffff;width:75px;font-size: 10px;">Membership
                                     Number</span>
                                 <span class="p-2"
-                                    style="border-radius: 0 5px 5px 0; background-color:{{ $member->membership_type == 'primary' ? '#D0C22F' : '#C0C0C0' }};color:#000000;width:120px; font-weight: bolder;font-size: 20px;text-transform:uppercase;">{{ $member->membership_number }}</span>
+                                    style="border-radius: 0 5px 5px 0; background-color:{{$member->gender == 'female' ? '#cb6ce6' : ($member->membership_type == 'primary' ? '#D0C22F' : '#C0C0C0') }};color:#000000;width:120px; font-weight: bolder;font-size: 20px;text-transform:uppercase;">{{ $member->membership_number }}</span>
                             </div>
 
                             <div style="padding-top: 50px" class="d-flex justify-content-between">
@@ -64,8 +71,11 @@
 
                         </div>
                     </div>
-                    <p style="background-color: {{ $member->membership_type == 'primary' ? '#D0C22F' : '#C0C0C0' }}; color:#000000; margin-top: 84px; padding: 7px;"
-                        class="text-center"> This Card is only used for PCF organization</p>
+                    <p style="background-color: {{ $member->gender == 'female' ? '#cb6ce6' : ($member->membership_type == 'primary' ? '#D0C22F' : '#C0C0C0') }}; color: #000000; margin-top: 84px; padding: 7px;"
+                        class="text-center">
+                        This Card is only used for PCF organization
+                    </p>
+                    
                 </div>
 
 
@@ -79,7 +89,6 @@
     <!-- end main content-->
 
     <!-- END layout-wrapper -->
-
 
 
     <!-- Right bar overlay-->

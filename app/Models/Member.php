@@ -25,6 +25,7 @@ class Member extends Model
         'membership_number',
         'issued',
         'expiry', 
+        'gender' ,
 
 
         'house_name',

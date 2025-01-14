@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\NewsController;
 
@@ -47,7 +48,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/store-news', [NewsController::class, 'store'])->name('store-news');
     Route::get('/edit-news/{id}', [NewsController::class, 'edit'])->name('edit-news');
     
-    
+    Route::get('/add-gallery', [GalleryController::class, 'index'])->name('add-gallery');
+    Route::get('/list-gallery', [GalleryController::class, 'list'])->name('add-gallery');
+    Route::post('/store-gallery', [GalleryController::class, 'store'])->name('store-gallery');
+    Route::post('/delete-gallery/{id}', [GalleryController::class, 'delete'])->name('delete-gallery');
+
+
     Route::get('/add-team', [FrontendController::class, 'addTeam'])->name('add-team');
     Route::get('/list-team', [FrontendController::class, 'listTeam'])->name('list-team');
     

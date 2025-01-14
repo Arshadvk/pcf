@@ -16,7 +16,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0">News List</h4>
+                            <h4 class="mb-sm-0">gallery List</h4>
 
 
 
@@ -34,6 +34,7 @@
                                     <thead>
                                         <tr>
                                             <th>ID</th>
+                                            <th>Title</th>
                                             <th>Image</th>
                                             <th>Date Added</th>
                                             <th>Action</th>
@@ -42,15 +43,16 @@
                                     </thead>
 
                                     <tbody>
-                                        @foreach ($news as $news)
+                                        @foreach ($galleries as $gallery)
                                             <tr>
-                                                <td>{{ $news->id }}</td>
-                                                <td><img src="{{ $news->image }}" class="img-thumbnail"
-                                                        style="width:60px;" alt="news"></td>
-                                                <td>{{ $news->created_at->format('F j Y') }}</td>
+                                                <td>{{ $gallery->id }}</td>
+                                                <td>{{ $gallery->title }}</td>
+                                                <td><img src="{{ $gallery->image }}" class="img-thumbnail"
+                                                        style="width:60px;" alt="gallery"></td>
+                                                 <td>{{ $gallery->created_at->format('F j Y') }}</td>
                                                 <td>
                                                      <button class="btn btn-primary waves-effect waves-light me-1">
-                                                        <a class="text-white" href="{{ route('edit-news', $news->id) }}">view</a>
+                                                        <a class="text-white" href="{{ route('edit-gallery', $gallery->id) }}">view</a>
                                                      </button>
                                                 </td>
                                             </tr>

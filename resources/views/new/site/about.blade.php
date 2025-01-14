@@ -195,17 +195,6 @@
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img src="assets/assets/img/pcf/2.jpg" alt>
-                                </div>
-                            </div>
-                            <div class="details">
-                                <h3>Ismail Arikkadi</h3>
-                                <span>Treasurer</span>
-                            </div>
-                        </div>
-                        <div class="grid">
-                            <div class="img-social">
-                                <div class="img-holder">
                                     <img src="assets/assets/img/pcf/3.jpg" alt>
                                 </div>
                             </div>
@@ -214,7 +203,17 @@
                                 <span>Secretary</span>
                             </div>
                         </div>
-
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img src="assets/assets/img/pcf/2.jpg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>Ismail Arikkadi</h3>
+                                <span>Treasurer</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

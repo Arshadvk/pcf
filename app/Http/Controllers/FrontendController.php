@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Emirate;
 use App\Models\Member;
+use App\Models\News;
 use Illuminate\Support\Facades\Auth;
 
 class FrontendController extends Controller
@@ -19,8 +20,9 @@ class FrontendController extends Controller
     }
 
     public function news()
-    {
-        return view('new.site.news');
+    {   
+        $news = News::orderby('id', 'asc')->get();
+        return view('new.site.news' ,compact('news'));
     }
 
     public function team()

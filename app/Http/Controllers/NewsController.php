@@ -28,9 +28,6 @@ class NewsController extends Controller
         if (!isset($request->id)) {
 
             $request->validate([
-                "title" => "required",
-                "short_description" => "required",
-                "description" => "required",
                 "image" => "required|mimes:jpeg,jpg,png,gif,heic,webp|max:2048",
             ]);
         }
@@ -42,12 +39,6 @@ class NewsController extends Controller
         } else {
             $news = new News();
         }
-        if (isset($request->title))
-            $news->title = $request->title;
-        if (isset($request->short_description))
-            $news->short_description = $request->short_description;
-        if (isset($request->description))
-            $news->description = $request->description;
         if (isset($request->image))
             $news->image = $uploadHelper->store('news', $request->image);
         $news->save();
