@@ -48,5 +48,9 @@ class EmirateSeeder extends Seeder
             'name' => 'Fujairah',
             'count' => 0,
         ]);
+        Emirate::create([
+            'name' => 'Al Ain',
+            'count' => 0,
+        ]);
     }
 }

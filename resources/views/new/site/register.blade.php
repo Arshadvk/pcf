@@ -19,6 +19,13 @@
         justify-content: center;
         align-items: center;
     }
+
+    .text-danger {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
 </style>
 
 
@@ -52,8 +59,18 @@
                         <input type="number" name="mobile"  placeholder="Enter Your Tel/Mob" class="form-control" required>
                     </div>
                     <div>
-                        <label  class="font-lato font-semibold text-edblue block mb-[12px]">Date of Birth</label>
-                        <input type="text" name="dob"  placeholder="Enter Your Date of Birth" class="form-control" required>
+                        <label class="font-lato font-semibold text-edblue block mb-[12px]">Date of Birth</label>
+                        <input 
+                            type="text" 
+                            name="dob" 
+                            id="dob" 
+                            placeholder="DD/MM/YYYY" 
+                            class="form-control" 
+                            required 
+                            maxlength="10" 
+                            pattern="\d{2}/\d{2}/\d{4}" 
+                            title="Enter the date in DD/MM/YYYY format (e.g., 25/12/2000)">
+                        <small id="dobError" class="text-danger" style="display: none;">Please enter a valid date in DD/MM/YYYY format.</small>
                     </div>
 
                     
@@ -83,6 +100,7 @@
                         <select name="emirates" id="emirates" class="form-control">
                             <option value="" disabled selected>Select your Emirate</option>
                             <option value="Abu Dhabi">Abu Dhabi</option>
+                            <option value="Al Ain">Al Ain</option>
                             <option value="Dubai">Dubai</option>
                             <option value="Sharjah">Sharjah</option>
                             <option value="Ajman">Ajman</option>
@@ -245,6 +263,25 @@
         imageInput.value = ""; // Clear the input
     });
 });
+
+document.querySelector('input[name="dob"]').addEventListener('input', function (e) {
+    const dobInput = e.target;
+    const value = dobInput.value;
+    const dobError = document.getElementById('dobError');
+
+    // Allow only numbers and slashes
+    if (!/^\d{0,2}(\/\d{0,2}(\/\d{0,4})?)?$/.test(value)) {
+        dobInput.value = value.slice(0, -1); // Remove invalid character
+    }
+
+    // Validate full date format
+    if (/^\d{2}\/\d{2}\/\d{4}$/.test(value)) {
+        dobError.style.display = 'none'; // Hide error message if valid
+    } else {
+        dobError.style.display = 'block'; // Show error message if invalid
+    }
+});
+
 
 </script>
 

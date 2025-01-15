@@ -78,7 +78,7 @@ class UserSeeder extends Seeder
         ]);
         User::create([
             'name' => 'Al Ain Admin',
-            'emirate' => 'Abu Dhabi' ,
+            'emirate' => 'Al Ain Admin' ,
             'email' => 'aan@pcfgcc.com',
             'password' => Hash::make('12345678'),
         ]);

@@ -113,7 +113,9 @@ class MemberController extends Controller
                 $request->emirates === 'Ajman' ? 'AJM-' : (
                     $request->emirates === 'Umm Al Quwain' ? 'UAQ-' : (
                         $request->emirates === 'Ras Al Khaimah' ? 'RAK-' : (
-                            $request->emirates === 'Fujairah' ? 'FUJ-' : 'AUH-'
+                            $request->emirates === 'Fujairah' ? 'FUJ-' : (
+                                $request->emirates === 'Al Ain' ? 'AAN-' : 'AUH-'
+                            )
                         )
                     )
                 )
