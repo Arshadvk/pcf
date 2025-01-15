@@ -10,7 +10,8 @@
 
     }
     .main-head {
-
+font-size: 60px!important;  ;
+color:#203E94!important;   ; 
     }
     @media (max-width: 768px) {
       .class-hide{
@@ -51,7 +52,7 @@
                     <div class="slide-inner slide-bg-image flex justify-end items-center relative" style="background-image: url('assets/assets/images/slider/hero2.jpg'); background-size: cover;  background-position: center right;">
                         <div class="container">
                             <div data-swiper-parallax="300" class="slide-title">
-                                <h2 style="font-size: 60px" class="main-head text-chilanka"  >അവർണ്ണന്&nbsp;അധികാരം <br /> പീഡിതർക്ക്&nbsp;മോചനം</h2>
+                                <h2  class="main-head text-chilanka"  >അവർണ്ണന്&nbsp;അധികാരം <br /> പീഡിതർക്ക്&nbsp;മോചനം</h2>
                             </div>
                             <div data-swiper-parallax="400" class="slide-text">
                                 <p class="class-hide text-chilanka"  style="color: black;">പ്രവാസി സമൂഹം നേരിടുന്ന വിവിധങ്ങളായ പ്രശ്നങ്ങൾ ഏറ്റെടുത്തു കൊണ്ടാണ് യുഎഇയിൽ ഉൾപ്പടെ മറ്റെല്ലാ ജിസിസി നാടുകളിലും  പി.സി.എഫ്. പ്രവർത്തിക്കുന്നത്.</p>
@@ -66,7 +67,7 @@
                     style="background-image: url('assets/assets/images/slider/hero3.jpg'); background-size: cover;  background-position: center right;">
                     <div class="container">
                         <div data-swiper-parallax="300" class="slide-title">
-                            <h2 style="font-size: 60px" class="text-chilanka">സാമൂഹ്യ&nbsp;നീതി <br> സമഗ്ര&nbsp;വികസനം <br />
+                            <h2 style="font-size: 60px" class="main-head text-chilanka">സാമൂഹ്യ&nbsp;നീതി <br> സമഗ്ര&nbsp;വികസനം <br />
                                 സമാധാന&nbsp;സമൂഹം</h2>
                         </div>
                         <div data-swiper-parallax="400" class="slide-text">

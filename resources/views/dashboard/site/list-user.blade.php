@@ -92,7 +92,7 @@
                                     </thead>
 
                                     <tbody>
-                                        @foreach ($users as $member)
+                                        @foreach ($users as $member )
                                             <tr>
                                                 @if (!$user->emirate)
                                                 <td>
@@ -179,10 +179,35 @@
                                                         <a class="text-white"
                                                             href="{{ route('single.user', $member->id) }}">id</a>
                                                     </button>
+                                                    @if(!$user->emirate)
+                                                    <button class="btn btn-danger waves-effect waves-light me-1"  data-bs-toggle="modal" data-bs-target="#deleteModal-{{ $member->id }}">
+                                                        <a class="text-white"
+                                                            >delete</a>
+                                                    </button>
+                                                    @endif
                                                 </td>
                                             </tr>
-                                        @endforeach
 
+
+                                            <div class="modal fade" id="deleteModal-{{ $member->id }}" tabindex="-1" aria-labelledby="deleteModalLabel-{{ $member->id }}" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="deleteModalLabel-{{ $member->id }}">Confirm Deletion</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Are you sure you want to delete this user?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                            <a class="btn btn-danger" href="{{ route('delete.user', $member->id) }}">Confirm</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                   
                                     </tbody>
                                 </table>
 

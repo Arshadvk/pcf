@@ -229,7 +229,7 @@ class MemberController extends Controller
         return view('dashboard.site.edit-user', compact('member', 'user'));
     }
 
-    public function destroy($id)
+    public function delete($id)
     {
         $member = Member::findOrFail($id);
         $isDeleted = $member->delete();

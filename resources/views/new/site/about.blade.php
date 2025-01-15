@@ -328,7 +328,7 @@
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img class="about-img" src="assets/assets/img/pcf/1.jpg" alt>
+                                    <img class="about-img" src="/assets/img/pcf/1.jpeg" alt>
                                 </div>
                             </div>
                             <div class="details">
