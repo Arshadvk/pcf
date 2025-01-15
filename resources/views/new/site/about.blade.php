@@ -2,6 +2,145 @@
 @section('title')
 @endsection
 @section('content')
+
+<style>
+    .team-section {
+  padding-bottom: 60px;
+}
+
+@media (max-width: 991px) {
+  .team-section {
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .team-section {
+    padding-bottom: 15px;
+  }
+}
+
+.team-section .team-grids-4 {
+  margin: 0 -15px;
+}
+
+@media (max-width: 767px) {
+  .team-section .team-grids-4 {
+    margin: 0 -7.5px;
+  }
+}
+
+.team-section .team-grids-4 .grid {
+  width: calc(25% - 30px);
+  float: left;
+  margin: 0 15px 50px;
+  text-align: center;
+}
+
+
+@media (max-width: 991px) {
+  .team-section .team-grids-4 .grid {
+    width: calc(50% - 30px);
+  }
+}
+
+@media (max-width: 767px) {
+  .team-section .team-grids-4 .grid {
+    width: calc(50% - 15px);
+    margin: 0 7.5px 50px;
+  }
+}
+
+@media (max-width: 500px) {
+  .team-section .team-grids-4.grid {
+    width: calc(100% - 15px);
+    float: none;
+  }
+}
+
+.team-section .team-grids-4 ul {
+  list-style: none;
+  display: inline-block;
+}
+
+.team-section .team-grids-4 ul li {
+  float: left;
+}
+
+.team-section .team-grids-4 ul > li + li {
+  margin-left: 10px;
+}
+
+.team-section .team-grids-4 ul li a {
+  background-color: #203E94;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  display: block;
+  font-size: 13px;
+  font-size: 0.86667rem;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.team-section .team-grids-4 ul li a:hover {
+  background-color: #e04700;
+}
+
+.team-section .team-grids-4 .img-social {
+  position: relative;
+}
+
+.team-section .team-grids-4 .social {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.team-section .team-grids-4 .grid:hover .social {
+  opacity: 1;
+  visibility: visible;
+  bottom: 20px;
+}
+
+.team-section .team-grids-4 .details {
+  padding-top: 20px;
+}
+
+.team-section .team-grids-4 h3 {
+  font-size: 18px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 0 0.1em;
+}
+
+@media (max-width: 767px) {
+  .team-section .team-grids-4 h3 {
+    font-size: 16px;
+    font-size: 1.06667rem;
+  }
+}
+
+.team-section .team-grids-4 h3 + span {
+  font-size: 13px;
+  font-size: 0.86667rem;
+  color: #203E94;
+  font-weight: 600;
+}
+</style>
     <!-- start page-title -->
     <section class="page-title">
         <div class="container">
