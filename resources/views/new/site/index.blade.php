@@ -69,7 +69,9 @@
                             <h2 class="text-chilanka">സാമൂഹ്യ&nbsp;നീതി <br> സമഗ്ര&nbsp;വികസനം <br />
                                 സമാധാന&nbsp;സമൂഹം</h2>
                         </div>
-
+                        <div data-swiper-parallax="400" class="slide-text">
+                            <p class="class-hide text-chilanka"  style="color: black;">മാതൃ രാജ്യത്തിൻ്റെ സർവ്വതോന്മുഖമായ പുരോഗതിക്ക് വേണ്ടി പ്രവർത്തിക്കുവാൻ തയ്യാറുള്ള ദലിത് പിന്നാക്ക ന്യൂനപക്ഷ മർദ്ദിത ജനവിഭാഗങ്ങൾക്ക് കഴിയുന്ന വിധം സഹായങ്ങൾ നൽകുക.</p>
+                        </div>
                         <div class="clearfix"></div>
                     </div>
                 </div> <!-- end slide-inner -->

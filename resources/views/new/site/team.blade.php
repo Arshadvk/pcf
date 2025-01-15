@@ -237,30 +237,45 @@
                     <div class="col col-xs-12">
                         <div class="team-grids">
                             <h1 class="text-center text-chilanka" style="padding-bottom: 40px">സെക്രട്ടറിമാര്‍</h1>
-            
-                            <div class="grid">
-                                <div class="img-social">
-                                    <div class="img-holder">
-                                        <img src="assets/img/leader/12.jpg" alt>
+                            <div style="display: flex;justify-content: center;">
+                                <div style="padding-right: 40px" class="">
+                                    <div class="img-social">
+                                        <div class="img-holder">
+                                            <img src="assets/img/leader/12.jpg" alt>
+                                        </div>
+                                    </div>
+                                    <div class="details">
+                                        <h3>സലിം ബാബു</h3>
+                                        <span>സെക്രട്ടറി</span>
                                     </div>
                                 </div>
-                                <div class="details">
-                                    <h3>സലിം ബാബു</h3>
-                                    <span>സെക്രട്ടറി</span>
-                                </div>
-                            </div>
-                            <div class="grid">
-                                <div class="img-social">
-                                    <div class="img-holder">
-                                        <img src="assets/img/leader/4.jpg" alt>
+                                <div style="padding-left: 40px" >
+                                    <div class="img-social">
+                                        <div class="img-holder">
+                                            <img src="assets/img/leader/4.jpg" alt>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="details">
-                                    <h3>രാജിമണി തൃശൂര്‍</h3>
-                                    <span>സെക്രട്ടറി</span>
-                                </div>
+                                    <div class="details">
+                                        <h3>രാജിമണി തൃശൂര്‍</h3>
+                                        <span>സെക്രട്ടറി</span>
+                                    </div>
+                                </div> 
                             </div>
-                            <div class="grid">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end container -->
+        </section>
+
+
+        <section class="team-section ">
+            <div class="container">
+                <div class="row">
+                    <div class="col col-xs-12">
+                        <div class="team-grids">
+                            <h1 class="text-center text-chilanka" style="padding-bottom: 40px">ട്രഷറർ</h1>
+                            <div class="">
                                 <div class="img-social">
                                     <div class="img-holder">
                                         <img src="assets/img/leader/3.jpg" alt>

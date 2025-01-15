@@ -14,6 +14,7 @@
 
     <!-- jvectormap -->
     <link href="/assets/libs/jqvmap/jqvmap.min.css" rel="stylesheet" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Bootstrap Css -->
     <link href="/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />

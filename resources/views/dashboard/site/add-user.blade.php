@@ -139,7 +139,20 @@
                                                 </select>
                                             </div>
                                             </div>
+
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="gender" class="form-label" >Gender </label>
+                                                    <select name="gender" id="gender" class="form-control">
+                                                    <option value="" disabled selected>Select Your Gender</option>
+                                                    <option value="male">Male</option>
+                                                    <option value="female">Female</option>
+                                                </select>
+                                            </div>
                                         </div>
+                                        </div>
+
+                                        
 
                                          <p class="text-edgray font-normal text-[16px] mb-[10px]">2. Address in home country</p>
                                          <div class="row">

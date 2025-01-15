@@ -14,6 +14,18 @@ use App\Imports\UsersImport;
 
 class MemberController extends Controller
 {
+    public function updateMembershipNumber(Request $request, $id)
+    {
+        $request->validate([
+            'membership_number' => 'required|string|max:255',
+        ]);
+
+        $member = Member::findOrFail($id);
+        $member->membership_number = $request->input('membership_number');
+        $member->save();
+
+        return response()->json(['success' => true]);
+    }
 
     public function exportUsers(Request $request)
     {
@@ -82,6 +94,8 @@ class MemberController extends Controller
         }
         if (isset($request->name))
             $members->name = $request->name;
+        if (isset($request->gender))
+            $members->gender = $request->gender;
         if (isset($request->email))
             $members->email = $request->email;
         if (isset($request->mobile))
@@ -94,12 +108,12 @@ class MemberController extends Controller
             $members->blood_group = $request->blood_group;
         if (isset($request->emirates))
             $members->emirates = $request->emirates;
-        $members->membership_number = $request->emirates === "Dubai" ? 'dxb 01' : (
-            $request->emirates === 'Sharjah' ? 'shj 01' : (
-                $request->emirates === 'Ajman' ? 'ajm 01' : (
-                    $request->emirates === 'Umm Al Quwain' ? 'uaq 01' : (
-                        $request->emirates === 'Ras Al Khaimah' ? 'rak 01' : (
-                            $request->emirates === 'Fujairah' ? 'fuj 01' : 'auh 01'
+        $members->membership_number = $request->emirates === "Dubai" ? 'DXB-' : (
+            $request->emirates === 'Sharjah' ? 'SHJ-' : (
+                $request->emirates === 'Ajman' ? 'AJM-' : (
+                    $request->emirates === 'Umm Al Quwain' ? 'UAQ-' : (
+                        $request->emirates === 'Ras Al Khaimah' ? 'RAK-' : (
+                            $request->emirates === 'Fujairah' ? 'FUJ-' : 'AUH-'
                         )
                     )
                 )
@@ -152,13 +166,26 @@ class MemberController extends Controller
         } else {
             Alert::error('Error', 'Failed to update member.');
         }
-
         return redirect()->back();
     }
 
+    public function status_reject(Request $request, $id, $status)
+    {
+        $member = Member::findOrFail($id);
+
+        $member->status = $request->reason;
+        if ($member->save()) {
+            Alert::success('Success', 'Member updated successfully!');
+        } else {
+            Alert::error('Error', 'Failed to update member.');
+        }
+        return redirect()->back();
+    }
+
+
     public function update(Request $request, $id)
     {
-        
+
 
         $member = Member::find($id);
         if (!$member) {
@@ -166,7 +193,6 @@ class MemberController extends Controller
         }
 
         $member->name = $request->name;
-        $member->gender = $request->gender;
         $member->email = $request->email;
         $member->mobile = $request->mobile;
         $member->dob = $request->dob;

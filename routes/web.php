@@ -57,12 +57,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/add-team', [FrontendController::class, 'addTeam'])->name('add-team');
     Route::get('/list-team', [FrontendController::class, 'listTeam'])->name('list-team');
     
+    Route::post('/update-membership-number/{id}', [MemberController::class, 'updateMembershipNumber']);
+
     
     Route::post('/putUser/{id}',[MemberController::class, 'update'])->name('putUser');
     Route::get('/add-member', [FrontendController::class, 'addUser'])->name('add-user');
     Route::get('/edit-user/{id}', [MemberController::class, 'editUser'])->name('edit.user');
     Route::get('/list-member', [FrontendController::class, 'listUser'])->name('list-user');
     Route::get('/update-status/{id}/{status}', [MemberController::class, 'update_status'])->name('update_status');
+    Route::post('/update-status/{id}/{status}', [MemberController::class, 'status_reject'])->name('update_status');
     Route::post('/export-users', [MemberController::class, 'exportUsers'])->name('export.users');
 
     Route::get('/upload', [MemberController::class, 'showForm']);

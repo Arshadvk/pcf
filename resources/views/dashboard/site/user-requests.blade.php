@@ -20,6 +20,7 @@
     <!-- Responsive datatable examples -->
     <link href="assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet"
         type="text/css" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Bootstrap Css -->
     <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -30,7 +31,13 @@
 
 </head>
 
-
+<style>
+    .membership-edit {
+        width: 100px;
+        padding: 5px;
+        font-size: 14px;
+    }
+</style>
 
 <!-- <body data-layout="horizontal" data-topbar="dark"> -->
 
@@ -68,7 +75,6 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
-                                            <th>Email</th>
                                             <th>Status</th>
                                             <th>Expiry</th>
                                             <th>View</th>
@@ -79,27 +85,40 @@
                                     <tbody>
                                         @foreach ($members as $member)
                                             <tr>
-                                                <td>{{ $member->id }}</td>
+                                                @if ($user->type === 'super')
                                                 <td>
-                                                    <img src="{{ $member->image }}" class="img-thumbnail"
-                                                        style="width:60px;" alt="Blog">
-                                                    <br>
-                                                    {{ $member->name }}
+                                                    <span class="membership-number" id="display-{{ $member->id }}"
+                                                        onclick="editMembershipNumber({{ $member->id }})">
+                                                        {{ $member->membership_number }}
+                                                    </span>
+                                                    <input type="text" id="edit-{{ $member->id }}"
+                                                        class="membership-edit" value="{{ $member->membership_number }}"
+                                                        style="display: none;"
+                                                        onblur="saveMembershipNumber({{ $member->id }})">
                                                 </td>
-                                                <td>{{ $member->email }}</td>
+                                                @else
+                                                <td>
+                                                    {{ $member->membership_number }}
+                                                </td>
+                                                @endif
+                                               
+                                                <td> {{ $member->name }}</td>
 
                                                 <td>
+                                                    <div>
                                                     @if ($member->status === 'pending' && $user->type === 'admin')
                                                         <div class="dropdown">
                                                             <!-- Dropdown Button -->
-                                             
-                                                                <a class="btn btn-warning waves-effect waves-light dropdown-toggle"
-                                                                    href="{{ route('update_status', ['id' => $member->id, 'status' => 'approved']) }}">Approve</a>
-                                                       
+
+                                                            <a class="btn btn-warning waves-effect waves-light dropdown-toggle"
+                                                                href="{{ route('update_status', ['id' => $member->id, 'status' => 'verified']) }}">Verified</a>
+
 
                                                         </div>
-                                                    @elseif ($member->status === 'approved' && $user->type === 'super')
+                                                    @elseif ($member->status === 'verified' && $user->type === 'super')
                                                         <!-- Dropdowns for Verify and Reject -->
+
+                                                        <div style="display: flex;">
                                                         <div class="dropdown">
                                                             <!-- Verify Dropdown -->
                                                             <button
@@ -107,8 +126,8 @@
                                                                 type="button" id="dropdownVerifyButton"
                                                                 data-bs-toggle="dropdown" aria-expanded="false">
                                                                 <a class="dropdown-item verify-confirm" href="#"
-                                                                    data-href="{{ route('update_status', ['id' => $member->id, 'status' => 'verified']) }}">
-                                                                    Verified
+                                                                    data-href="{{ route('update_status', ['id' => $member->id, 'status' => 'approved']) }}">
+                                                                    Approved
                                                                 </a>
                                                             </button>
                                                         </div>
@@ -122,9 +141,15 @@
                                                                 Reject
                                                             </button>
                                                         </div>
+                                                    </div>
+                                                    @elseif ($member->status === 'verified' && $user->type === 'admin')
+                                                    Waiting For Approvel
                                                     @else
-                                                        {{ $member->status }}
+                                                    <b style="color: red">
+                                                       rejected: {{ $member->status }}
+                                                    </b>
                                                     @endif
+                                                    
 
                                                 </td>
                                                 <td>{{ $member->expiry }}</td>
@@ -136,24 +161,32 @@
                                                 </td>
                                             </tr>
 
-                                            <div class="modal fade" id="rejectModal" tabindex="-1" aria-labelledby="rejectModalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="rejectModal" tabindex="-1"
+                                                aria-labelledby="rejectModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
-                                                    <form action="{{ route('update_status', ['id' => $member->id, 'status' => 'rejected']) }}" method="POST">
+                                                    <form
+                                                        action="{{ route('update_status', ['id' => $member->id, 'status' => 'rejected']) }}"
+                                                        method="POST">
                                                         @csrf
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h5 class="modal-title" id="rejectModalLabel">Reason for Rejection</h5>
-                                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                <h5 class="modal-title" id="rejectModalLabel">Reason for
+                                                                    Rejection</h5>
+                                                                <button type="button" class="btn-close"
+                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
                                                                 <div class="mb-3">
-                                                                    <label for="reason" class="form-label">Reason</label>
+                                                                    <label for="reason"
+                                                                        class="form-label">Reason</label>
                                                                     <textarea class="form-control" id="reason" name="reason" rows="4" required></textarea>
                                                                 </div>
                                                             </div>
                                                             <div class="modal-footer">
-                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                                <button type="submit" class="btn btn-danger">Submit</button>
+                                                                <button type="button" class="btn btn-secondary"
+                                                                    data-bs-dismiss="modal">Close</button>
+                                                                <button type="submit"
+                                                                    class="btn btn-danger">Submit</button>
                                                             </div>
                                                         </div>
                                                     </form>
@@ -178,7 +211,7 @@
                     <div class="col-sm-6">
                         <script>
                             document.write(new Date().getFullYear())
-                        </script> © P C F -  People Culture Forum
+                        </script> © P C F - People Culture Forum
                     </div>
                 </div>
             </div>
@@ -216,6 +249,49 @@
             });
         });
     });
+
+    function editMembershipNumber(id) {
+        const displayElement = document.getElementById(`display-${id}`);
+        const editElement = document.getElementById(`edit-${id}`);
+
+        displayElement.style.display = 'none';
+        editElement.style.display = 'inline-block';
+        editElement.focus();
+    }
+
+    function saveMembershipNumber(id) {
+        const displayElement = document.getElementById(`display-${id}`);
+        const editElement = document.getElementById(`edit-${id}`);
+        const newValue = editElement.value;
+
+        // Send AJAX request to update the membership number
+        fetch(`/update-membership-number/${id}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify({
+                    membership_number: newValue
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    displayElement.textContent = newValue;
+                } else {
+                    alert('Failed to update membership number');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            })
+            .finally(() => {
+                editElement.style.display = 'none';
+                displayElement.style.display = 'inline';
+            });
+    }
 </script>
 
 <!-- Right bar overlay-->

@@ -140,6 +140,10 @@
   color: #203E94;
   font-weight: 600;
 }
+.about-img {
+    max-width: 65%!important;
+    border-radius: 10px;
+}
 </style>
     <!-- start page-title -->
     <section class="page-title">
@@ -324,7 +328,7 @@
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img src="assets/assets/img/pcf/1.jpg" alt>
+                                    <img class="about-img" src="assets/assets/img/pcf/1.jpg" alt>
                                 </div>
                             </div>
                             <div class="details">
@@ -335,7 +339,7 @@
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img src="assets/assets/img/pcf/3.jpg" alt>
+                                    <img class="about-img" src="assets/assets/img/pcf/3.jpg" alt>
                                 </div>
                             </div>
                             <div class="details">
@@ -346,7 +350,7 @@
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img src="assets/assets/img/pcf/2.jpg" alt>
+                                    <img class="about-img" src="assets/assets/img/pcf/2.jpg" alt>
                                 </div>
                             </div>
                             <div class="details">
@@ -371,7 +375,7 @@
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img  src="assets/img/pcf/4.jpeg" alt>
+                                    <img class="about-img" src="assets/img/pcf/4.jpeg" alt>
                                 </div>
                             </div>
                             <div class="details">
@@ -382,7 +386,7 @@
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img src="assets/img/pcf/8.jpeg" alt>
+                                    <img class="about-img" src="assets/img/pcf/8.jpeg" alt>
                                 </div>
                             </div>
                             <div class="details">
@@ -393,7 +397,7 @@
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img src="assets/img/pcf/5.jpeg" alt>
+                                    <img class="about-img" src="assets/img/pcf/5.jpeg" alt>
                                 </div>
                             </div>
                             <div class="details">
@@ -419,7 +423,7 @@
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img  src="assets/img/pcf/6.jpeg" alt>
+                                    <img class="about-img" src="assets/img/pcf/6.jpeg" alt>
                                 </div>
                             </div>
                             <div class="details">
@@ -430,7 +434,7 @@
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img src="assets/img/pcf/7.jpeg" alt>
+                                    <img class="about-img" src="assets/img/pcf/7.jpeg" alt>
                                 </div>
                             </div>
                             <div class="details">
@@ -441,7 +445,7 @@
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img src="assets/img/pcf/10.jpeg" alt>
+                                    <img class="about-img" src="assets/img/pcf/10.jpeg" alt>
                                 </div>
                             </div>
                             <div class="details">
@@ -453,7 +457,7 @@
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img src="assets/img/pcf/9.jpeg" alt>
+                                    <img class="about-img" src="assets/img/pcf/9.jpeg" alt>
                                 </div>
                             </div>
                             <div class="details">
@@ -478,7 +482,7 @@
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img style="border-radius:50%"  src="assets/img/pcf/11.jpeg" alt>
+                                    <img class="about-img" style="border-radius:50%"  src="assets/img/pcf/11.jpeg" alt>
                                 </div>
                             </div>
                             <div class="details">
@@ -489,7 +493,7 @@
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img style="border-radius:50%" src="assets/img/pcf/13.jpeg" alt>
+                                    <img class="about-img" style="border-radius:50%" src="assets/img/pcf/13.jpeg" alt>
                                 </div>
                             </div>
                             <div class="details">

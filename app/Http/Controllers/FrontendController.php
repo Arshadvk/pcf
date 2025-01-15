@@ -92,15 +92,15 @@ class FrontendController extends Controller
 
         // Check if user has an emirate set
         if ($user->emirate) {
-            // Use where with multiple conditions
             $members = Member::where('emirates', $user->emirate)
-                ->where('status', 'pending')
+                ->where('status', '!=', 'approved') // Exclude "verified"
                 ->get();
             $user->type = 'admin';
-        } else {
+        }
+         else {
             // Fetch all members ordered by ID if no emirate is set
             $user->type = 'super';
-            $members = Member::where('status', 'approved')
+            $members = Member::where('status', 'verified')
                 ->orderBy('id', 'asc')
                 ->get();
         }
@@ -123,7 +123,7 @@ class FrontendController extends Controller
     }
     public function listUser()
     {
-        $users = Member::where('status', 'verified')
+        $users = Member::where('status', 'approved')
             ->orderby('id', 'desc')
             ->get();
             

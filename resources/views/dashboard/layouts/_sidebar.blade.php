@@ -52,27 +52,9 @@
                         </ul>
                     </li>
 
-                     <li>
-                         <a href="javascript: void(0);" class="has-arrow waves-effect">
-                             <i class="mdi mdi-account-group"></i>
-                             <span>Leader</span>
-                         </a>
-                         <ul class="sub-menu" aria-expanded="false">
-                             <li><a href="/add-leader">Add Leader</a></li>
-                             <li><a href="/list-leader">List Leader</a></li>
-                         </ul>
-                     </li>
+                 
 
-                     <li>
-                        <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="mdi mdi-account-lock"></i>
-                            <span>Admin</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="/add-admin">Add Admin</a></li>
-                            <li><a href="/list-admin">List Admin</a></li>
-                        </ul>
-                    </li>
+                
                  @endif
 
                  <li>

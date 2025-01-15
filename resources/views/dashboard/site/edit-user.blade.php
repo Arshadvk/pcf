@@ -17,13 +17,13 @@
                                 </div>
                             </div>
                         </div>
-
+                        
                         <div class="row">
                             <div class="col-xl-12">
                                 <div class="card">
                                     <div class="card-body">
+                                            
 
-                                        <p class="text-edgray font-normal text-[16px] mb-[10px]">1. Personal Info</p>
                                         <form method="POST" class="custom-validation"
                                             action="{{ route('putUser', $member->id) }}" enctype="multipart/form-data">
                                             {{ csrf_field() }}
@@ -283,8 +283,9 @@
                         <div class="col-xl-12">
                             <div class="card">
                                 <div class="card-body">
-
                                     <p class="text-edgray font-normal text-[16px] mb-[10px]">1. Personal Info</p>
+                                        <img src="{{$member->image}}" width="200" alt="" srcset="">
+
                                     <form method="POST" class="custom-validation"
                                         action="{{ route('putUser', $member->id) }}" enctype="multipart/form-data">
                                         {{ csrf_field() }}

@@ -4,6 +4,22 @@
 @endsection
 @section('content')
 
+<style>
+   
+
+    #cropModal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
 
 
 <section class="contact-pg-section section-padding">
@@ -77,11 +93,10 @@
                     </div>
                     
                     <div>
-                        <label class="font-lato font-semibold text-edblue block mb-[12px]">Photo</label>
-                        <input id="imageInput" name="image" type="file"  class="form-control" placeholder="Type something" required />
+                        <label for="imageInput" class="font-lato font-semibold text-edblue block mb-[12px]">Photo</label>
+                        <input id="imageInput" name="image" type="file" class="form-control" required />
                         <small id="imageError" style="color: red; display: none;">The image must be square (equal width and height).</small>
                     </div>
-
                     <div>
                         <label  class="font-lato font-semibold text-edblue block mb-[12px]">Profession</label>
                         <input type="text" name="profession"  placeholder="Enter Your Profession" class="form-control" required>
@@ -168,25 +183,69 @@
         </div>
     </div> <!-- end container -->
 </section>
-
+ <!-- Modal for cropping -->
+ <div id="cropModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1000; align-items: center; justify-content: center;">
+    <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; max-width: 90%; max-height: 90%;">
+        <h2>Crop Your Image</h2>
+        <img id="cropImage" style="max-width: 100%; max-height: 400px;" />
+        <br />
+        <button id="cropButton" class="theme-btn">Crop & Save</button>
+        <button id="cancelButton" class="theme-btn" style="background-color: red;">Cancel</button>
+    </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
 <script>
-    document.getElementById('imageInput').addEventListener('change', function () {
-        const file = this.files[0];
-        const imageError = document.getElementById('imageError');
+    document.addEventListener("DOMContentLoaded", function () {
+    let cropper;
+    const cropModal = document.getElementById("cropModal");
+    const cropImage = document.getElementById("cropImage");
+    const imageInput = document.getElementById("imageInput");
+    const imageError = document.getElementById("imageError");
+    let croppedImageBlob;
 
+    // When the user selects an image
+    imageInput.addEventListener("change", function (event) {
+        const file = event.target.files[0];
         if (file) {
-            const img = new Image();
-            img.src = URL.createObjectURL(file);
-            img.onload = function () {
-                if (img.width !== img.height) {
-                    imageError.style.display = 'block';
-                    document.getElementById('imageInput').value = ''; // Clear the input
-                } else {
-                    imageError.style.display = 'none';
-                }
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                cropImage.src = e.target.result;
+                cropModal.style.display = "flex"; // Show the modal
+                if (cropper) cropper.destroy(); // Destroy previous instance
+                cropper = new Cropper(cropImage, {
+                    aspectRatio: 1, // Square cropping
+                    viewMode: 1,
+                });
             };
+            reader.readAsDataURL(file);
         }
     });
+
+    // Crop and save the image
+    document.getElementById("cropButton").addEventListener("click", function () {
+        if (cropper) {
+            cropper.getCroppedCanvas().toBlob((blob) => {
+                croppedImageBlob = blob;
+
+                // Create a file-like object for submission
+                const dataTransfer = new DataTransfer();
+                const croppedFile = new File([blob], "cropped-image.png", { type: "image/png" });
+                dataTransfer.items.add(croppedFile);
+                imageInput.files = dataTransfer.files; // Replace the file input value
+
+                cropModal.style.display = "none"; // Hide the modal
+            });
+        }
+    });
+
+    // Cancel cropping
+    document.getElementById("cancelButton").addEventListener("click", function () {
+        cropModal.style.display = "none"; // Hide the modal
+        imageInput.value = ""; // Clear the input
+    });
+});
+
 </script>
 
 @endsection

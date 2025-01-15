@@ -27,6 +27,8 @@
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 
 </head>
 
@@ -34,6 +36,11 @@
     .text-warning {
         color: #FFA500;
         /* Orange color for expiry in the next month */
+    }
+    .membership-edit {
+        width: 100px;
+        padding: 5px;
+        font-size: 14px;
     }
 </style>
 
@@ -76,10 +83,8 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
-                                            <th>Email</th>
                                             <th>Gender</th>
                                             <th>Type</th>
-                                            <th>Issued</th>
                                             <th>Expiry</th>
                                             <th>View</th>
 
@@ -89,14 +94,23 @@
                                     <tbody>
                                         @foreach ($users as $member)
                                             <tr>
-                                                <td>{{ $member->id }}</td>
+                                                @if (!$user->emirate)
                                                 <td>
-                                                    <img src="{{ $member->image }}" class="img-thumbnail"
-                                                        style="width:60px;" alt="Blog">
-                                                    <br>
-                                                    {{ $member->name }}
+                                                    <span class="membership-number" id="display-{{ $member->id }}"
+                                                        onclick="editMembershipNumber({{ $member->id }})">
+                                                        {{ $member->membership_number }}
+                                                    </span>
+                                                    <input type="text" id="edit-{{ $member->id }}"
+                                                        class="membership-edit" value="{{ $member->membership_number }}"
+                                                        style="display: none;"
+                                                        onblur="saveMembershipNumber({{ $member->id }})">
                                                 </td>
-                                                <td>{{ $member->email }}</td>
+                                                @else
+                                                <td>
+                                                    {{ $member->membership_number }}
+                                                </td>
+                                                @endif
+                                                <td>  {{ $member->name }} </td>
                                                 <td>{{ $member->gender }}</td>
                                                 <td>
                                                     @if ($member->membership_type === 'primary')
@@ -115,7 +129,6 @@
                                                         </a>
                                                     @endif
                                                 </td>
-                                                <td>{{ $member->issued }}</td>
                                                 @php
                                                     try {
                                                         $expiryDate = \Carbon\Carbon::createFromFormat(
@@ -233,6 +246,51 @@
 <!-- END layout-wrapper -->
 
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function editMembershipNumber(id) {
+        const displayElement = document.getElementById(`display-${id}`);
+        const editElement = document.getElementById(`edit-${id}`);
+
+        displayElement.style.display = 'none';
+        editElement.style.display = 'inline-block';
+        editElement.focus();
+    }
+
+    function saveMembershipNumber(id) {
+        const displayElement = document.getElementById(`display-${id}`);
+        const editElement = document.getElementById(`edit-${id}`);
+        const newValue = editElement.value;
+
+        // Send AJAX request to update the membership number
+        fetch(`/update-membership-number/${id}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify({
+                    membership_number: newValue
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    displayElement.textContent = newValue;
+                } else {
+                    alert('Failed to update membership number');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            })
+            .finally(() => {
+                editElement.style.display = 'none';
+                displayElement.style.display = 'inline';
+            });
+    }
+</script>
 
 <!-- Right bar overlay-->
 <div class="rightbar-overlay"></div>
