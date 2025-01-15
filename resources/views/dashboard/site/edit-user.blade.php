@@ -516,13 +516,22 @@
                                         </div>
 
                                         <div>
-                                            @if ($user->type === 'admin')
+                                            @if ($user->type === 'admin' && $member->status !== "approved")
                                                 <div>
                                                     <button type="submit"
                                                         class="btn btn-primary waves-effect waves-light me-1">Submit</button>
                                                     <button type="reset"
                                                         class="btn btn-secondary waves-effect">Cancel</button>
                                                 </div>
+                                            @endif
+
+                                            @if ($user->type === 'super' && $member->status == "approved")
+                                            <div>
+                                                <button type="submit"
+                                                    class="btn btn-primary waves-effect waves-light me-1">Submit</button>
+                                                <button type="reset"
+                                                    class="btn btn-secondary waves-effect">Cancel</button>
+                                            </div>
                                             @endif
                                         </div>
                                     </form>

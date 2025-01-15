@@ -501,6 +501,17 @@
                                 <span>ഗ്ലോബൽ അംഗം</span>
                             </div>
                         </div>
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img class="about-img" style="border-radius:50%" src="assets/img/pcf/14.jpeg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>ഇല്യാസ് തലശ്ശേരി</h3>
+                                <span>കൗൺസിൽ അംഗം</span>
+                            </div>
+                        </div>
                     
                     </div>
                 </div>
