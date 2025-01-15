@@ -317,7 +317,7 @@
             <div class="row">
                 <div class="col col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
                     <div class="section-title-s4">
-                        <h2 style="padding-top: 20px;">Our P C F Leaders</h2>
+                        <h2 class="text-chilanka" style="padding-top: 20px;">പി.സി.എഫ്&nbsp;യു.എ.ഇ നാഷണൽ കമ്മിറ്റി                         </h2>
                     </div>
                 </div>
             </div>
@@ -371,7 +371,7 @@
             </div>
             <div class="row">
                 <div class="col col-xs-12">
-                    <div class="team-grids">
+                    <div class="team-grids-4">
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
@@ -380,7 +380,6 @@
                             </div>
                             <div class="details">
                                 <h3>മുഹമ്മദ് സാഹിബ്</h3>
-                                <span>വൈസ് പ്രസിഡന്റ്</span>
                             </div>
                         </div>
                         <div class="grid">
@@ -391,7 +390,6 @@
                             </div>
                             <div class="details">
                                 <h3>ഷാരിസ് കള്ളിയത്ത്:</h3>
-                                <span>വൈസ് പ്രസിഡന്റ്</span>
                             </div>
                         </div>
                         <div class="grid">
@@ -402,7 +400,16 @@
                             </div>
                             <div class="details">
                                 <h3>റാഷിദ് സുൽത്താൻ</h3>
-                                <span>വൈസ് പ്രസിഡന്റ്</span>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img class="about-img" src="assets/img/pcf/15.jpg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>മുനീർ നന്നബ്ര</h3>
                             </div>
                         </div>
                     </div>
@@ -428,7 +435,6 @@
                             </div>
                             <div class="details">
                                 <h3>ജംഷാദ് ഇല്ലിക്കൽ</h3>
-                                <span>ജോ: സെക്രട്ടറി</span>
                             </div>
                         </div>
                         <div class="grid">
@@ -439,7 +445,6 @@
                             </div>
                             <div class="details">
                                 <h3>ഇബ്രാഹിം പട്ടിശ്ശേര</h3>
-                                <span>ജോ: സെക്രട്ടറി</span>
                             </div>
                         </div>
                         <div class="grid">
@@ -450,7 +455,6 @@
                             </div>
                             <div class="details">
                                 <h3>റഹീസ് കാർത്തികപ്പള്ളി</h3>
-                                <span>ജോ: സെക്രട്ടറി</span>
                             </div>
                         </div>
 
@@ -462,7 +466,6 @@
                             </div>
                             <div class="details">
                                 <h3>ഇസ്മയിൽ സി.പി നന്നബ</h3>
-                                <span>ജോ: സെക്രട്ടറി</span>
                             </div>
                         </div>
                     </div>
@@ -472,7 +475,7 @@
             <div class="row">
                 <div class="col col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
                     <div class="section-title-s4">
-                        <h2 class="text-chilanka" style="padding-top: 20px;">ഗ്ലോബൽ അംഗം</h2>
+                        <h2 class="text-chilanka" style="padding-top: 20px;">ഗോബൽ&nbsp;അംഗങ്ങൾ</h2>
                     </div>
                 </div>
             </div>
@@ -487,7 +490,6 @@
                             </div>
                             <div class="details">
                                 <h3>ഇസ്മയിൽ നാട്ടിക</h3>
-                                <span>ഗ്ലോബൽ അംഗം</span>
                             </div>
                         </div>
                         <div class="grid">
@@ -498,7 +500,6 @@
                             </div>
                             <div class="details">
                                 <h3>അസീസ് സേട്ട്</h3>
-                                <span>ഗ്ലോബൽ അംഗം</span>
                             </div>
                         </div>
                         <div class="grid">
@@ -509,7 +510,6 @@
                             </div>
                             <div class="details">
                                 <h3>ഇല്യാസ് തലശ്ശേരി</h3>
-                                <span>കൗൺസിൽ അംഗം</span>
                             </div>
                         </div>
                     
