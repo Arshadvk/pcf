@@ -32,9 +32,11 @@
                         <div class="card">
                             <div class="card-body p-4">
                                 <div class="">
+                                    <a href="/"><
+                                        Back to Home</a>
                                     <div class="text-center">
                                         <a href="/" class="">
-                                            <img src="assets/images/logo.png" alt="" height="80" class="auth-logo  mx-auto">
+                                            <img src="assets/img/logo.png" alt="" height="80" class="auth-logo  mx-auto">
                                         </a>
                                     </div>
                                     <!-- end row -->
