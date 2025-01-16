@@ -461,7 +461,7 @@
             <div class="row">
                 <div class="col col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
                     <div class="section-title-s4">
-                        <h2 class="text-chilanka" style="padding-top: 20px;">ഗോബൽ&nbsp;അംഗങ്ങൾ</h2>
+                        <h2 class="text-chilanka" style="padding-top: 20px;">ഗ്ലോബൽ&nbsp;അംഗങ്ങൾ</h2>
                     </div>
                 </div>
             </div>
