@@ -29,7 +29,7 @@
                                     <p class="text-white" style="font-size: 24px; font-weight: bolder;">
                                         PEOPLE'S <br>
                                         CULTURAL FORUM (P.C.F) <br>
-                                        <span style="font-size: 18px; font-weight: lighter;">UAE National Committee</span>
+                                        <span style="font-size: 21px; font-weight: lighter;">UAE National Committee</span>
                                     </p>
                                 </div>
                             </div>
@@ -43,7 +43,7 @@
                             <div class="text-center p-2">
                                 <h6
                                     style="text-transform: capitalize;font-size: 30px; padding-top: 20px; font-weight: bolder;">
-                                    {{ $member->name }}</h6>
+                                    {{Str::title( $member->name) }}</h6>
                                 <h6 style="text-transform: capitalize;font-size: 20px; font-weight: bolder;"> mob :
                                     {{ $member->mobile }}</h6>
                             </div>
@@ -54,13 +54,13 @@
                                     style="border-radius: 5px 0 0 5px; background-color: #d02f2f;color:#ffff;width:75px;font-size: 10px;">Membership
                                     Number</span>
                                 <span class="p-2"
-                                    style="border-radius: 0 5px 5px 0; background-color:{{$member->gender == 'female' ? '#cb6ce6' : ($member->membership_type == 'primary' ? '#D0C22F' : '#C0C0C0') }};color:#000000;width:120px; font-weight: bolder;font-size: 20px;text-transform:uppercase;">{{ $member->membership_number }}</span>
+                                    style="border-radius: 0 5px 5px 0; background-color:{{$member->gender == 'female' ? '#cb6ce6' : ($member->membership_type == 'active' ? '#D0C22F' : '#C0C0C0') }};color:#000000;width:120px; font-weight: bolder;font-size: 20px;text-transform:uppercase;">{{ $member->membership_number }}</span>
                             </div>
 
                             <div style="padding-top: 50px" class="d-flex justify-content-between">
                                 <div>
-                                    <h5> <b>Constituency :</b> {{ $member->mandalam }}</h5>
-                                    <h5> <b>District :</b> {{ $member->district }}</h5>
+                                    <h5 style=""> <b>Constituency :</b> {{ Str::title($member->mandalam) }}</h5>
+                                    <h5> <b>District :</b> {{ Str::title($member->district) }}</h5>
                                 </div>
 
                                 <div>
@@ -71,9 +71,9 @@
 
                         </div>
                     </div>
-                    <p style="background-color: {{ $member->gender == 'female' ? '#cb6ce6' : ($member->membership_type == 'primary' ? '#D0C22F' : '#C0C0C0') }}; color: #000000; margin-top: 84px; padding: 7px;"
+                    <p style="background-color: {{ $member->gender == 'female' ? '#cb6ce6' : ($member->membership_type == 'active' ? '#D0C22F' : '#C0C0C0') }}; color: #000000; margin-top: 84px; padding: 7px;"
                         class="text-center">
-                        This Card is only used for PCF organization
+                        <b>This Card is only used for PCF organization</b>
                     </p>
                     
                 </div>
