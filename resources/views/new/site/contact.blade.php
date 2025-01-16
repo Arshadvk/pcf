@@ -7,13 +7,13 @@
        <section class="page-title">
         <div class="container">
             <div class="row">
-                <div class="col col-xs-12">
+                {{-- <div class="col col-xs-12">
                     <h2>Contact us</h2>
                     <ol class="breadcrumb">
                         <li><a href="/">Home</a></li>
                         <li>Contact us</li>
                     </ol>
-                </div>
+                </div> --}}
             </div> <!-- end row -->
         </div> <!-- end container -->
     </section>        

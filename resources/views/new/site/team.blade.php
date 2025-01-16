@@ -38,7 +38,7 @@
         <!-- start page-title -->
         <section class="page-title">
             <div class="container">
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col col-xs-12">
                         <h2>Team</h2>
                         <ol class="breadcrumb">
@@ -46,7 +46,7 @@
                             <li>Team</li>
                         </ol>
                     </div>
-                </div> <!-- end row -->
+                </div> <!-- end row --> --}}
             </div> <!-- end container -->
         </section>        
         <!-- end page-title -->

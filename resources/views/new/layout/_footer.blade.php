@@ -9,8 +9,8 @@
                         </div>
                         <div class="social">
                             <ul>
-                                <li><a href="#"><i class="ti-facebook"></i></a></li>
-                                <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                                <li><a href="https://www.facebook.com/people/Peoples-Cultural-Forum-PCF-UAE/100064894413911/?mibextid=LQQJ4d"><i class="ti-facebook"></i></a></li>
+                                <li><a href="https://youtu.be/Q5laFNalNPU?si=xj5no1Bz_7JpmSZ4"><i class="ti-youtube"></i></a></li>
                                 <li><a href="#"><i class="ti-linkedin"></i></a></li>
                                 <li><a href="#"><i class="ti-pinterest"></i></a></li>
                             </ul>
@@ -43,8 +43,8 @@
                         </div>
                         <ul>
                             <li>Khalidiyah - Abu Dhabi</li>
-                            <li>Phone: +91-9061116222</li>
-                            <li>Email: info@pcfgcc.com</li>
+                            <li>Phone:<a  style="text-decoration: none; color:aliceblue" href="tel:+919061116222"> +91 906 111 6222</a></li>
+                            <li>Email: <a style="text-decoration: none; color:aliceblue" href="mailto:pcfgcc@gmail.com"> pcfgcc@gmail.com </a></li>
                         </ul>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
             <div class="row">
                 <div class="separator"></div>
                 <div class="col col-xs-12">
-                    <p class="copyright">Copyright &copy; 2019 PEOPLE'S CULTURAL FORUM. All rights reserved.</p>
+                    <p class="copyright">Copyright &copy; 2019 <span  style="color: #DFB034;">PEOPLE'S CULTURAL FORUM.</span> All rights reserved.</p>
                     <div class="short-links">
                         <ul>
                             <li><a href="#">Privacy</a></li>

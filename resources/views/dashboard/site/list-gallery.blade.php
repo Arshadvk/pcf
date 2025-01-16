@@ -50,11 +50,42 @@
                                                 <td><img src="{{ $gallery->image }}" class="img-thumbnail" style="height: 150px" alt="gallery"></td>
                                                  <td>{{ $gallery->created_at->format('F j Y') }}</td>
                                                 <td>
-                                                     <button class="btn btn-primary waves-effect waves-light me-1">
-                                                        <a class="text-white" href="{{ route('delete-gallery', $gallery->id) }}">view</a>
+                                              
+
+                                                     @if (!$user->emirate)
+                                                     <button class="btn btn-danger waves-effect waves-light me-1"
+                                                         data-bs-toggle="modal"
+                                                         data-bs-target="#deleteModal-{{ $gallery->id }}">
+                                                         <a class="text-white">delete</a>
                                                      </button>
+                                                 @endif
                                                 </td>
                                             </tr>
+
+                                            <div class="modal fade" id="deleteModal-{{ $gallery->id }}" tabindex="-1"
+                                                aria-labelledby="deleteModalLabel-{{ $gallery->id }}"
+                                                aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title"
+                                                                id="deleteModalLabel-{{ $gallery->id }}">Confirm
+                                                                Deletion</h5>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            Are you sure you want to delete this gallery?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Cancel</button>
+                                                            <a class="btn btn-danger"
+                                                                href="{{ route('delete.gallery', $gallery->id) }}">Confirm</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         @endforeach
 
                                     </tbody>

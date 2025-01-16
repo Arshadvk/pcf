@@ -37,6 +37,7 @@
         color: #FFA500;
         /* Orange color for expiry in the next month */
     }
+
     .membership-edit {
         width: 100px;
         padding: 5px;
@@ -92,25 +93,26 @@
                                     </thead>
 
                                     <tbody>
-                                        @foreach ($users as $member )
+                                        @foreach ($users as $member)
                                             <tr>
                                                 @if (!$user->emirate)
-                                                <td>
-                                                    <span class="membership-number" id="display-{{ $member->id }}"
-                                                        onclick="editMembershipNumber({{ $member->id }})">
-                                                        {{ $member->membership_number }}
-                                                    </span>
-                                                    <input type="text" id="edit-{{ $member->id }}"
-                                                        class="membership-edit" value="{{ $member->membership_number }}"
-                                                        style="display: none;"
-                                                        onblur="saveMembershipNumber({{ $member->id }})">
-                                                </td>
+                                                    <td>
+                                                        <span class="membership-number" id="display-{{ $member->id }}"
+                                                            onclick="editMembershipNumber({{ $member->id }})">
+                                                            {{ $member->membership_number }}
+                                                        </span>
+                                                        <input type="text" id="edit-{{ $member->id }}"
+                                                            class="membership-edit"
+                                                            value="{{ $member->membership_number }}"
+                                                            style="display: none;"
+                                                            onblur="saveMembershipNumber({{ $member->id }})">
+                                                    </td>
                                                 @else
-                                                <td>
-                                                    {{ $member->membership_number }}
-                                                </td>
+                                                    <td>
+                                                        {{ $member->membership_number }}
+                                                    </td>
                                                 @endif
-                                                <td>  {{ $member->name }} </td>
+                                                <td> {{ $member->name }} </td>
                                                 <td>{{ $member->gender }}</td>
                                                 <td>
                                                     @if ($member->membership_type === 'primary')
@@ -179,35 +181,43 @@
                                                         <a class="text-white"
                                                             href="{{ route('single.user', $member->id) }}">id</a>
                                                     </button>
-                                                    @if(!$user->emirate)
-                                                    <button class="btn btn-danger waves-effect waves-light me-1"  data-bs-toggle="modal" data-bs-target="#deleteModal-{{ $member->id }}">
-                                                        <a class="text-white"
-                                                            >delete</a>
-                                                    </button>
+                                                    @if (!$user->emirate)
+                                                        <button class="btn btn-danger waves-effect waves-light me-1"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#deleteModal-{{ $member->id }}">
+                                                            <a class="text-white">delete</a>
+                                                        </button>
                                                     @endif
                                                 </td>
                                             </tr>
 
 
-                                            <div class="modal fade" id="deleteModal-{{ $member->id }}" tabindex="-1" aria-labelledby="deleteModalLabel-{{ $member->id }}" aria-hidden="true">
+                                            <div class="modal fade" id="deleteModal-{{ $member->id }}" tabindex="-1"
+                                                aria-labelledby="deleteModalLabel-{{ $member->id }}"
+                                                aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="deleteModalLabel-{{ $member->id }}">Confirm Deletion</h5>
-                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                            <h5 class="modal-title"
+                                                                id="deleteModalLabel-{{ $member->id }}">Confirm
+                                                                Deletion</h5>
+                                                            <button type="button" class="btn-close"
+                                                                data-bs-dismiss="modal" aria-label="Close"></button>
                                                         </div>
                                                         <div class="modal-body">
                                                             Are you sure you want to delete this user?
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                                            <a class="btn btn-danger" href="{{ route('delete.user', $member->id) }}">Confirm</a>
+                                                            <button type="button" class="btn btn-secondary"
+                                                                data-bs-dismiss="modal">Cancel</button>
+                                                            <a class="btn btn-danger"
+                                                                href="{{ route('delete.user', $member->id) }}">Confirm</a>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         @endforeach
-                                   
+
                                     </tbody>
                                 </table>
 
@@ -220,7 +230,8 @@
                     <form action="{{ route('upload') }}" method="POST" enctype="multipart/form-data">
                         <div class="d-flex justify-content-between">
                             @csrf
-                            <input class="form-control" type="file" placeholder="upload Excel File" name="file" />
+                            <input class="form-control" type="file" placeholder="upload Excel File"
+                                name="file" />
                             <button style="margin-left: 10px" class="btn btn-success"
                                 type="submit">Upload&nbsp;Excel</button>
                         </div>
@@ -249,6 +260,198 @@
 
                 </div>
 
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Download</h4>
+                                <p class="card-title-desc"></p>
+
+                                <form action="{{ route('export.users') }}" method="POST"
+                                    enctype="multipart/form-data">
+                                    @csrf
+
+                                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+
+
+                                        <div class="col">
+
+                                            <div class="d-flex flex-column gap-2">
+                                                <div class="form-check form-switch form-switch-md" dir="ltr">
+                                                    <input class="form-check-input" name="name" type="checkbox"
+                                                        id="SwitchCheckSizemd" checked>
+                                                    <label class="form-check-label"
+                                                        for="SwitchCheckSizemd">Name</label>
+                                                </div>
+
+                                                <div class="form-check form-switch form-switch-lg" dir="ltr">
+                                                    <input class="form-check-input" name="email" type="checkbox"
+                                                        id="SwitchCheckSizelg" checked>
+                                                    <label class="form-check-label"
+                                                        for="SwitchCheckSizelg">Email</label>
+                                                </div>
+
+                                                <div class="form-check form-switch form-switch-lg" dir="ltr">
+                                                    <input class="form-check-input" name="emirates" type="checkbox"
+                                                        id="SwitchCheckSizelg" checked>
+                                                    <label class="form-check-label"
+                                                        for="SwitchCheckSizelg">Emirates</label>
+                                                </div>
+
+                                                <div class="form-check form-switch form-switch-lg" dir="ltr">
+                                                    <input class="form-check-input" name="membership_type"
+                                                        type="checkbox" id="SwitchCheckSizelg" checked>
+                                                    <label class="form-check-label" for="SwitchCheckSizelg">Membership
+                                                        Type</label>
+                                                </div>
+
+                                                <div class="form-check form-switch form-switch-lg" dir="ltr">
+                                                    <input class="form-check-input" name="expiry" type="checkbox"
+                                                        id="SwitchCheckSizelg" checked>
+                                                    <label class="form-check-label"
+                                                        for="SwitchCheckSizelg">Expiry</label>
+                                                </div>
+
+                                                <div class="form-check form-switch form-switch-lg" dir="ltr">
+                                                    <input class="form-check-input" name="district" type="checkbox"
+                                                        id="SwitchCheckSizelg" checked>
+                                                    <label class="form-check-label"
+                                                        for="SwitchCheckSizelg">District</label>
+                                                </div>
+
+                                                <div class="form-check form-switch form-switch-lg" dir="ltr">
+                                                    <input class="form-check-input" name="mandalam" type="checkbox"
+                                                        id="SwitchCheckSizelg" checked>
+                                                    <label class="form-check-label"
+                                                        for="SwitchCheckSizelg">Mandalam</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+
+                                            <div class="d-flex flex-column gap-2">
+                                                <div class="form-check form-switch form-switch-md" dir="ltr">
+                                                    <input class="form-check-input" name="mobile" type="checkbox"
+                                                        id="SwitchCheckSizemd" checked>
+                                                    <label class="form-check-label"
+                                                        for="SwitchCheckSizemd">Mobile</label>
+                                                </div>
+
+                                                <div class="form-check form-switch form-switch-lg" dir="ltr">
+                                                    <input class="form-check-input" name="dob" type="checkbox"
+                                                        id="SwitchCheckSizelg" checked>
+                                                    <label class="form-check-label" for="SwitchCheckSizelg">Date Of
+                                                        Birth</label>
+                                                </div>
+
+                                                <div class="form-check form-switch form-switch-lg" dir="ltr">
+                                                    <input class="form-check-input" name="profession" type="checkbox"
+                                                        id="SwitchCheckSizelg" checked>
+                                                    <label class="form-check-label"
+                                                        for="SwitchCheckSizelg">Profession</label>
+                                                </div>
+
+                                                <div class="form-check form-switch form-switch-lg" dir="ltr">
+                                                    <input class="form-check-input" name="membership_number"
+                                                        type="checkbox" id="SwitchCheckSizelg" checked>
+                                                    <label class="form-check-label" for="SwitchCheckSizelg">Membership
+                                                        Number</label>
+                                                </div>
+
+                                                <div class="form-check form-switch form-switch-lg" dir="ltr">
+                                                    <input class="form-check-input" name="gender" type="checkbox"
+                                                        id="SwitchCheckSizelg" checked>
+                                                    <label class="form-check-label"
+                                                        for="SwitchCheckSizelg">Gender</label>
+                                                </div>
+
+                                                <div class="form-check form-switch form-switch-lg" dir="ltr">
+                                                    <input class="form-check-input" name="panjayath" type="checkbox"
+                                                        id="SwitchCheckSizelg" checked>
+                                                    <label class="form-check-label"
+                                                        for="SwitchCheckSizelg">Panjayath</label>
+                                                </div>
+
+                                                <div class="form-check form-switch form-switch-lg" dir="ltr">
+                                                    <input class="form-check-input" name="before_pdp" type="checkbox"
+                                                        id="SwitchCheckSizelg" checked>
+                                                    <label class="form-check-label" for="SwitchCheckSizelg">Before
+                                                        pdp</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="d-flex flex-column gap-2">
+                                                <div class="form-check form-switch form-switch-md" dir="ltr">
+                                                    <input class="form-check-input" name="whatsapp" type="checkbox"
+                                                        id="SwitchCheckSizemd" checked>
+                                                    <label class="form-check-label"
+                                                        for="SwitchCheckSizemd">Whatsapp</label>
+                                                </div>
+
+                                                <div class="form-check form-switch form-switch-lg" dir="ltr">
+                                                    <input class="form-check-input" name="blood_group"
+                                                        type="checkbox" id="SwitchCheckSizelg" checked>
+                                                    <label class="form-check-label" for="SwitchCheckSizelg">Blood
+                                                        Group</label>
+                                                </div>
+
+                                                <div class="form-check form-switch form-switch-lg" dir="ltr">
+                                                    <input class="form-check-input" name="zone" type="checkbox"
+                                                        id="SwitchCheckSizelg" checked>
+                                                    <label class="form-check-label"
+                                                        for="SwitchCheckSizelg">Zone</label>
+                                                </div>
+
+                                                <div class="form-check form-switch form-switch-lg" dir="ltr">
+                                                    <input class="form-check-input" name="issued" type="checkbox"
+                                                        id="SwitchCheckSizelg" checked>
+                                                    <label class="form-check-label"
+                                                        for="SwitchCheckSizelg">Issued</label>
+                                                </div>
+
+                                                <div class="form-check form-switch form-switch-lg" dir="ltr">
+                                                    <input class="form-check-input" name="house_name" type="checkbox"
+                                                        id="SwitchCheckSizelg" checked>
+                                                    <label class="form-check-label" for="SwitchCheckSizelg">House
+                                                        Name</label>
+                                                </div>
+
+                                                <div class="form-check form-switch form-switch-lg" dir="ltr">
+                                                    <input class="form-check-input" name="pin" type="checkbox"
+                                                        id="SwitchCheckSizelg" checked>
+                                                    <label class="form-check-label"
+                                                        for="SwitchCheckSizelg">PIN</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="d-flex justify-content-between m-5">
+                                        <select name="select_emirate" id="emirates" class="form-control" required>
+                                            <option value="all" disabled selected>All Emirates</option>
+                                            <option value="all">All Emirates</option>
+                                            <option value="Abu Dhabi">Abu Dhabi</option>
+                                            <option value="Dubai">Dubai</option>
+                                            <option value="Sharjah">Sharjah</option>
+                                            <option value="Ajman">Ajman</option>
+                                            <option value="Umm Al Quwain">Umm Al-Quwain</option>
+                                            <option value="Ras Al Khaimah">Ras Al Khaimah</option>
+                                            <option value="Fujairah">Fujairah</option>
+                                        </select>
+                                        <button style="margin-left: 10px" class="btn btn-success">
+                                            Download&nbsp;Excel
+                                        </button>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end col -->
+                </div>
                 <!-- end row -->
             </div> <!-- container-fluid -->
         </div>

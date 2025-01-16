@@ -9,28 +9,30 @@ use Maatwebsite\Excel\Concerns\WithHeadings;
 class UsersExport implements FromCollection, WithHeadings
 {
     protected $emirates;
+    protected $selectedFields;
 
-    public function __construct($emirates)
+    public function __construct($emirates, $selectedFields)
     {
         $this->emirates = $emirates;
+        $this->selectedFields = $selectedFields;
     }
 
     public function collection()
     {
-        if ($this->emirates == 'all' || !$this->emirates) {
-            // If 'All Emirates' is selected, return all users
-            return Member::where('status', 'verified')
-            ->get(['id', 'membership_number', 'name', 'email', 'mobile', 'dob', 'whatsapp', 'blood_group', 'emirates', 'profession', 'zone', 'house_name', 'district', 'mandalam', 'panjayath', 'pin', 'before_pdp', 'membership_type', 'issued', 'expiry']);
-        }
+         // Base query to fetch only approved members
+    $query = Member::query()->where('status', 'approved');
 
-        // Otherwise, return users filtered by the selected emirate
-        return Member::where('emirates', $this->emirates)
-            ->where('status', 'verified')
-            ->get(['id', 'membership_number', 'name', 'email', 'mobile', 'dob', 'whatsapp', 'blood_group', 'emirates', 'profession', 'zone', 'house_name', 'district', 'mandalam', 'panjayath', 'pin', 'before_pdp', 'membership_type', 'issued', 'expiry']);
+    // If a specific emirate is selected, apply a filter
+    if ($this->emirates && $this->emirates !== 'all') {
+        $query->where('emirates', $this->emirates);
+    }
+
+    // Return the query results with only the selected fields
+    return $query->get($this->selectedFields);
     }
 
     public function headings(): array
     {
-        return ['ID', 'Membership Number', 'Name', 'Email', 'Mobile', 'Date of Birth', 'Whatsapp', 'Blood Group', 'Emirates', 'Profession', 'Zone', 'House Name', 'District', 'Mandalam', 'Panjayath', 'Pin', 'Before Pdp', 'Type', 'Issued', 'Expiry'];
+        return array_map('ucwords', str_replace('_', ' ', $this->selectedFields)); // Convert field names to readable headings
     }
 }

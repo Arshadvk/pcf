@@ -5,7 +5,7 @@
 @section('content')
 <section class="page-title">
     <div class="container">
-        <div class="row">
+        {{-- <div class="row">
             <div class="col col-xs-12">
                 <h2>News</h2>
                 <ol class="breadcrumb">
@@ -13,8 +13,8 @@
                     <li>News</li>
                 </ol>
             </div>
-        </div> <!-- end row -->
-    </div> <!-- end container -->
+        </div>  --}}
+    </div> 
 </section>  
 
 <section class="blog-section section-padding">

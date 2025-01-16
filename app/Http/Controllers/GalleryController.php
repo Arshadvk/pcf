@@ -53,7 +53,7 @@ class GalleryController extends Controller
         return back();
     }
 
-    public function destroy($id)
+    public function delete($id)
     {
         $gallery = Gallery::findorFail($id);
 

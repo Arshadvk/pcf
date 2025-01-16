@@ -47,11 +47,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/list-news', [NewsController::class, 'list'])->name('list-news');
     Route::post('/store-news', [NewsController::class, 'store'])->name('store-news');
     Route::get('/edit-news/{id}', [NewsController::class, 'edit'])->name('edit-news');
+    Route::get('/delete-news/{id}', [NewsController::class, 'delete'])->name('delete.news');
     
     Route::get('/add-gallery', [GalleryController::class, 'index'])->name('add-gallery');
     Route::get('/list-gallery', [GalleryController::class, 'list'])->name('add-gallery');
     Route::post('/store-gallery', [GalleryController::class, 'store'])->name('store-gallery');
-    Route::post('/delete-gallery/{id}', [GalleryController::class, 'delete'])->name('delete-gallery');
+    Route::post('/delete-gallery/{id}', [GalleryController::class, 'delete'])->name('delete.gallery');
 
 
     Route::get('/add-team', [FrontendController::class, 'addTeam'])->name('add-team');

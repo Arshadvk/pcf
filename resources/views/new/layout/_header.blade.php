@@ -30,8 +30,8 @@
                 <div class="col col-md-9">
                     <div class="contact-info">
                         <ul>
-                            <li><i class="ti-mobile"></i> +91-9061116222 </li>
-                            <li><i class="ti-email"></i> info@pcfgcc.com</li>
+                            <li><a  style="text-decoration: none; color:aliceblue" href="tel:+919061116222"><i class="ti-mobile"></i> +91 906 111 6222</a> </li>
+                            <li><a style="text-decoration: none; color:aliceblue" href="mailto:pcfgcc@gmail.com"><i class="ti-email"></i> pcfgcc@gmail.com</a></li>
                             <li>Organization: <span style="color: #DFB034;">PEOPLE'S CULTURAL FORUM</span></li>
                         </ul>
                     </div>
@@ -39,8 +39,8 @@
                 <div class="col col-md-3">
                     <div class="social">
                         <ul>
-                            <li><a href="#"><i class="ti-facebook"></i></a></li>
-                            <li><a href="#"><i class="ti-twitter-alt"></i></a></li>
+                            <li><a href="https://www.facebook.com/people/Peoples-Cultural-Forum-PCF-UAE/100064894413911/?mibextid=LQQJ4d"><i class="ti-facebook"></i></a></li>
+                            <li><a href="https://youtu.be/Q5laFNalNPU?si=xj5no1Bz_7JpmSZ4"><i class="ti-youtube"></i></a></li>
                             <li><a href="#"><i class="ti-linkedin"></i></a></li>
                             <li><a href="#"><i class="ti-instagram"></i></a></li>
                         </ul>

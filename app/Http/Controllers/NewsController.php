@@ -65,7 +65,7 @@ class NewsController extends Controller
             "image" => "nullable|mimes:jpeg,jpg,png,gif|max:2048",
         ]);
 
-        $updteBlog = News::findorFail($id);
+        $updtenews = News::findorFail($id);
 
         $updatedAttributes = [
             "title" => "Title Updated",
@@ -78,50 +78,50 @@ class NewsController extends Controller
 
         foreach ($updatedAttributes as $attribute => $message) {
             if ($request->has($attribute)) {
-                $updteBlog->$attribute = $request->get($attribute);
-                if ($updteBlog->isDirty($attribute)) {
+                $updtenews->$attribute = $request->get($attribute);
+                if ($updtenews->isDirty($attribute)) {
                     array_push($updatedMessages, $message);
                 }
             }
         }
 
         if ($request->hasFile('image')) {
-            $updteBlog->image = $uploadHelper->store('blog', $request->image);
-            array_push($updatedMessages, "Blog Image Updated");
+            $updtenews->image = $uploadHelper->store('news', $request->image);
+            array_push($updatedMessages, "news Image Updated");
         } else {
-            $updteBlog->image = $updteBlog->image;
+            $updtenews->image = $updtenews->image;
         }
 
-        $updteBlog->save();
+        $updtenews->save();
 
         if (count($updatedMessages) > 0) {
             Alert::success('Success', implode(", ", $updatedMessages));
         } else {
-            Alert::warning('No changes', 'No Updates made to the blog');
+            Alert::warning('No changes', 'No Updates made to the news');
         }
 
         return back();
     }
 
 
-    public function destroy($id)
+    public function delete($id)
     {
-        $blog = News::findorFail($id);
+        $news = News::findorFail($id);
 
-        $isSuccess = $blog->delete();
+        $isSuccess = $news->delete();
 
         if ($isSuccess) {
-            $this->imageDeleteHandler($blog);
+            $this->imageDeleteHandler($news);
         }
 
-        Alert::success('Success', 'Blog Removed!');
+        Alert::success('Success', 'news Removed!');
         return back();
     }
 
-    private function imageDeleteHandler($blog)
+    private function imageDeleteHandler($news)
     {
         $images = array(
-            $blog->image,
+            $news->image,
         );
         foreach ($images as $image) {
             if (file_exists($image)) {
