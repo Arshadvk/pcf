@@ -97,6 +97,7 @@
                                                 <select name="emirates" id="emirates" class="form-control" required>
                                                 <option value="" disabled selected>Select your Emirate</option>
                                                 <option value="Abu Dhabi">Abu Dhabi</option>
+                                                <option value="Al Ain">Al Ain</option>
                                                 <option value="Dubai">Dubai</option>
                                                 <option value="Sharjah">Sharjah</option>
                                                 <option value="Ajman">Ajman</option>
@@ -134,8 +135,8 @@
                                                 <label for="membership_type" class="form-label" >Membership Type</label>
                                                 <select name="membership_type" id="membership_type" class="form-control">
                                                 <option value="" disabled selected>Select your Membership Type</option>
+                                                <option value="active">Active</option>
                                                 <option value="primary">Primary</option>
-                                                <option value="secondary">Secondary</option>
                                                 </select>
                                             </div>
                                             </div>

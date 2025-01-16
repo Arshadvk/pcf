@@ -115,7 +115,7 @@
                                                 <td> {{ $member->name }} </td>
                                                 <td>{{ $member->gender }}</td>
                                                 <td>
-                                                    @if ($member->membership_type === 'primary')
+                                                    @if ($member->membership_type === 'active')
                                                         <a class="text-black"
                                                             href="{{ route('single.user', $member->id) }}">
                                                             <span

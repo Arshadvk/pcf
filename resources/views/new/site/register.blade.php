@@ -129,8 +129,8 @@
                         <label for="membership_type" class="font-lato font-semibold text-edblue block mb-[12px]">Membership Type  </label>
                         <select name="membership_type" id="membership_type" class="form-control">
                             <option value="" disabled selected>Select your Membership Type</option>
+                            <option value="active">Active</option>
                             <option value="primary">Primary</option>
-                            <option value="secondary">Secondary</option>
 
                         </select>
                     </div>
