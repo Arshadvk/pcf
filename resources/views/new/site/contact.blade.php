@@ -33,7 +33,8 @@
             </div>
             <div class="row">
                 <div class="col col-md-7">
-                    <form method="post" class="contact-validation-active" id="contact-form-main">
+                    <form method="post" action="{{ route('contact-form') }}" class="contact-validation-active" id="contact-form-main">
+                        {{ csrf_field() }}
                         <div>
                             <input type="text" class="form-control" name="name" id="name" placeholder="Name*">
                         </div>
@@ -44,11 +45,12 @@
                             <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone*">
                         </div>
                         <div>
-                            <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone*">
+                            <input type="text" class="form-control" name="subject" id="phone" placeholder="Subject*">
                         </div>
                         <div class="fullwidth">
-                            <textarea class="form-control" name="note"  id="note" placeholder="Case Description..."></textarea>
+                            <textarea class="form-control" name="description"  id="note" placeholder="Case Description..."></textarea>
                         </div>
+
                         <div class="submit-area">
                             <button type="submit" class="theme-btn">Submit Now</button>
                             <div id="loader">
@@ -69,7 +71,7 @@
                             <ul>
                                 <li><i class="ti-location-pin"></i> Khalidiyah - Abu Dhabi</li>
                                 <li><i class="ti-mobile"></i> +91 9061116222</li>
-                                <li><i class="ti-email"></i> info@pcfgcc.com</li>
+                                <li><i class="ti-email"></i> <a style="color: white" href="mailto:pcfgcc@gmail.com">pcfgcc@gmail.com</a></li>
                             </ul>
                         </div>
 

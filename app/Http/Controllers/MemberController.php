@@ -249,8 +249,8 @@ class MemberController extends Controller
         } else {
             Alert::error('Error', 'Failed to Remove Member!');
         }
-
-        return redirect()->route('members.index');
+        
+        return back();
     }
 
     private function deleteImage($imagePath)

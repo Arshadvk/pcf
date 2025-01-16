@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\NewsController;
@@ -34,6 +35,7 @@ Route::get('/reset-password', [FrontendController::class, 'resetPassword']);
 Route::post('logout', [AdminController::class, 'logout'])->name('logout');
 Route::post('/postLogin', [AdminController::class, 'postLogin'])->name('postLogin');
 Route::post('/postUser', [MemberController::class, 'store'])->name('postUser');
+Route::post('/contact-form',[ContactController::class, 'storeContactForm'])->name('contact-form');
 
 // admin side  
 Route::group(['middleware' => 'auth'], function () {
