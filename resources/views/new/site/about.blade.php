@@ -28,6 +28,9 @@
   .team-section .team-grids-4 {
     margin: 0 -7.5px;
   }
+  .text-heading{
+    font-size: 20px!important;
+  }
 }
 
 .team-section .team-grids-4 .grid {
@@ -303,7 +306,7 @@
             <div>
                 <div>
                     <div class="section-title-s4">
-                        <h2 class="text-chilanka text-center" style="padding-top: 30px;">പി.സി.എഫ്&nbsp;യു.എ.ഇ&nbsp;നാഷണൽ&nbsp;കമ്മിറ്റി                         </h2>
+                        <h2 class="text-heading text-chilanka text-center" style="padding-top: 30px;">പി.സി.എഫ്&nbsp;യു.എ.ഇ&nbsp;നാഷണൽ&nbsp;കമ്മിറ്റി                         </h2>
                     </div>
                 </div>
             </div>
@@ -351,7 +354,7 @@
             <div class="row">
                 <div class="col col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
                     <div class="section-title-s4">
-                        <h2 class="text-chilanka" style="padding-top: 20px;">വൈസ്&nbsp;പ്രസിഡന്റുമാർ</h2>
+                        <h2 class="text-heading text-chilanka" style="padding-top: 20px;">വൈസ്&nbsp;പ്രസിഡന്റുമാർ</h2>
                     </div>
                 </div>
             </div>
@@ -405,7 +408,7 @@
             <div class="row">
                 <div class="col col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
                     <div class="section-title-s4">
-                        <h2 class="text-chilanka" style="padding-top: 20px;">ജോയിൻ&nbsp;സെക്രട്ടറിമാർ</h2>
+                        <h2 class="text-heading text-chilanka" style="padding-top: 20px;">ജോയിൻ&nbsp;സെക്രട്ടറിമാർ</h2>
                     </div>
                 </div>
             </div>
@@ -461,7 +464,7 @@
             <div class="row">
                 <div class="col col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
                     <div class="section-title-s4">
-                        <h2 class="text-chilanka" style="padding-top: 20px;">ഗ്ലോബൽ&nbsp;അംഗങ്ങൾ</h2>
+                        <h2 class="text-heading text-chilanka" style="padding-top: 20px;">ഗ്ലോബൽ&nbsp;അംഗങ്ങൾ</h2>
                     </div>
                 </div>
             </div>
