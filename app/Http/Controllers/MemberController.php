@@ -180,12 +180,12 @@ class MemberController extends Controller
     public function update_status($id, $status)
     {
         $member = Member::findOrFail($id);
-        if( $status === "approve"){
+        if ($status === "approve") {
             DB::table('emirates')->where('name', $member->emirates)->increment('count');
         }
         $member->status = $status;
         if ($member->save()) {
-            
+
             Alert::success('Success', 'Member updated successfully!');
         } else {
             Alert::error('Error', 'Failed to update member.');
