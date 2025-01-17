@@ -149,7 +149,7 @@ class MemberController extends Controller
         if (isset($request->membership_type))
             $members->membership_type = $request->membership_type;
         $members->issued = date('d/m/Y');
-        $members->expiry = $request->membership_type === 'primary' ? date('d/m/Y', strtotime('+2 years')) : date('d/m/Y', strtotime('+1 years'));
+        $members->expiry = $request->membership_type === 'active' ? date('d/m/Y', strtotime('+2 years')) : date('d/m/Y', strtotime('+1 years'));
         if (isset($request->house_name))
             $members->house_name = $request->house_name;
         if (isset($request->district))
