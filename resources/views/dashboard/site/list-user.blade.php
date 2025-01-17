@@ -126,7 +126,7 @@
                                                         <a class="text-black"
                                                             href="{{ route('single.user', $member->id) }}">
                                                             <span
-                                                                style="background-color: #C0C0C0;border-radius:50%;width:5px; padding:5px; color:#D0C22F">22</span>
+                                                                style="background-color: #C0C0C0;border-radius:50%;width:5px; padding:5px; color:#C0C0C0">22</span>
                                                             <b>{{ $member->membership_type }}</b>
                                                         </a>
                                                     @endif
