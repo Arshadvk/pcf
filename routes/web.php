@@ -61,6 +61,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/list-team', [FrontendController::class, 'listTeam'])->name('list-team');
     
     Route::post('/update-membership-number/{id}', [MemberController::class, 'updateMembershipNumber']);
+    Route::put('/update-membership-type/{id}', [MemberController::class, 'updateMembershipType'])->name('update_membership_type');
 
     
     Route::post('/putUser/{id}',[MemberController::class, 'update'])->name('putUser');

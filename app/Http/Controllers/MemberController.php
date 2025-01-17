@@ -27,19 +27,32 @@ class MemberController extends Controller
         return response()->json(['success' => true]);
     }
 
+    public function updateMembershipType(Request $request, $id)
+    {
+        $request->validate([
+            'membership_type' => 'required|in:active,primary',
+        ]);
+
+        $member = Member::findOrFail($id);
+        $member->membership_type = $request->membership_type;
+        $member->save();
+
+        return redirect()->back()->with('success', 'Membership type updated successfully.');
+    }
+
     public function exportUsers(Request $request)
     {
         $emirates = $request->select_emirate; // Get the selected emirate
         $selectedFields = array_keys($request->except(['_token', 'select_emirate'])); // Get the selected fields
-    
+
         // Validate if at least one field is selected
         if (empty($selectedFields)) {
             return redirect()->back()->with('error', 'Please select at least one field to export.');
         }
-    
+
         return Excel::download(new UsersExport($emirates, $selectedFields), 'users.xlsx');
     }
-    
+
     public function upload(Request $request)
     {
         // Validate the file
@@ -249,7 +262,7 @@ class MemberController extends Controller
         } else {
             Alert::error('Error', 'Failed to Remove Member!');
         }
-        
+
         return back();
     }
 

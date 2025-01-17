@@ -76,6 +76,7 @@
                                             <th>ID</th>
                                             <th>Name</th>
                                             <th>Status</th>
+                                            <th>Type</th>
                                             <th>Expiry</th>
                                             <th>View</th>
 
@@ -86,72 +87,119 @@
                                         @foreach ($members as $member)
                                             <tr>
                                                 @if ($user->type === 'super')
-                                                <td>
-                                                    <span class="membership-number" id="display-{{ $member->id }}"
-                                                        onclick="editMembershipNumber({{ $member->id }})">
-                                                        {{ $member->membership_number }}
-                                                    </span>
-                                                    <input type="text" id="edit-{{ $member->id }}"
-                                                        class="membership-edit" value="{{ $member->membership_number }}"
-                                                        style="display: none;"
-                                                        onblur="saveMembershipNumber({{ $member->id }})">
-                                                </td>
+                                                    <td>
+                                                        <span class="membership-number" id="display-{{ $member->id }}"
+                                                            onclick="editMembershipNumber({{ $member->id }})">
+                                                            {{ $member->membership_number }}
+                                                        </span>
+                                                        <input type="text" id="edit-{{ $member->id }}"
+                                                            class="membership-edit"
+                                                            value="{{ $member->membership_number }}"
+                                                            style="display: none;"
+                                                            onblur="saveMembershipNumber({{ $member->id }})">
+                                                    </td>
                                                 @else
-                                                <td>
-                                                    {{ $member->membership_number }}
-                                                </td>
+                                                    <td>
+                                                        {{ $member->membership_number }}
+                                                    </td>
                                                 @endif
-                                               
+
                                                 <td> {{ $member->name }}</td>
 
                                                 <td>
                                                     <div>
-                                                    @if ($member->status === 'pending' && $user->type === 'admin')
-                                                        <div class="dropdown">
-                                                            <!-- Dropdown Button -->
-
-                                                            <a class="btn btn-warning waves-effect waves-light dropdown-toggle"
-                                                                href="{{ route('update_status', ['id' => $member->id, 'status' => 'verified']) }}">Verified</a>
-
-
-                                                        </div>
-                                                    @elseif ($member->status === 'verified' && $user->type === 'super')
-                                                        <!-- Dropdowns for Verify and Reject -->
-
-                                                        <div style="display: flex;">
-                                                        <div class="dropdown">
-                                                            <!-- Verify Dropdown -->
-                                                            <button
-                                                                class="btn btn-success waves-effect waves-light dropdown-toggle m-2"
-                                                                type="button" id="dropdownVerifyButton"
-                                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                                <a class="dropdown-item verify-confirm" href="#"
-                                                                    data-href="{{ route('update_status', ['id' => $member->id, 'status' => 'approved']) }}">
-                                                                    Approved
+                                                        @if ($member->status === 'pending' && $user->type === 'admin')
+                                                            <div class="dropdown">
+                                                                <!-- Dropdown Button -->
+                                                                <a class="btn btn-warning waves-effect waves-light dropdown-toggle"
+                                                                    href="#" data-bs-toggle="modal"
+                                                                    data-bs-target="#confirmModal">
+                                                                    Verified
                                                                 </a>
-                                                            </button>
-                                                        </div>
+                                                            </div>
+                                                            <div class="modal fade" id="confirmModal" tabindex="-1"
+                                                                aria-labelledby="confirmModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog">
+                                                                    <div class="modal-content">
+                                                                        <!-- Modal Header -->
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title"
+                                                                                id="confirmModalLabel">Confirm Action
+                                                                            </h5>
+                                                                            <button type="button" class="btn-close"
+                                                                                data-bs-dismiss="modal"
+                                                                                aria-label="Close"></button>
+                                                                        </div>
+                                                                        <!-- Modal Body -->
+                                                                        <div class="modal-body">
+                                                                            Are you sure you want to update the status
+                                                                            to "Verified"?
+                                                                        </div>
+                                                                        <!-- Modal Footer -->
+                                                                        <div class="modal-footer">
+                                                                            <button type="button"
+                                                                                class="btn btn-secondary"
+                                                                                data-bs-dismiss="modal">Cancel</button>
+                                                                            <a href="{{ route('update_status', ['id' => $member->id, 'status' => 'verified']) }}"
+                                                                                class="btn btn-warning">Confirm</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        @elseif ($member->status === 'verified' && $user->type === 'super')
+                                                            <!-- Dropdowns for Verify and Reject -->
 
-                                                        <div class="dropdown">
-                                                            <!-- Reject Dropdown -->
-                                                            <button
-                                                                class="btn btn-danger waves-effect waves-light dropdown-toggle m-2"
-                                                                type="button" id="dropdownRejectButton"
-                                                                data-bs-toggle="modal" data-bs-target="#rejectModal">
-                                                                Reject
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                    @elseif ($member->status === 'verified' && $user->type === 'admin')
-                                                    Waiting For Approvel
-                                                    @else
-                                                    <b style="color: red">
-                                                       rejected: {{ $member->status }}
-                                                    </b>
-                                                    @endif
-                                                    
+                                                            <div style="display: flex;">
+                                                                <div class="dropdown">
+                                                                    <!-- Verify Dropdown -->
+                                                                    <button
+                                                                        class="btn btn-success waves-effect waves-light dropdown-toggle m-2"
+                                                                        type="button" id="dropdownVerifyButton"
+                                                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                                                        <a class="dropdown-item verify-confirm"
+                                                                            href="#"
+                                                                            data-href="{{ route('update_status', ['id' => $member->id, 'status' => 'approved']) }}">
+                                                                            Approved
+                                                                        </a>
+                                                                    </button>
+                                                                </div>
+
+                                                                <div class="dropdown">
+                                                                    <!-- Reject Dropdown -->
+                                                                    <button
+                                                                        class="btn btn-danger waves-effect waves-light dropdown-toggle m-2"
+                                                                        type="button" id="dropdownRejectButton"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#rejectModal">
+                                                                        Reject
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        @elseif ($member->status === 'verified' && $user->type === 'admin')
+                                                            Waiting For Approvel
+                                                        @else
+                                                            <b style="color: red">
+                                                                rejected: {{ $member->status }}
+                                                            </b>
+                                                        @endif
+
 
                                                 </td>
+                                                @if ($member->status === 'pending' && $user->type === 'admin')
+                                                <td>
+                                                    <form action="{{ route('update_membership_type', ['id' => $member->id]) }}" method="POST">
+                                                        @csrf
+                                                        @method('PUT')
+                                                        <select name="membership_type" class="form-control" onchange="this.form.submit()">
+                                                            <option value="active" {{ $member->membership_type === 'active' ? 'selected' : '' }}>Active</option>
+                                                            <option value="primary" {{ $member->membership_type === 'primary' ? 'selected' : '' }}>Primary</option>
+                                                        </select>
+                                                    </form>
+                                                </td>
+                                                @else
+                                                    <td> {{ $member->membership_type }}</td>
+                                                @endif
+
                                                 <td>{{ $member->expiry }}</td>
                                                 <td>
                                                     <button class="btn btn-primary waves-effect waves-light me-1">
@@ -170,10 +218,12 @@
                                                         @csrf
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h5 class="modal-title" id="rejectModalLabel">Reason for
+                                                                <h5 class="modal-title" id="rejectModalLabel">Reason
+                                                                    for
                                                                     Rejection</h5>
                                                                 <button type="button" class="btn-close"
-                                                                    data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    data-bs-dismiss="modal"
+                                                                    aria-label="Close"></button>
                                                             </div>
                                                             <div class="modal-body">
                                                                 <div class="mb-3">
