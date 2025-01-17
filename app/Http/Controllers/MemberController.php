@@ -166,8 +166,6 @@ class MemberController extends Controller
             $members->image = $uploadHelper->store('members', $request->image);
         $members->save();
 
-        DB::table('emirates')->where('name', $request->emirates)->increment('count');
-
 
         Alert::success('Success', 'New Member Added!');
         return back();
@@ -182,8 +180,12 @@ class MemberController extends Controller
     public function update_status($id, $status)
     {
         $member = Member::findOrFail($id);
+        if( $status === "approve"){
+            DB::table('emirates')->where('name', $member->emirates)->increment('count');
+        }
         $member->status = $status;
         if ($member->save()) {
+            
             Alert::success('Success', 'Member updated successfully!');
         } else {
             Alert::error('Error', 'Failed to update member.');
