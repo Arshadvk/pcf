@@ -42,9 +42,9 @@
 
                             <div class="text-center p-2">
                                 <h6
-                                    style="text-transform: capitalize;font-size: 30px; padding-top: 20px; font-weight: bolder;">
+                                    style="text-transform: capitalize;font-size: 30px; padding-top: 20px; font-weight: bolder;color:black;">
                                     {{Str::title( $member->name) }}</h6>
-                                <h6 style="text-transform: capitalize;font-size: 20px; font-weight: bolder;"> mob :
+                                <h6 style="text-transform: capitalize;font-size: 20px; font-weight: bolder; color:black;"> mob :
                                     {{ $member->mobile }}</h6>
                             </div>
 
