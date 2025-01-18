@@ -283,9 +283,55 @@
                         <div class="col-xl-12">
                             <div class="card">
                                 <div class="card-body">
-                                    <p class="text-edgray font-normal text-[16px] mb-[10px]">1. Personal Info</p>
+                                    <p class="text-edgray font-normal text-[16px] mb-[10px]">Member Image</p>
                                         <img src="{{$member->image}}" width="200" alt="" srcset="">
 
+                                    <form method="POST" class="custom-validation"
+                                        action="{{ route('update_photo', $member->id) }}" enctype="multipart/form-data">
+                                        {{ csrf_field() }}
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="my-3">
+                                                        <label for="imageInput" class="font-lato font-semibold text-edblue block mb-[12px]">Photo</label>
+                                                        <input id="imageInput" name="image" type="file" class="form-control" required />
+                                                        <small id="imageError" style="color: red; display: none;">The image must be square (equal width and height).</small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div>
+                                            @if ($user->type === 'admin' && $member->status !== "approved")
+                                                <div>
+                                                    <button type="submit"
+                                                        class="btn btn-primary waves-effect waves-light me-1">Submit</button>
+                                                    <button type="reset"
+                                                        class="btn btn-secondary waves-effect">Cancel</button>
+                                                </div>
+                                            @endif
+
+                                            @if ($user->type === 'super' && $member->status == "approved")
+                                            <div>
+                                                <button type="submit"
+                                                    class="btn btn-primary waves-effect waves-light me-1">Submit</button>
+                                                <button type="reset"
+                                                    class="btn btn-secondary waves-effect">Cancel</button>
+                                            </div>
+                                            @endif
+                                        </div>
+                                    </form>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <p class="text-edgray font-normal text-[16px] mb-[10px]">1. Personal Info</p>
                                     <form method="POST" class="custom-validation"
                                         action="{{ route('putUser', $member->id) }}" enctype="multipart/form-data">
                                         {{ csrf_field() }}
@@ -540,6 +586,9 @@
                             </div>
                         </div>
                     </div>
+
+
+               
                 </div>
 
 
@@ -549,4 +598,69 @@
             </div>
         </div>
     </div>
+
+
+    <div id="cropModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1000; align-items: center; justify-content: center;">
+        <div style="background: white; padding: 20px; border-radius: 10px; text-align: center; max-width: 90%; max-height: 90%;">
+            <h2>Crop Your Image</h2>
+            <img id="cropImage" style="max-width: 100%; max-height: 400px;" />
+            <br />
+            <button id="cropButton" class="theme-btn">Crop & Save</button>
+            <button id="cancelButton" class="theme-btn" style="background-color: red;">Cancel</button>
+        </div>
+    </div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        let cropper;
+        const cropModal = document.getElementById("cropModal");
+        const cropImage = document.getElementById("cropImage");
+        const imageInput = document.getElementById("imageInput");
+        const imageError = document.getElementById("imageError");
+        let croppedImageBlob;
+    
+        // When the user selects an image
+        imageInput.addEventListener("change", function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    cropImage.src = e.target.result;
+                    cropModal.style.display = "flex"; // Show the modal
+                    if (cropper) cropper.destroy(); // Destroy previous instance
+                    cropper = new Cropper(cropImage, {
+                        aspectRatio: 1, // Square cropping
+                        viewMode: 1,
+                    });
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    
+        // Crop and save the image
+        document.getElementById("cropButton").addEventListener("click", function () {
+            if (cropper) {
+                cropper.getCroppedCanvas().toBlob((blob) => {
+                    croppedImageBlob = blob;
+    
+                    // Create a file-like object for submission
+                    const dataTransfer = new DataTransfer();
+                    const croppedFile = new File([blob], "cropped-image.png", { type: "image/png" });
+                    dataTransfer.items.add(croppedFile);
+                    imageInput.files = dataTransfer.files; // Replace the file input value
+    
+                    cropModal.style.display = "none"; // Hide the modal
+                });
+            }
+        });
+    
+        // Cancel cropping
+        document.getElementById("cancelButton").addEventListener("click", function () {
+            cropModal.style.display = "none"; // Hide the modal
+            imageInput.value = ""; // Clear the input
+        });
+    });
+    
+    </script>
 @endsection

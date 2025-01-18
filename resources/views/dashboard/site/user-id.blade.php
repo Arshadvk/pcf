@@ -51,13 +51,13 @@
                             <div style="padding-top: 30px"
                                 class="d-flex justify-content-center align-items-center text-center">
                                 <span class="p-2"
-                                    style="border-radius: 5px 0 0 5px; background-color: #d02f2f;color:#ffff;width:75px;font-size: 10px;">Membership
+                                    style="border-radius: 5px 0 0 5px; background-color: #d02f2f;color:#ffff;width:85px;font-size: 12px;">Membership
                                     Number</span>
                                 <span class="p-2"
-                                    style="border-radius: 0 5px 5px 0; background-color:{{$member->gender == 'female' ? '#cb6ce6' : ($member->membership_type == 'active' ? '#D0C22F' : '#C0C0C0') }};color:#000000;width:120px; font-weight: bolder;font-size: 20px;text-transform:uppercase;">{{ $member->membership_number }}</span>
+                                    style="border-radius: 0 5px 5px 0; background-color:{{$member->gender == 'female' ? '#cb6ce6' : ($member->membership_type == 'active' ? '#D0C22F' : '#C0C0C0') }};color:#000000;width:130px; font-weight: bolder;font-size: 24px;text-transform:uppercase;">{{ $member->membership_number }}</span>
                             </div>
 
-                            <div style="padding-top: 50px" class="d-flex justify-content-between">
+                            <div style="padding-top: 80px" class="d-flex justify-content-between">
                                 <div>
                                     <h5 style=""> <b>Constituency :</b> {{ Str::title($member->mandalam) }}</h5>
                                     <h5> <b>District :</b> {{ Str::title($member->district) }}</h5>
@@ -71,7 +71,7 @@
 
                         </div>
                     </div>
-                    <p style="background-color: {{ $member->gender == 'female' ? '#cb6ce6' : ($member->membership_type == 'active' ? '#D0C22F' : '#C0C0C0') }}; color: #000000; margin-top: 84px; padding: 7px;"
+                    <p style="background-color: {{ $member->gender == 'female' ? '#cb6ce6' : ($member->membership_type == 'active' ? '#D0C22F' : '#C0C0C0') }}; color: #000000; margin-top: 47px; padding: 7px;"
                         class="text-center">
                         <b>This Card is only used for PCF organization</b>
                     </p>

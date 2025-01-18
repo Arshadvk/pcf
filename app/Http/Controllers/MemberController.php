@@ -177,6 +177,29 @@ class MemberController extends Controller
         return view('members.show', compact('member'));
     }
 
+    
+    public function update_photo($id, Request $request, UploadHelper $uploadHelper)
+    {
+        $member = Member::findOrFail($id);
+        $isDeleted = $member->delete();
+        if ($isDeleted) {
+            $this->deleteImage($member->image);
+        }
+
+        if (isset($request->image)){
+            $member->image = $uploadHelper->store('members', $request->image);
+        }
+
+        if ($member->save()) {
+            Alert::success('Success', 'Member updated successfully!');
+        } 
+        else {
+            Alert::error('Error', 'Failed to update member.');
+        }
+        
+        return redirect()->back();
+    }
+
     public function update_status($id, $status)
     {
         $member = Member::findOrFail($id);
