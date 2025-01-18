@@ -123,13 +123,25 @@ class FrontendController extends Controller
     }
     public function listUser()
     {
-        $users = Member::where('status', 'approved')
-            ->orderby('id', 'desc')
-            ->get();
-            
         $user = Auth::user();
-        return view('dashboard.site.list-user', compact('users', 'user'));
-    }
+
+       // Check if user has an emirate set
+       if ($user->emirate) {
+           $users = Member::where('emirates', $user->emirate)
+               ->where('status', 'approved') // Exclude "verified"
+               ->get();
+           $user->type = 'admin';
+       }
+        else {
+           // Fetch all members ordered by ID if no emirate is set
+           $user->type = 'super';
+           $users = Member::where('status', 'approved')
+               ->orderBy('id', 'desc')
+               ->get();
+       }
+       
+       return view('dashboard.site.list-user', compact('users', 'user'));
+   }
 
     public function singleUser($id)
     {
