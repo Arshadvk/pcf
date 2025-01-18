@@ -115,7 +115,6 @@ class FrontendController extends Controller
         return view('dashboard.site.add-blog', compact('user'));
     }
 
-
     public function addUser()
     {
         $user = Auth::user();
