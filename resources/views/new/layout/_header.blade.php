@@ -61,7 +61,7 @@
                 <a class="navbar-brand" href="/"><img style="height: 75px;" src="assets/img/logo.png" alt></a>
 
                 <div data-swiper-parallax="500" class="mobile-btns">
-                    <a href="/register" class="theme-btn">Member ship</a>
+                    <a href="/register" class="theme-btn">Membership</a>
                 </div>
 
             </div>
@@ -82,7 +82,7 @@
             <div class="search-contact">
 
                 <div class="contact-btn">
-                    <a href="/register" class="theme-btn">Member ship</a>
+                    <a href="/register" class="theme-btn">Membership</a>
                 </div>
                 <div class="contact-btn">
                     <a href="/login" class="theme-btn-s2">Login</a>
