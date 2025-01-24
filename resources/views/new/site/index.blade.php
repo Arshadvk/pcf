@@ -64,7 +64,7 @@ color:#203E94!important;   ;
 
             <div class="swiper-slide">
                 <div class="slide-inner slide-bg-image flex justify-end items-center relative"
-                    style="background-image: url('assets/assets/images/slider/hero3.jpg'); background-size: cover;  background-position: center right;">
+                    style="background-image: url('assets/assets/images/slider/hero4.jpg'); background-size: cover;  background-position: center right;">
                     <div class="container">
                         <div data-swiper-parallax="300" class="slide-title">
                             <h2 style="font-size: 60px" class="main-head text-chilanka">സാമൂഹ്യ&nbsp;നീതി <br> സമഗ്ര&nbsp;വികസനം <br />
