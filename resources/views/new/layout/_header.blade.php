@@ -20,6 +20,10 @@
         .login-btn {
             display: flex !important; 
         }
+
+        .header-top{
+            background-color: #020d26;
+        }
     }
 </style>
 
@@ -49,7 +53,11 @@
             </div>
         </div>
     </div> <!-- end topbar -->
+    <div class="header-top">
+            <h5 style="color: white; margin:0px;padding:5px" class="text-center">Organization: <span style="color: #DFB034;">PEOPLE'S CULTURAL FORUM</span></h5>
+    </div>
     <nav class="navigation navbar navbar-default">
+
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="open-btn">
