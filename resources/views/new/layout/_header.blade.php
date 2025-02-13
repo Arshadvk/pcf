@@ -7,7 +7,9 @@
     .login-btn {
         display: none !important;        /* Hide by default */
     }
-
+    .header-top{
+            display: none;
+        }
     @media (max-width: 768px) {
         .mobile-btns {
             display: flex;
@@ -22,7 +24,9 @@
         }
 
         .header-top{
-            background-color: #020d26;
+            display: block;
+            background-color: #203E94;
+            
         }
     }
 </style>
@@ -54,7 +58,7 @@
         </div>
     </div> <!-- end topbar -->
     <div class="header-top">
-            <h5 style="color: white; margin:0px;padding:5px" class="text-center">Organization: <span style="color: #DFB034;">PEOPLE'S CULTURAL FORUM</span></h5>
+            <h3 style="color: white; margin:0px;padding:10px" class="text-center">PEOPLE'S CULTURAL FORUM</h3>
     </div>
     <nav class="navigation navbar navbar-default">
 
