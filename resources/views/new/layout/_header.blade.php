@@ -38,9 +38,9 @@
                 <div class="col col-md-9">
                     <div class="contact-info">
                         <ul>
-                            <li><a  style="text-decoration: none; color:aliceblue" href="tel:+919061116222"><i class="ti-mobile"></i> +91 906 111 6222</a> </li>
-                            <li><a style="text-decoration: none; color:aliceblue" href="mailto:pcfgcc@gmail.com"><i class="ti-email"></i> pcfgcc@gmail.com</a></li>
-                            <li>Organization: <span style="color: #DFB034;">PEOPLE'S CULTURAL FORUM</span></li>
+                            {{-- <li><a  style="text-decoration: none; color:aliceblue" href="tel:+919061116222"><i class="ti-mobile"></i> +91 906 111 6222</a> </li>
+                            <li><a style="text-decoration: none; color:aliceblue" href="mailto:pcfgcc@gmail.com"><i class="ti-email"></i> pcfgcc@gmail.com</a></li> --}}
+                            <li> <span style="color: #;">PEOPLE'S CULTURAL FORUM</span></li>
                         </ul>
                     </div>
                 </div>
