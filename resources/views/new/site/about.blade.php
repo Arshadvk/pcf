@@ -157,7 +157,7 @@
             <div class="row">
                 <div class="col col-md-5">
                     <div class="img-holder about-image">
-                        <img src="assets/assets/img/logo.png" alt>
+                        <img src="/assets/assets/img/logo.png" alt>
                     </div>
                 </div>
                 <div class="col col-md-7">

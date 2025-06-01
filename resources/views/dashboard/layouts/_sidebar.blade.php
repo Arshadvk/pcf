@@ -43,6 +43,17 @@
 
                      <li>
                         <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="mdi mdi-account"></i>
+                            <span>Committee</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="/add-committee">Add Committee</a></li>
+                            <li><a href="/list-committee">List Committee</a></li>
+                        </ul>
+                    </li>
+
+                     <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
                             <i class="mdi mdi-file-upload"></i>
                             <span>Gallery</span>
                         </a>

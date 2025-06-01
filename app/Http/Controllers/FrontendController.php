@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Committee;
 use App\Models\Emirate;
 use App\Models\Gallery;
 use App\Models\Member;
@@ -20,6 +21,22 @@ class FrontendController extends Controller
         return view('new.site.about');
     }
 
+    public function emirates ()
+    {
+        $emirates = Emirate::orderby('id', 'asc')->get();
+
+        return view('new.site.emirates' , compact('emirates'));
+
+    }
+    public function emirate ( $id)
+    {
+    
+        $emirate = Emirate::find($id); // Fetch the Emirate by ID
+        $committee = Committee::where('emirates', $emirate->name)->get();
+         
+        return view('new.site.emirate', compact('emirate' , 'committee'));
+
+    }
     public function news()
     {   
         $news = News::orderby('id', 'asc')->get();
@@ -115,6 +132,11 @@ class FrontendController extends Controller
         return view('dashboard.site.add-blog', compact('user'));
     }
 
+    public function addCommittee()
+    {
+        $user = Auth::user();
+        return view('dashboard.site.add-committee', compact('user'));
+    }
     public function addUser()
     {
         $user = Auth::user();

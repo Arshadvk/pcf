@@ -70,7 +70,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/"><img style="height: 75px;" src="assets/img/logo.png" alt></a>
+                <a class="navbar-brand" href="/"><img style="height: 75px;" src="/assets/img/logo.png" alt></a>
 
                 <div data-swiper-parallax="500" class="mobile-btns">
                     <a href="/register" class="theme-btn">Membership</a>
@@ -84,6 +84,7 @@
                     <li><a href="/gallery">Gallery</a></li>
                     <li><a href="/about">About Us</a></li>
                     <li><a href="/our-leaders">PDP Leaders</a></li>
+                    <li><a href="/emirates">Emirates</a></li>
                     <li><a href="/news">News</a></li>
                     <li><a href="/contact">Contact</a></li>
                     <li class="login-btn"><a href="/login">Login</a></li>

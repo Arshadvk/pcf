@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\CommitteeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +27,9 @@ Route::get('/news', [FrontendController::class, 'news'])->name('news');
 Route::get('/our-leaders', [FrontendController::class, 'team'])->name('team');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('/gallery', [FrontendController::class, 'gallery'])->name('gallery');
+Route::get('/emirates', [FrontendController::class, 'emirates'])->name('emirates');
+Route::get('/emirates', [FrontendController::class, 'emirates'])->name('emirates');
+Route::get('/emirate/{id}', [FrontendController::class, 'emirate'])->name('emirate');
 
 //auth 
 Route::get('/login', [FrontendController::class, 'login'])->name('login');
@@ -52,9 +56,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/delete-news/{id}', [NewsController::class, 'delete'])->name('delete.news');
     
     Route::get('/add-gallery', [GalleryController::class, 'index'])->name('add-gallery');
-    Route::get('/list-gallery', [GalleryController::class, 'list'])->name('add-gallery');
+    Route::get('/list-gallery', [GalleryController::class, 'list'])->name('list-gallery');
     Route::post('/store-gallery', [GalleryController::class, 'store'])->name('store-gallery');
     Route::post('/delete-gallery/{id}', [GalleryController::class, 'delete'])->name('delete.gallery');
+
+    Route::get('/add-committee', [FrontendController::class, 'addCommittee'])->name('add-committe');
+    Route::get('/list-committee', [CommitteeController::class, 'list'])->name('list-committe');
+    Route::post('/store-committee', [GalleryController::class, 'store'])->name('store-committe');
 
 
     Route::get('/add-team', [FrontendController::class, 'addTeam'])->name('add-team');
@@ -70,7 +78,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/list-member', [FrontendController::class, 'listUser'])->name('list-user');
     Route::post('/update-photo/{id}', [MemberController::class, 'update_photo'])->name('update_photo');
     Route::get('/update-status/{id}/{status}', [MemberController::class, 'update_status'])->name('update_status');
-    Route::post('/update-status/{id}/{status}', [MemberController::class, 'status_reject'])->name('update_status');
+    Route::post('/update-status/{id}/{status}', [MemberController::class, 'status_reject'])->name('status_reject');
     Route::post('/export-users', [MemberController::class, 'exportUsers'])->name('export.users');
 
     Route::get('/upload', [MemberController::class, 'showForm']);

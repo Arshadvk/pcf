@@ -33,7 +33,7 @@ color:#203E94!important;   ;
 
                 <div class="swiper-slide">
                     <div class="slide-inner slide-bg-image flex justify-end items-center relative"
-                        style="background-image: url('assets/assets/images/slider/hero1.jpg'); background-size: cover;  background-position: center right;">
+                        style="background-image: url('/assets/assets/images/slider/hero1.jpg'); background-size: cover;  background-position: center right;">
                         <div class="container">
                             <div data-swiper-parallax="300" class="slide-title">
                                 <h2 style="font-size: 60px" class="main-head text-chilanka">ജന സേവനം <br> ജീവിത ദൗത്യം</h2>
@@ -49,7 +49,7 @@ color:#203E94!important;   ;
                 <!-- end swiper-slide -->
 
                 <div class="swiper-slide">
-                    <div class="slide-inner slide-bg-image flex justify-end items-center relative" style="background-image: url('assets/assets/images/slider/hero2.jpg'); background-size: cover;  background-position: center right;">
+                    <div class="slide-inner slide-bg-image flex justify-end items-center relative" style="background-image: url('/assets/assets/images/slider/hero2.jpg'); background-size: cover;  background-position: center right;">
                         <div class="container">
                             <div data-swiper-parallax="300" class="slide-title">
                                 <h2  class="main-head text-chilanka"  >അവർണ്ണന്&nbsp;അധികാരം <br /> പീഡിതർക്ക്&nbsp;മോചനം</h2>
@@ -64,7 +64,7 @@ color:#203E94!important;   ;
 
             <div class="swiper-slide">
                 <div class="slide-inner slide-bg-image flex justify-end items-center relative"
-                    style="background-image: url('assets/assets/images/slider/hero4.jpg'); background-size: cover;  background-position: center right;">
+                    style="background-image: url('/assets/assets/images/slider/hero4.jpg'); background-size: cover;  background-position: center right;">
                     <div class="container">
                         <div data-swiper-parallax="300" class="slide-title">
                             <h2 style="font-size: 60px" class="main-head text-chilanka">സാമൂഹ്യ&nbsp;നീതി <br> സമഗ്ര&nbsp;വികസനം <br />
@@ -97,7 +97,7 @@ color:#203E94!important;   ;
             <div class="row">
                 <div class="col col-md-5">
                     <div class="img-holder about-image">
-                        <img src="assets/assets/img/home/leader.jpeg" alt>
+                        <img src="/assets/assets/img/home/leader.jpeg" alt>
                     </div>
                 </div>
                 <div class="col col-md-7">
@@ -138,7 +138,7 @@ color:#203E94!important;   ;
                 <div class="grid">
                     <div class="inner">
                         <div class="img-holder">
-                            <img src="assets/assets/img/events/1.jpg" alt>
+                            <img src="/assets/assets/img/events/1.jpg" alt>
                         </div>
                         <!-- <div class="details">
                             <div class="arrow"><a href="#"><i class="fi flaticon-next"></i></a></div>
@@ -152,28 +152,28 @@ color:#203E94!important;   ;
                 <div class="grid">
                     <div class="inner">
                         <div class="img-holder">
-                            <img src="assets/assets/img/events/2.jpg" alt>
+                            <img src="/assets/assets/img/events/2.jpg" alt>
                         </div>
                     </div>
                 </div>
                 <div class="grid">
                     <div class="inner">
                         <div class="img-holder">
-                            <img src="assets/assets/img/events/4.jpg" alt>
+                            <img src="/assets/assets/img/events/4.jpg" alt>
                         </div>
                     </div>
                 </div>
                 <div class="grid">
                     <div class="inner">
                         <div class="img-holder">
-                            <img src="assets/assets/img/events/5.jpg" alt>
+                            <img src="/assets/assets/img/events/5.jpg" alt>
                         </div>
                     </div>
                 </div>
                 <div class="grid">
                     <div class="inner">
                         <div class="img-holder">
-                            <img src="assets/assets/img/events/7.jpg" alt>
+                            <img src="/assets/assets/img/events/7.jpg" alt>
                         </div>
                     </div>
                 </div>
