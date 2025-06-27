@@ -578,7 +578,6 @@
 	@include widther(992px) {
 		#navbar {
 			width: calc(100% - 300px);
-			margin: 0 ;
 			float: none !important;
 			text-align: center;
 			max-height: 100px;
