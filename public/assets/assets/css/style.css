@@ -2040,7 +2040,7 @@ img {
 @media screen and (min-width: 992px) {
   .header-style-1 #navbar, .header-style-2 #navbar {
     width: calc(100% - 300px);
-    margin: 0;
+    margin: 0px;
     float: none !important;
     text-align: center;
     max-height: 100px;
