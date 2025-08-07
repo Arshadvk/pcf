@@ -84,7 +84,19 @@
                     <li><a href="/gallery">Gallery</a></li>
                     <li><a href="/about">About Us</a></li>
                     <li><a href="/our-leaders">PDP Leaders</a></li>
-                    <li><a href="/emirates">Emirates</a></li>
+                     <li class="menu-item-has-children">
+                                <a href="#">Emirates</a>
+                                <ul class="sub-menu">
+                                    <li><a href="/emirate/1">Abu Dhabi</a></li>
+                                    <li><a href="/emirate/2">Dubai</a></li>
+                                    <li><a href="/emirate/3">Sharjah</a></li>
+                                    <li><a href="/emirate/4">Ajman</a></li>
+                                    <li><a href="/emirate/5">Umm Al Quwain</a></li>
+                                    <li><a href="/emirate/6">Ras Al Khaimah</a></li>
+                                    <li><a href="/emirate/7">Fujairah</a></li>
+                                    <li><a href="/emirate/8">Al Ain</a></li>
+                                </ul>
+                            </li>
                     <li><a href="/news">News</a></li>
                     <li><a href="/contact">Contact</a></li>
                     <li class="login-btn"><a href="/login">Login</a></li>

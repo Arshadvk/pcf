@@ -65,18 +65,7 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label for="membership_type" class="form-label">Position</label>
-                                                    <select name="membership_type" id="membership_type"
-                                                        class="form-control">
-                                                        <option value="" disabled selected>Select your Membership
-                                                            Type</option>
-                                                        <option value="active">Active</option>
-                                                        <option value="primary">Primary</option>
-                                                    </select>
-                                                </div>
-                                            </div>
+                                           
                                         </div>
                                         
                                         <div>

@@ -62,7 +62,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/add-committee', [FrontendController::class, 'addCommittee'])->name('add-committe');
     Route::get('/list-committee', [CommitteeController::class, 'list'])->name('list-committe');
-    Route::post('/store-committee', [GalleryController::class, 'store'])->name('store-committe');
+    Route::post('/store-committee', [CommitteeController::class, 'store'])->name('store-committe');
 
 
     Route::get('/add-team', [FrontendController::class, 'addTeam'])->name('add-team');
