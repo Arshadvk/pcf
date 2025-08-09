@@ -29,7 +29,7 @@
             </div>
 
 
-            <!-- start team-section -->
+            {{-- <!-- start team-section -->
             <section class="team-section">
                 <div class="container">
                     <h1 class="text-center text-chilanka" style="padding-bottom: 40px">വൈസ് ചെയർമാൻമാർ</h1>
@@ -130,7 +130,7 @@
                     </div>
                 </div> <!-- end container -->
             </section>
-            <!-- end team-section -->
+            <!-- end team-section --> --}}
 
         </div>
     </section>
