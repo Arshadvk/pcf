@@ -77,12 +77,19 @@
                                                             <div class="modal-body">
                                                                 Are you sure you want to delete this gallery?
                                                             </div>
+                                                            
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-secondary"
                                                                     data-bs-dismiss="modal">Cancel</button>
-                                                                <a class="btn btn-danger"
-                                                                    href="{{ route('delete.gallery', $gallery->id) }}">Confirm</a>
+                                                                <form action="{{ route('delete.gallery', $gallery->id) }}"
+                                                                    method="POST" style="display:inline;">
+                                                                    @csrf
+                                                                    @method('DELETE')
+                                                                    <button type="submit"
+                                                                        class="btn btn-danger">Confirm</button>
+                                                                </form>
                                                             </div>
+
                                                         </div>
                                                     </div>
                                                 </div>

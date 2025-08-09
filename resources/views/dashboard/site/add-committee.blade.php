@@ -20,7 +20,7 @@
                                 <div class="card-body">
                                     <p class="text-edgray font-normal text-[16px] mb-[10px]">1. Personal Info</p>
 
-                                    <form method="POST" class="custom-validation" action="{{ route('postUser') }}"
+                                    <form method="POST" class="custom-validation" action="/store-committee"
                                         enctype="multipart/form-data">
                                         {{ csrf_field() }}
                                         <div class="row">
@@ -39,7 +39,7 @@
                                                     <label class="form-label">Photo <span
                                                             style="color: red">*</span></label>
                                                     <input id="imageInput" name="image" type="file"
-                                                        class="form-control" placeholder="Type something" required />
+                                                        class="form-control" placeholder="Type something" />
                                                     <small id="imageError" style="color: red; display: none;">The image must
                                                         be square (equal width and height).</small>
                                                 </div>
@@ -54,14 +54,12 @@
                                                     <select name="emirates" id="emirates" class="form-control" required>
                                                         <option value="" disabled selected>Select your Emirate
                                                         </option>
-                                                        <option value="Abu Dhabi">Abu Dhabi</option>
-                                                        <option value="Al Ain">Al Ain</option>
-                                                        <option value="Dubai">Dubai</option>
-                                                        <option value="Sharjah">Sharjah</option>
-                                                        <option value="Ajman">Ajman</option>
-                                                        <option value="Umm Al Quwain">Umm Al-Quwain</option>
-                                                        <option value="Ras Al Khaimah">Ras Al Khaimah</option>
-                                                        <option value="Fujairah">Fujairah</option>
+
+                                                        @foreach ($emirates as $emirate)
+                                                            <option value="{{ $emirate->id }}">{{ $emirate->name }}
+                                                            </option>
+                                                        @endforeach
+
                                                     </select>
                                                 </div>
                                             </div>
@@ -69,19 +67,18 @@
 
                                             <div class="col-md-6">
                                                 <div class="mb-3">
-                                                    <label for="emirates" class="form-label">Position</label>
-                                                    <select name="emirates" id="emirates" class="form-control" required>
+                                                    <label for="position" class="form-label">Position</label>
+                                                    <select name="position_id" id="position" class="form-control" required>
                                                         <option value="" disabled selected>Select Position</option>
-                                                        <option value="president">പ്രസിഡന്റ്</option>
-                                                        <option value="secretary">സെക്രട്ടറി</option>
-                                                        <option value="treasurer">ട്രഷറർ</option>
-                                                        <option value="joint secretary">ജോ: സെക്രട്ടറിമാർ</option>
-                                                        <option value="vice president">വൈസ് പ്രസിഡന്റുമാർ</option>
-                                                        <option value="council member">കൗൺസിൽ അംഗങ്ങൾ</option>
-                                                        <option value="secretariat member">സെക്രട്ടറിയേറ്റ് അംഗങ്ങൾ</option>
+                                                        @foreach ($positions as $pos)
+                                                            <option value="{{ $pos->id }}">{{ $pos->name_mal }}
+                                                            </option>
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                             </div>
+
+
                                         </div>
 
 

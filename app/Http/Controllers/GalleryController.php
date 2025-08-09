@@ -53,19 +53,37 @@ class GalleryController extends Controller
         return back();
     }
 
+    // public function delete($id)
+    // {
+    //     $gallery = Gallery::findorFail($id);
+
+    //     $isSuccess = $gallery->delete();
+
+    //     if ($isSuccess) {
+    //         $this->imageDeleteHandler($gallery);
+    //     }
+
+    //     Alert::success('Success', 'Gallery Removed!');
+    //     return back();
+    // }
+
+
     public function delete($id)
-    {
-        $gallery = Gallery::findorFail($id);
-
-        $isSuccess = $gallery->delete();
-
-        if ($isSuccess) {
-            $this->imageDeleteHandler($gallery);
-        }
-
-        Alert::success('Success', 'Gallery Removed!');
-        return back();
+{
+    $gallery = Gallery::find($id);
+    
+    if (!$gallery) {
+        return redirect()->back()->with('error', 'Gallery item not found.');
     }
+
+    // Optional: delete image file from storage if needed
+    // Storage::delete($gallery->image);
+
+    $gallery->delete();
+
+    return redirect()->back()->with('success', 'Gallery item deleted successfully.');
+}
+
 
     private function imageDeleteHandler($gallery)
     {

@@ -7,7 +7,9 @@ use App\Models\Emirate;
 use App\Models\Gallery;
 use App\Models\Member;
 use App\Models\News;
+use App\Models\Position;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class FrontendController extends Controller
 {
@@ -21,26 +23,42 @@ class FrontendController extends Controller
         return view('new.site.about');
     }
 
-    public function emirates ()
+    public function emirate($id)
     {
-        $emirates = Emirate::orderby('id', 'asc')->get();
+        // Debug logging
+        Log::info("Emirate ID: " . $id);
 
-        return view('new.site.emirates' , compact('emirates'));
+        // Fetch emirate by ID
+        $emirate = Emirate::findOrFail($id);
+        Log::info($emirate);
 
+        // Committees in this emirate
+        $section_one = Committee::where('emirates', $id)
+            ->whereIn('position_id', [1, 2, 3])
+            ->with('position')
+            ->get();
+
+
+        Log::info("section_one");
+        Log::info($section_one);
+
+        // Committees in this emirate with position_id = 11
+        $section_two = Committee::where('emirates', $id)
+            ->where('position_id', 11)
+            ->get();
+
+        // Committees in this emirate with position_id = 12
+        $section_three = Committee::where('emirates', $id)
+            ->where('position_id', 12)
+            ->get();
+
+        return view('new.site.emirate', compact('emirate', 'section_one', 'section_two', 'section_three'));
     }
-    public function emirate ( $id)
-    {
-    
-        $emirate = Emirate::find($id); // Fetch the Emirate by ID
-        $committee = Committee::where('emirates', $emirate->name)->get();
-         
-        return view('new.site.emirate', compact('emirate' , 'committee'));
 
-    }
     public function news()
-    {   
+    {
         $news = News::orderby('id', 'asc')->get();
-        return view('new.site.news' ,compact('news'));
+        return view('new.site.news', compact('news'));
     }
 
     public function team()
@@ -60,7 +78,7 @@ class FrontendController extends Controller
     public function gallery()
     {
         $gallery = Gallery::orderby('id', 'asc')->get();
-        return view('new.site.gallery' ,compact('gallery'));
+        return view('new.site.gallery', compact('gallery'));
     }
 
     public function login()
@@ -84,9 +102,6 @@ class FrontendController extends Controller
             return view('auth.auth-recover', compact('action', 'page_title'));
         }
     }
-
-
-
 
 
     /// admin dashboard code
@@ -113,8 +128,7 @@ class FrontendController extends Controller
                 ->where('status', '!=', 'approved') // Exclude "verified"
                 ->get();
             $user->type = 'admin';
-        }
-         else {
+        } else {
             // Fetch all members ordered by ID if no emirate is set
             $user->type = 'super';
             $members = Member::where('status', 'verified')
@@ -135,7 +149,9 @@ class FrontendController extends Controller
     public function addCommittee()
     {
         $user = Auth::user();
-        return view('dashboard.site.add-committee', compact('user'));
+        $positions = Position::all();
+        $emirates = Emirate::all();
+        return view('dashboard.site.add-committee', compact('user', 'positions', 'emirates'));
     }
     public function addUser()
     {
@@ -146,23 +162,22 @@ class FrontendController extends Controller
     {
         $user = Auth::user();
 
-       // Check if user has an emirate set
-       if ($user->emirate) {
-           $users = Member::where('emirates', $user->emirate)
-               ->where('status', 'approved') // Exclude "verified"
-               ->get();
-           $user->type = 'admin';
-       }
-        else {
-           // Fetch all members ordered by ID if no emirate is set
-           $user->type = 'super';
-           $users = Member::where('status', 'approved')
-               ->orderBy('id', 'desc')
-               ->get();
-       }
-       
-       return view('dashboard.site.list-user', compact('users', 'user'));
-   }
+        // Check if user has an emirate set
+        if ($user->emirate) {
+            $users = Member::where('emirates', $user->emirate)
+                ->where('status', 'approved') // Exclude "verified"
+                ->get();
+            $user->type = 'admin';
+        } else {
+            // Fetch all members ordered by ID if no emirate is set
+            $user->type = 'super';
+            $users = Member::where('status', 'approved')
+                ->orderBy('id', 'desc')
+                ->get();
+        }
+
+        return view('dashboard.site.list-user', compact('users', 'user'));
+    }
 
     public function singleUser($id)
     {

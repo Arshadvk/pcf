@@ -27,8 +27,6 @@ Route::get('/news', [FrontendController::class, 'news'])->name('news');
 Route::get('/our-leaders', [FrontendController::class, 'team'])->name('team');
 Route::get('/contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('/gallery', [FrontendController::class, 'gallery'])->name('gallery');
-Route::get('/emirates', [FrontendController::class, 'emirates'])->name('emirates');
-Route::get('/emirates', [FrontendController::class, 'emirates'])->name('emirates');
 Route::get('/emirate/{id}', [FrontendController::class, 'emirate'])->name('emirate');
 
 //auth 
@@ -58,11 +56,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/add-gallery', [GalleryController::class, 'index'])->name('add-gallery');
     Route::get('/list-gallery', [GalleryController::class, 'list'])->name('list-gallery');
     Route::post('/store-gallery', [GalleryController::class, 'store'])->name('store-gallery');
-    Route::post('/delete-gallery/{id}', [GalleryController::class, 'delete'])->name('delete.gallery');
+    Route::delete('/delete-gallery/{id}', [GalleryController::class, 'delete'])->name('delete.gallery');
+
 
     Route::get('/add-committee', [FrontendController::class, 'addCommittee'])->name('add-committe');
     Route::get('/list-committee', [CommitteeController::class, 'index']);
-    Route::post('/store-committee', [CommitteeController::class, 'store'])->name('store-committe');
+    Route::post('/store-committee', [CommitteeController::class, 'store'])->name('storeCommitte');
+    Route::delete('/delete-committee/{id}', [CommitteeController::class, 'delete'])->name('delete.committee');
 
 
     Route::get('/add-team', [FrontendController::class, 'addTeam'])->name('add-team');

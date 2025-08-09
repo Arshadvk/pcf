@@ -14,6 +14,16 @@ class Committee extends Model
         'emirates',
         'image',
         'position'
-        
+
     ];
+
+    // Committee.php
+    public function position()
+    {
+        return $this->belongsTo(Position::class);
+    }
+    public function emirate()
+    {
+        return $this->belongsTo(Emirate::class);
+    }
 }
