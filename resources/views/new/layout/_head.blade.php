@@ -8,7 +8,7 @@
     <meta name="author" content="arshadvk">
     <title>P C F -  people culture forum</title>
     
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
 
     <link href="/assets/assets/css/themify-icons.css" rel="stylesheet">
     <link href="/assets/assets/css/flaticon.css" rel="stylesheet">
