@@ -9,14 +9,7 @@
 </head>
 
 <body id="top">
-    <div class="preloader">
-        <div class="lds-ellipsis">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
+    
 
     @include('new.layout._header')
     @yield('content')
