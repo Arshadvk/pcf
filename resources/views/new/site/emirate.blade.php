@@ -28,6 +28,110 @@
                 </div>
             </div>
 
-        </div> 
+
+            <!-- start team-section -->
+            <section class="team-section">
+                <div class="container">
+                    <h1 class="text-center text-chilanka" style="padding-bottom: 40px">വൈസ് ചെയർമാൻമാർ</h1>
+
+                    <div class="row">
+
+                        <div class="col col-xs-12">
+                            <div class="team-grids">
+                                <div class="grid">
+                                    <div class="img-social">
+                                        <div class="img-holder">
+                                            <img src="/assets/img/leader/9.jpg" alt>
+                                        </div>
+                                    </div>
+                                    <div class="details">
+                                        <h3>വർക്കല രാജ്</h3>
+                                        <span>വൈസ് ചെയർമാൻ</span>
+                                    </div>
+                                </div>
+                                <div class="grid">
+                                    <div class="img-social">
+                                        <div class="img-holder">
+                                            <img src="/assets/img/leader/7.jpg" alt>
+                                        </div>
+                                    </div>
+                                    <div class="details">
+                                        <h3>അഡ്വ. മുട്ടം നാസർ</h3>
+                                        <span>വൈസ് ചെയർമാൻ</span>
+
+                                    </div>
+                                </div>
+                                <div class="grid">
+                                    <div class="img-social">
+                                        <div class="img-holder">
+                                            <img src="/assets/img/leader/2.jpg" alt>
+                                        </div>
+                                    </div>
+                                    <div class="details">
+                                        <h3>ടി. എ. മുഹമ്മദ് ബിലാൽ</h3>
+                                        <span>വൈസ് ചെയർമാൻ</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end container -->
+            </section>
+            <!-- end team-section -->
+
+
+             <!-- start team-section -->
+            <section class="team-section">
+                <div class="container">
+                    <h1 class="text-center text-chilanka" style="padding-bottom: 40px">വൈസ് ചെയർമാൻമാർ</h1>
+
+                    <div class="row">
+
+                        <div class="col col-xs-12">
+                            <div class="team-grids">
+                                <div class="grid">
+                                    <div class="img-social">
+                                        <div class="img-holder">
+                                            <img src="/assets/img/leader/9.jpg" alt>
+                                        </div>
+                                    </div>
+                                    <div class="details">
+                                        <h3>വർക്കല രാജ്</h3>
+                                        <span>വൈസ് ചെയർമാൻ</span>
+                                    </div>
+                                </div>
+                                <div class="grid">
+                                    <div class="img-social">
+                                        <div class="img-holder">
+                                            <img src="/assets/img/leader/7.jpg" alt>
+                                        </div>
+                                    </div>
+                                    <div class="details">
+                                        <h3>അഡ്വ. മുട്ടം നാസർ</h3>
+                                        <span>വൈസ് ചെയർമാൻ</span>
+
+                                    </div>
+                                </div>
+                                <div class="grid">
+                                    <div class="img-social">
+                                        <div class="img-holder">
+                                            <img src="/assets/img/leader/2.jpg" alt>
+                                        </div>
+                                    </div>
+                                    <div class="details">
+                                        <h3>ടി. എ. മുഹമ്മദ് ബിലാൽ</h3>
+                                        <span>വൈസ് ചെയർമാൻ</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end container -->
+            </section>
+            <!-- end team-section -->
+
+        </div>
     </section>
 @endsection

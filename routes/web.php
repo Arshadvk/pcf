@@ -61,7 +61,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/delete-gallery/{id}', [GalleryController::class, 'delete'])->name('delete.gallery');
 
     Route::get('/add-committee', [FrontendController::class, 'addCommittee'])->name('add-committe');
-    Route::get('/list-committee', [CommitteeController::class, 'list'])->name('list-committe');
+    Route::get('/list-committee', [CommitteeController::class, 'index']);
     Route::post('/store-committee', [CommitteeController::class, 'store'])->name('store-committe');
 
 

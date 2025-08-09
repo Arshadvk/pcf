@@ -3606,3 +3606,29 @@ input[switch=dark]:checked + label {
 .error-text {
   text-shadow: 4px 4px rgba(11, 177, 151, 0.4);
 } 
+
+.service-grids {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* controls the spacing */
+    justify-content: center;
+}
+
+.grid {
+    width: 250px; /* adjust as needed */
+    box-sizing: border-box;
+}
+
+.grid,
+.img-holder,
+.grid img,
+.text-center {
+    margin: 0;
+    padding: 0;
+}
+
+.service-grids {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}

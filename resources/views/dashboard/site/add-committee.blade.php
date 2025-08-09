@@ -65,9 +65,27 @@
                                                     </select>
                                                 </div>
                                             </div>
-                                           
+
+
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label for="emirates" class="form-label">Position</label>
+                                                    <select name="emirates" id="emirates" class="form-control" required>
+                                                        <option value="" disabled selected>Select Position</option>
+                                                        <option value="president">പ്രസിഡന്റ്</option>
+                                                        <option value="secretary">സെക്രട്ടറി</option>
+                                                        <option value="treasurer">ട്രഷറർ</option>
+                                                        <option value="joint secretary">ജോ: സെക്രട്ടറിമാർ</option>
+                                                        <option value="vice president">വൈസ് പ്രസിഡന്റുമാർ</option>
+                                                        <option value="council member">കൗൺസിൽ അംഗങ്ങൾ</option>
+                                                        <option value="secretariat member">സെക്രട്ടറിയേറ്റ് അംഗങ്ങൾ</option>
+                                                    </select>
+                                                </div>
+                                            </div>
                                         </div>
-                                        
+
+
+
                                         <div>
                                             <div>
                                                 <button type="submit"

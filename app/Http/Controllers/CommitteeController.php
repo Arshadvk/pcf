@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Committee;
 use Illuminate\Http\Request;
 use App\Actions\UploadHelper;
+use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -14,9 +15,15 @@ class CommitteeController extends Controller
     public function index()
     {
         $committee = Committee::all();
-        return view('committee.index', compact('committee'));
+        $user = Auth::user();
+        return view('dashboard.site.list-committee', compact('committee' , 'user'));
     }
 
+
+    public function list()
+    {
+    return $this->index();
+    }
 
     public function create()
     {
