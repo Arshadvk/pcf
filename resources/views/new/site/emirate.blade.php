@@ -13,7 +13,7 @@
 
                     <div class="section-title-s4">
                         <h2 class="text-heading text-chilanka" style="padding-top: 20px;color:#203E94">
-                            {{ $emirate->name_mal }} എമിറേറ്റ്സ് കമ്മിറ്റി 2025-2026</h2>
+                            {{ $emirate->name_mal }} എമിറേറ്റ്സ് കമ്മിറ്റി 2024-2025</h2>
                     </div>
 
 

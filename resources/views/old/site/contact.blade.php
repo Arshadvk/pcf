@@ -63,7 +63,7 @@
 
                                 <div class="txt">
                                     <span class="font-normal">Location</span>
-                                    <h4 class="font-medium text-[24px] xxs:text-[22px]">Khalidiyah - Abu Dhabi </h4>
+                                    <h4 class="font-medium text-[24px] xxs:text-[22px]">Eranamkulam - Kerala</h4>
                                 </div>
                             </div>
                         </div>
