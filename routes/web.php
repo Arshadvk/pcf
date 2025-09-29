@@ -88,4 +88,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/user/{id}', [FrontendController::class, 'singleUser'])->name('single.user');
     Route::get('/delete/{id}', [MemberController::class, 'delete'])->name('delete.user');
     Route::get('/user-requests', [FrontendController::class, 'user_requests'])->name('user_requests');
+
+    Route::get('/member/{id}/download-card', [FrontendController::class, 'downloadUserCard'])->name('member.downloadCard');
+
 });

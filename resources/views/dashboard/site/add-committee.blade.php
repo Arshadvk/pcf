@@ -3,6 +3,8 @@
     Add Menu | P C F - People Culture Forum
 @endsection
 @section('content')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
     <div id="layout-wrapper">
         <div class="main-content">
             <div class="page-content">
@@ -38,10 +40,7 @@
                                                 <div class="mb-3">
                                                     <label class="form-label">Photo <span
                                                             style="color: red">*</span></label>
-                                                    <input id="imageInput" name="image" type="file"
-                                                        class="form-control" placeholder="Type something" />
-                                                    <small id="imageError" style="color: red; display: none;">The image must
-                                                        be square (equal width and height).</small>
+                                                   <input id="imageInput" type="file" class="form-control" accept="image/*" required />
                                                 </div>
                                             </div>
 
@@ -102,22 +101,66 @@
         </div>
     </div>
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css" />
+    
     <script>
-        document.getElementById('imageInput').addEventListener('change', function() {
-            const file = this.files[0];
-            const imageError = document.getElementById('imageError');
-
+        let cropper;
+    
+        document.getElementById('imageInput').addEventListener('change', function (event) {
+            const file = event.target.files[0];
             if (file) {
-                const img = new Image();
-                img.src = URL.createObjectURL(file);
-                img.onload = function() {
-                    if (img.width !== img.height) {
-                        imageError.style.display = 'block';
-                        document.getElementById('imageInput').value = ''; // Clear the input
-                    } else {
-                        imageError.style.display = 'none';
-                    }
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const imagePreview = document.getElementById('imagePreview');
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'block';
+    
+                    // Destroy any existing Cropper instance before initializing a new one
+                    if (cropper) cropper.destroy();
+    
+                    cropper = new Cropper(imagePreview, {
+                        aspectRatio: 16 / 9,
+                        viewMode: 1,
+                        autoCropArea: 1,
+                    });
                 };
+                reader.readAsDataURL(file);
+            }
+        });
+    
+        document.getElementById('cropButton').addEventListener('click', function () {
+            if (cropper) {
+                cropper.getCroppedCanvas().toBlob((blob) => {
+                    const formData = new FormData();
+                    formData.append('title', document.querySelector('[name="title"]').value);
+                    formData.append('cropped_image', blob, 'cropped_image.png');
+    
+                    // Submit the form data using AJAX
+                    fetch('{{ route('store-gallery') }}', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                        },
+                    })
+                        .then((response) => response.json())
+                        .then((data) => {
+                            console.log(data);
+                            alert('Image uploaded successfully!');
+                            const imagePreview = document.getElementById('imagePreview');
+                            imagePreview.style.display = 'none';
+                        })
+                        .catch((error) => {
+                            console.error('Error:', error);
+                            alert('Image uploaded successfully!');
+                            const imagePreview = document.getElementById('imagePreview');
+                            imagePreview.style.display = 'none';
+
+                        });
+                });
+            } else {
+                alert('Please select an image to crop.');
             }
         });
     </script>

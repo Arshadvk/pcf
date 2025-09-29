@@ -69,7 +69,7 @@
                         <div>
                             <h3>PEOPLE'S CULTURAL FORUM</h3>
                             <ul>
-                                <li><i class="ti-location-pin"></i> Khalidiyah - Abu Dhabi</li>
+                                <li><i class="ti-location-pin"></i>Eranamkulam -  Kerala </li>
                                 <li><i class="ti-mobile"></i> +91 9061116222</li>
                                 <li><i class="ti-email"></i> <a style="color: white" href="mailto:pcfgcc@gmail.com">pcfgcc@gmail.com</a></li>
                             </ul>

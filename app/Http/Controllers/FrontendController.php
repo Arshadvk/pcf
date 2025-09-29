@@ -10,6 +10,7 @@ use App\Models\News;
 use App\Models\Position;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class FrontendController extends Controller
 {
@@ -186,4 +187,18 @@ class FrontendController extends Controller
 
         return view('dashboard.site.user-id', compact('member', 'user'));
     }
+
+
+    public function downloadUserCard($id)
+{
+    $user = Auth::user();
+    $member = Member::findOrFail($id);
+
+    $pdf = Pdf::loadView('dashboard.site.user-id-pdf', compact('member', 'user'))
+        ->setPaper([0, 0, 459.21, 728.50], 'portrait'); 
+        // custom size: 16.2cm x 25.68cm
+
+    return $pdf->stream('card-' . $member->membership_number . '.pdf');
+}
+
 }
