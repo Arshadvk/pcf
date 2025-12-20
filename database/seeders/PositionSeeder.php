@@ -12,6 +12,7 @@ class PositionSeeder extends Seeder
      */
     public function run(): void
     {
+
         $positions = [
             ['name' => 'president', 'name_mal' => 'പ്രസിഡന്റ്'],
             ['name' => 'secretary', 'name_mal' => 'സെക്രട്ടറി'],
@@ -22,12 +23,15 @@ class PositionSeeder extends Seeder
             ['name' => 'secretariat member', 'name_mal' => 'സെക്രട്ടറിയേറ്റ് അംഗങ്ങൾ'],            
             ['name' => 'global member', 'name_mal' => 'ഗ്ലോബൽ അംഗങ്ങൾ'],         
             ['name' => 'chairman', 'name_mal' => 'ചെയർമാൻ'],                     
-            ['name' => '"vice chairmen"', 'name_mal' => 'വൈസ് ചെയർമാൻമാർ'],         
+            ['name' => 'vice chairmen', 'name_mal' => 'വൈസ് ചെയർമാൻമാർ'],         
             ['name' => 'General Secretary', 'name_mal' => 'ജനറല്‍ സെക്രട്ടറിമാര്‍'],
         ];
 
         foreach ($positions as $position) {
             Position::updateOrCreate($position);
         }
+
+        Position::where('name', '=', "vice chairmen")->update(['name' => 'vice chairman', 'name_mal' => 'വൈസ് ചെയർമാൻ']);
     }
+
 }
