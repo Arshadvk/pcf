@@ -30,6 +30,29 @@
                  </li>
 
                  @if (!$user->emirate)
+
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="mdi mdi-account"></i>
+                            <span>National Committee</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="/add-national-committee">Add National Committee</a></li>
+                            <li><a href="/list-national-committee">List National Committee</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="mdi mdi-account"></i>
+                            <span>PDP Leaders</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="/add-leaders">Add PDP Leaders</a></li>
+                            <li><a href="/list-leaders">List PDP Leaders</a></li>
+                        </ul>
+                    </li>
+
                      <li>
                          <a href="javascript: void(0);" class="has-arrow waves-effect">
                              <i class="mdi mdi-newspaper-variant"></i>
@@ -50,24 +73,35 @@
                             <li><a href="/add-committee">Add Committee</a></li>
                             <li><a href="/list-committee">List Committee</a></li>
                         </ul>
-                    </li>
-
-                     <li>
-                        <a href="javascript: void(0);" class="has-arrow waves-effect">
-                            <i class="mdi mdi-file-upload"></i>
-                            <span>Gallery</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="/add-gallery">Add Gallery</a></li>
-                            <li><a href="/list-gallery">List Gallery</a></li>
-                        </ul>
-                    </li>
+                    </li>              
 
                  
 
                 
                  @endif
 
+                  <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="mdi mdi-file-upload"></i>
+                        <span>Gallery</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="/add-gallery">Add Gallery</a></li>
+                        <li><a href="/list-gallery">List Gallery</a></li>
+                    </ul>
+                </li>
+                @if (!$user->emirate)
+                    <li>
+                        <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <i class="mdi mdi-file-upload"></i>
+                            <span>Admin User</span>
+                        </a>
+                        <ul class="sub-menu" aria-expanded="false">
+                            <li><a href="/users">List Users</a></li>
+                        </ul>
+                    </li>
+
+                @endif
                  <li>
                     <a href="/profile" class=" waves-effect">
                         <i class="mdi mdi-card-account-details"></i>

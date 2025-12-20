@@ -10,9 +10,9 @@
                         <div class="social">
                             <ul>
                                 <li><a href="https://www.facebook.com/people/Peoples-Cultural-Forum-PCF-UAE/100064894413911/?mibextid=LQQJ4d"><i class="ti-facebook"></i></a></li>
-                                <li><a href="https://youtu.be/Q5laFNalNPU?si=xj5no1Bz_7JpmSZ4"><i class="ti-youtube"></i></a></li>
-                                <li><a href="#"><i class="ti-linkedin"></i></a></li>
-                                <li><a href="#"><i class="ti-pinterest"></i></a></li>
+                                <li><a href="http://youtube.com/channel/UCfLvj9IEQubbtAiu3wXX-BQ?sub_confirmation=1"><i class="ti-youtube"></i></a></li>
+                                <!-- <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                                <li><a href="#"><i class="ti-pinterest"></i></a></li> -->
                             </ul>
                         </div>
                     </div>
@@ -29,8 +29,8 @@
                             <li><a href="/gallery">Gallery</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#">Policy</a></li>
-                            <li><a href="#">FAQ</a></li>
+                            <!-- <li><a href="#">Policy</a></li>
+                            <li><a href="#">FAQ</a></li> -->
                             <li><a href="/news">News</a></li>
                             <li><a href="/contact">Contact</a></li>
                         </ul>
@@ -60,9 +60,9 @@
                     <p class="copyright">Copyright &copy; 2019 <span  style="color: #DFB034;">PEOPLE'S CULTURAL FORUM.</span> All rights reserved.</p>
                     <div class="short-links">
                         <ul>
-                            <li><a href="#">Privacy</a></li>
+                            <!-- <li><a href="#">Privacy</a></li>
                             <li><a href="#">Terms of Use</a></li>
-                            <li><a href="#">Cookies</a></li>
+                            <li><a href="#">Cookies</a></li> -->
                         </ul>
                     </div>
                 </div>

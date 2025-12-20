@@ -6,11 +6,12 @@ use App\Models\Committee;
 use App\Models\Emirate;
 use App\Models\Gallery;
 use App\Models\Member;
+use App\Models\NationalCommittee;
 use App\Models\News;
 use App\Models\Position;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
-use Barryvdh\DomPDF\Facade\Pdf;
 
 class FrontendController extends Controller
 {
@@ -21,20 +22,33 @@ class FrontendController extends Controller
 
     public function about()
     {
-        return view('new.site.about');
+        $activeCommittee = NationalCommittee::where('is_active', true)->first();
+
+        if ($activeCommittee) {
+            $members = Committee::with('position1')
+                ->where('national_committee_id', $activeCommittee->id)
+                ->where('committee_type', 'national')
+                ->get()
+                ->groupBy(function ($member) {
+                    return optional($member->position1)->name ?? 'Others';
+                });
+        }   
+        
+        return view('new.site.about', compact('activeCommittee', 'members'));
     }
 
     public function emirate($id)
     {
         // Debug logging
         Log::info("Emirate ID: " . $id);
-
+        $activeCommittee = NationalCommittee::where('is_active', true)->first();
         // Fetch emirate by ID
         $emirate = Emirate::findOrFail($id);
         Log::info($emirate);
 
         // Committees in this emirate
         $section_one = Committee::where('emirates', $id)
+            ->where('committee_type', 'emirate')
             ->whereIn('position_id', [1, 2, 3])
             ->with('position')
             ->get();
@@ -53,7 +67,9 @@ class FrontendController extends Controller
             ->where('position_id', 12)
             ->get();
 
-        return view('new.site.emirate', compact('emirate', 'section_one', 'section_two', 'section_three'));
+            $gallery = Gallery::where('emirates', $id)->orderby('id', 'asc')->get();
+
+        return view('new.site.emirate', compact('emirate', 'section_one', 'section_two', 'section_three','activeCommittee', 'gallery'));
     }
 
     public function news()
@@ -64,7 +80,13 @@ class FrontendController extends Controller
 
     public function team()
     {
-        return view('new.site.team');
+        $members = Committee::with('position1')
+                ->where('committee_type', 'leaders')
+                ->get()
+                ->groupBy(function ($member) {
+                    return optional($member->position1)->name ?? 'Others';
+                });
+        return view('new.site.team', compact('members'));
     }
 
     public function contact()

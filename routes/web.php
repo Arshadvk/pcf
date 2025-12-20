@@ -55,14 +55,26 @@ Route::group(['middleware' => 'auth'], function () {
     
     Route::get('/add-gallery', [GalleryController::class, 'index'])->name('add-gallery');
     Route::get('/list-gallery', [GalleryController::class, 'list'])->name('list-gallery');
+    Route::get('/list-gallery/{id}', [GalleryController::class, 'list'])->name('list-gallery');
     Route::post('/store-gallery', [GalleryController::class, 'store'])->name('store-gallery');
     Route::delete('/delete-gallery/{id}', [GalleryController::class, 'delete'])->name('delete.gallery');
 
 
-    Route::get('/add-committee', [FrontendController::class, 'addCommittee'])->name('add-committe');
-    Route::get('/list-committee', [CommitteeController::class, 'index']);
+    Route::get('/add-committee', [CommitteeController::class, 'create'])->name('add-committe');
+    Route::get('/list-committee', [CommitteeController::class, 'index'])->name('list-committee');
     Route::post('/store-committee', [CommitteeController::class, 'store'])->name('storeCommitte');
+    Route::get('/edit-committee/{id}', [CommitteeController::class, 'editCommittee'])->name('edit-committee');
     Route::delete('/delete-committee/{id}', [CommitteeController::class, 'delete'])->name('delete.committee');
+
+    Route::get('/add-national-committee', [CommitteeController::class, 'createNational'])->name('add-national-committee');
+    Route::get('/list-national-committee', [CommitteeController::class, 'listGlobalCommitte'])->name('list-national-committee');
+     Route::get('/edit-global-committee/{id}', [CommitteeController::class, 'editGlobal'])->name('edit-global-committee');
+
+
+    Route::get('/add-leaders', [CommitteeController::class, 'createLeaders'])->name('add-leaders');
+    Route::get('/edit-leader/{id}', [CommitteeController::class, 'editPdpLeaders'])->name('edit-leader');
+    Route::get('/list-leaders', [CommitteeController::class, 'listPdpLeaders'])->name('list-leaders');
+
 
 
     Route::get('/add-team', [FrontendController::class, 'addTeam'])->name('add-team');
@@ -90,5 +102,23 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/user-requests', [FrontendController::class, 'user_requests'])->name('user_requests');
 
     Route::get('/member/{id}/download-card', [FrontendController::class, 'downloadUserCard'])->name('member.downloadCard');
+
+
+    // Admin User Management Routes
+    Route::get('/users', [AdminController::class, 'users'])->name('admin.users');
+
+    Route::get('/users/{id}/edit', [AdminController::class, 'editUser'])
+        ->name('admin.users.edit');
+
+    Route::post('/users/{id}/update', [AdminController::class, 'updateUser'])
+        ->name('admin.users.update');
+
+    // 🔐 Reset password
+    Route::post('/users/{id}/reset-password', [AdminController::class, 'resetUserPassword'])
+        ->name('admin.users.reset-password');
+
+    // 🗑 Delete user
+    Route::delete('/users/{id}', [AdminController::class, 'deleteUser'])
+        ->name('admin.users.delete');
 
 });

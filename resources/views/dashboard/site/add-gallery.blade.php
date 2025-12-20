@@ -27,14 +27,22 @@
                                             <label class="form-label">Title <span style="color: red">*</span></label>
                                             <input type="text" name="title" class="form-control" placeholder="Enter title here" />
                                         </div>
+                                        @if ($user->emirates_id && $user->emirates_id != null)
+                                            <input type="hidden" name="emirates"  id="emirates" class="form-control" value="{{ $user->emirates_id }}" />                                            
+                                        @endif
+                                        <div class="mb-3">
+                                            <label class="form-label">URL </label>
+                                            <input type="text" name="url" id="url" class="form-control" placeholder="Enter URL here" />
+                                        </div>
+                                        
                                         <div class="mb-3">
                                             <label class="form-label">Image <span style="color: red">*</span></label>
-                                            <input id="imageInput" type="file" class="form-control" accept="image/*" required />
+                                            <input id="imageInput" name ="image" type="file" class="form-control" accept="image/*" required />
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Preview & Crop</label>
                                             <div>
-                                                <img id="imagePreview" style="max-width: 100%; display: none;" />
+                                                <img id="imagePreview" name ="image"style="max-width: 100%; display: none;" />
                                             </div>
                                         </div>
                                         <input type="hidden" name="cropped_image" id="croppedImage">
@@ -86,6 +94,12 @@
                 cropper.getCroppedCanvas().toBlob((blob) => {
                     const formData = new FormData();
                     formData.append('title', document.querySelector('[name="title"]').value);
+                    formData.append('url', document.querySelector('[name="url"]').value);
+                    const emiratesField = document.querySelector('[name="emirates"]');
+
+                    if (emiratesField && emiratesField.value) {
+                        formData.append('emirates', emiratesField.value);
+                    }
                     formData.append('cropped_image', blob, 'cropped_image.png');
     
                     // Submit the form data using AJAX
@@ -102,10 +116,11 @@
                             alert('Image uploaded successfully!');
                             const imagePreview = document.getElementById('imagePreview');
                             imagePreview.style.display = 'none';
+                            window.location.href = "{{ route('list-gallery') }}";
                         })
                         .catch((error) => {
                             console.error('Error:', error);
-                            alert('Image uploaded successfully!');
+                            alert('Image uploaded error');
                             const imagePreview = document.getElementById('imagePreview');
                             imagePreview.style.display = 'none';
 

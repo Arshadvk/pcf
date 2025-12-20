@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Actions\UploadHelper;
+use App\Models\Emirate;
 use App\Models\Gallery;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -19,12 +20,23 @@ class GalleryController extends Controller
     public function list()
     {
         $user = Auth::user();
-        $galleries = Gallery::orderby('id', 'asc')->get();
-        return view('dashboard.site.list-gallery', compact('user', 'galleries'));
+        $emirates = Emirate::all();
+        $galleries = Gallery::when($user->emirates_id, function ($query) use ($user) {
+            // User has emirate → show only that emirate's galleries
+            $query->where('emirates', $user->emirates_id);
+        }, function ($query) {
+            // User emirate is NULL → show all, NULL first
+            $query->orderByRaw('emirates IS NOT NULL')
+                  ->orderBy('emirates', 'asc')
+                  ->orderBy('id', 'asc');
+        })
+        ->get();
+        return view('dashboard.site.list-gallery', compact('user', 'galleries', 'emirates'));
     }
 
     public function store(Request $request, UploadHelper $uploadHelper)
     {
+        
         if (!isset($request->id)) {
 
             $request->validate([
@@ -44,13 +56,22 @@ class GalleryController extends Controller
 
         if (isset($request->title))
             $gallery->title = $request->title;
+        if (isset($request->url))
+            $gallery->url = $request->url;
+
+        if (isset($request->emirates))
+            $gallery->emirates = $request->emirates;
+
         if (isset($request->cropped_image))
             $gallery->image = $uploadHelper->store('gallery', $request->cropped_image);
         $gallery->save();
 
 
         Alert::success('Success', 'gallery Added!');
-        return back();
+        return response()->json([
+            'success' => true,
+            'message' => 'Gallery Added!'
+        ]);
     }
 
     // public function delete($id)

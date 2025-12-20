@@ -16,6 +16,9 @@ class UserSeeder extends Seeder
     public function run()
     {
 
+         if (User::count() > 0) {
+            return; // Stop seeder (do nothing)
+        }
         User::create([
             'name' => 'Super Admin',
             'email' => 'admin@pcfgcc.com',

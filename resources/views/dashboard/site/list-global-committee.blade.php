@@ -9,7 +9,7 @@
 
                 <div class="row mb-3">
                     <div class="col-12">
-                        <h4>Committee List</h4>
+                        <h4>Global Committee List</h4>
                     </div>
                 </div>
 
@@ -22,7 +22,6 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>Name</th>
-                                            <th>Emirate</th>
                                             <th>Position</th>
                                             <th>Image</th>
                                             <th>Action</th>
@@ -33,7 +32,6 @@
                                             <tr>
                                                 <td>{{ $committee->id }}</td>
                                                 <td>{{ $committee->name }}</td>
-                                                <td>{{ $committee->emirate->name }}</td>
                                                 <td>{{ $committee->position1->name }}</td>
                                                 <td>
                                                     @if($committee->image)
@@ -44,7 +42,7 @@
                                                 </td>
                                                 <td>
                                                     @if (!$user->emirate)
-                                                        <a href="{{ url('/edit-committee/' . $committee->id) }}" class="btn btn-info">
+                                                        <a href="{{ url('/edit-global-committee/' . $committee->id) }}" class="btn btn-info">
                                                             Edit
                                                         </a>
                                                         <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ $committee->id }}">

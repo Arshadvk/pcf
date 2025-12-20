@@ -12,7 +12,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">Add Committee</h4>
+                                <h4 class="mb-sm-0">Add PDP Leaders</h4>
                             </div>
                         </div>
                     </div>
@@ -45,36 +45,19 @@
                                                 </div>
                                             </div>
 
-                                            <input type="hidden" name="committee_type" class="form-control"
-                                                        value="emirates"  />
+
                                             <div class="col-md-6">
                                                 <div class="mb-3">
                                                     <label class="form-label">Photo <span
                                                             style="color: red">*</span></label>
-                                                   <input id="imageInput" name="image" type="file" class="form-control" accept="image/*" required />
+                                                   <input id="imageInput" type="file" class="form-control"  name="image" accept="image/*" required />
                                                 </div>
                                             </div>
 
                                         </div>
-
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="mb-3">
-                                                    <label for="emirates" class="form-label">Select Emirate</label>
-                                                    <select name="emirates" id="emirates" class="form-control" required>
-                                                        <option value="" disabled selected>Select your Emirate
-                                                        </option>
-
-                                                        @foreach ($emirates as $emirate)
-                                                            <option value="{{ $emirate->id }}">{{ $emirate->name }}
-                                                            </option>
-                                                        @endforeach
-
-                                                    </select>
-                                                </div>
-                                            </div>
-
-
+                                        <input type="hidden" name="committee_type" class="form-control"
+                                                        value="leaders"  />
+                                        <div class="row">    
                                             <div class="col-md-6">
                                                 <div class="mb-3">
                                                     <label for="position" class="form-label">Position</label>
@@ -113,6 +96,4 @@
     </div>
 
         
-    
-  
 @endsection

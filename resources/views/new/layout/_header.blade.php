@@ -40,7 +40,7 @@
                         <ul>
                             {{-- <li><a  style="text-decoration: none; color:aliceblue" href="tel:+919061116222"><i class="ti-mobile"></i> +91 906 111 6222</a> </li>
                             <li><a style="text-decoration: none; color:aliceblue" href="mailto:pcfgcc@gmail.com"><i class="ti-email"></i> pcfgcc@gmail.com</a></li> --}}
-                            <li> <span style="color: #;">PEOPLE'S CULTURAL FORUM</span></li>
+                            <li> <span >PEOPLE'S CULTURAL FORUM</span></li>
                         </ul>
                     </div>
                 </div>
@@ -48,9 +48,9 @@
                     <div class="social">
                         <ul>
                             <li><a href="https://www.facebook.com/people/Peoples-Cultural-Forum-PCF-UAE/100064894413911/?mibextid=LQQJ4d"><i class="ti-facebook"></i></a></li>
-                            <li><a href="https://youtu.be/Q5laFNalNPU?si=xj5no1Bz_7JpmSZ4"><i class="ti-youtube"></i></a></li>
-                            <li><a href="#"><i class="ti-linkedin"></i></a></li>
-                            <li><a href="#"><i class="ti-instagram"></i></a></li>
+                            <li><a href="http://youtube.com/channel/UCfLvj9IEQubbtAiu3wXX-BQ?sub_confirmation=1"><i class="ti-youtube"></i></a></li>
+                            <!-- <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                            <li><a href="#"><i class="ti-instagram"></i></a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                                     <li><a href="/emirate/5">Umm Al Quwain</a></li>
                                     <li><a href="/emirate/6">Ras Al Khaimah</a></li>
                                     <li><a href="/emirate/7">Fujairah</a></li>
-                                    <li><a href="/emirate/8">Al Ain</a></li>
+                                    <li><a href="/emirate/8">Al Ain (AD)</a></li>
                                 </ul>
                             </li>
                     <li><a href="/news">News</a></li>

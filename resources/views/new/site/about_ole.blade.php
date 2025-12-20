@@ -313,37 +313,38 @@
             <div class="row">
                 <div class="col col-xs-12">
                     <div class="team-grids">
-                            <div class="grid">
-                                <div class="img-social">
-                                    <div class="img-holder">
-                                        <img class="about-img" src="{{ $members['president'][0]->image }}" alt="{{ $members['president'][0]->name }}">
-                                    </div>
-                                </div>
-                                <div class="details">
-                                    <h3>{{ $members['president'][0]->name }}</h3>
-                                    <span>President</span> 
-                                </div>
-                            </div>
+                        
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img class="about-img" src="{{ $members['secretary'][0]->image }}" alt="{{ $members['secretary'][0]->name }}">
+                                    <img class="about-img" src="/assets/img/pcf/1.jpeg" alt>
                                 </div>
                             </div>
                             <div class="details">
-                                <h3>{{ $members['secretary'][0]->name }}</h3>
+                                <h3>Abdulkadher Kothachira</h3>
+                                <span>President</span> 
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img class="about-img" src="assets/assets/img/pcf/3.jpg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>KPA Rafeek</h3>
                                 <span>Secretary</span>
                             </div>
                         </div>
                         <div class="grid">
                             <div class="img-social">
                                 <div class="img-holder">
-                                    <img class="about-img" src="{{ $members['treasurer'][0]->image }}" alt="{{ $members['treasurer'][0]->name }}">
+                                    <img class="about-img" src="assets/assets/img/pcf/2.jpg" alt>
                                 </div>
                             </div>
                             <div class="details">
                                 <h3>Ismail Arikkadi</h3>
-                                <span>{{ $members['treasurer'][0]->name }}</span>
+                                <span>Treasurer</span>
                             </div>
                         </div>
                     </div>
@@ -360,20 +361,47 @@
             <div class="row">
                 <div class="col col-xs-12">
                     <div class="team-grids-4">
-                        @foreach ($members['vice president'] as $member)
-                            <div class="grid">
-                                <div class="img-social">
-                                    <div class="img-holder">
-                                        <img class="about-img" src="{{ $member->image }}" alt="{{ $member->name }}">
-                                    </div>
-                                </div>
-                                <div class="details">
-                                    <h3>{{ $member->name }}</h3>
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img class="about-img" src="assets/img/pcf/4.jpeg" alt>
                                 </div>
                             </div>
-                        @endforeach                        
+                            <div class="details">
+                                <h3>മുഹമ്മദ് സാഹിബ്</h3>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img class="about-img" src="assets/img/pcf/8.jpeg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>ഷാരിസ് കള്ളിയത്ത്:</h3>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img class="about-img" src="assets/img/pcf/5.jpeg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>റാഷിദ് സുൽത്താൻ</h3>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img class="about-img" src="assets/img/pcf/15.jpg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>മുനീർ നന്നബ്ര</h3>
+                            </div>
+                        </div>
                     </div>
-                        
                 </div>
             </div>
 
@@ -388,19 +416,47 @@
             <div class="row">
                 <div class="col col-xs-12">
                     <div class="team-grids-4">
-                        @foreach ($members['joint secretary'] as $member)
-                            <div class="grid">
-                                <div class="img-social">
-                                    <div class="img-holder">
-                                        <img class="about-img" src="{{ $member->image }}" alt="{{ $member->name }}">
-                                    </div>
-                                </div>
-                                <div class="details">
-                                    <h3>{{ $member->name }}</h3>
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img class="about-img" src="assets/img/pcf/6.jpeg" alt>
                                 </div>
                             </div>
-                        @endforeach 
-                        
+                            <div class="details">
+                                <h3>ജംഷാദ് ഇല്ലിക്കൽ</h3>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img class="about-img" src="assets/img/pcf/7.jpeg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>ഇബ്രാഹിം പട്ടിശ്ശേര</h3>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img class="about-img" src="assets/img/pcf/10.jpeg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>റഹീസ് കാർത്തികപ്പള്ളി</h3>
+                            </div>
+                        </div>
+
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img class="about-img" src="assets/img/pcf/9.jpeg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>ഇസ്മയിൽ സി.പി നന്നബ</h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -415,18 +471,36 @@
             <div class="row">
                 <div class="col col-xs-12">
                     <div class="team-grids">
-                        @foreach ($members['global member'] as $member)
-                            <div class="grid">
-                                <div class="img-social">
-                                    <div class="img-holder">
-                                        <img class="about-img" style="border-radius:50%"  src="{{ $member->image }}" alt="{{ $member->name }}">
-                                    </div>
-                                </div>
-                                <div class="details">
-                                    <h3>{{ $member->name }}</h3>
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img class="about-img" style="border-radius:50%"  src="assets/img/pcf/11.jpeg" alt>
                                 </div>
                             </div>
-                        @endforeach 
+                            <div class="details">
+                                <h3>ഇസ്മയിൽ നാട്ടിക</h3>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img class="about-img" style="border-radius:50%" src="assets/img/pcf/13.jpeg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>അസീസ് സേട്ട്</h3>
+                            </div>
+                        </div>
+                        <div class="grid">
+                            <div class="img-social">
+                                <div class="img-holder">
+                                    <img class="about-img" style="border-radius:50%" src="assets/img/pcf/14.jpeg" alt>
+                                </div>
+                            </div>
+                            <div class="details">
+                                <h3>ഇല്യാസ് തലശ്ശേരി</h3>
+                            </div>
+                        </div>
                     
                     </div>
                 </div>

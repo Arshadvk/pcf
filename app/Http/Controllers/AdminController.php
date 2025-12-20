@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Auth;
-use RealRashid\SweetAlert\Facades\Alert;
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 use App\Actions\UploadHelper;
+use App\Models\Emirate;
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminController extends Controller
 {
@@ -74,6 +76,74 @@ class AdminController extends Controller
         return back();
     }
 }
+
+public function resetUserPassword($id)
+    {
+        $user = User::findOrFail($id);
+
+        // Generate random password
+        $newPassword = Str::random(8);
+
+        $user->password = Hash::make($newPassword);
+        $user->save();
+
+        Alert::success(
+            'Password Reset',
+            "New password for {$user->email} is: {$newPassword}"
+        );
+
+        return back();
+    }
+
+    public function deleteUser($id)
+    {
+        $user = User::findOrFail($id);
+
+        // Prevent deleting yourself
+        if (Auth::id() === $user->id) {
+            Alert::error('Error', 'You cannot delete your own account');
+            return back();
+        }
+
+        $user->delete();
+
+        Alert::success('Success', 'User deleted successfully');
+        return back();
+    }
+
+    public function users()
+    {
+        $users = User::with('emirate')->orderBy('id', 'desc')->get();
+        return view('dashboard.site.user.list', compact('users'));
+    }
+
+    public function editUser($id)
+    {
+        $user = User::findOrFail($id);
+        $emirates = Emirate::all();
+
+        return view('dashboard.site.user.edit', compact('user', 'emirates'));
+    }
+
+    public function updateUser(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => "required|email|unique:users,email,$id",
+            'emirates_id' => 'nullable|exists:emirates,id',
+        ]);
+
+        $user = User::findOrFail($id);
+
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'emirates_id' => $request->emirates_id,
+        ]);
+
+        Alert::success('Success', 'User updated successfully');
+        return redirect()->route('admin.users');
+    }
 
 
     

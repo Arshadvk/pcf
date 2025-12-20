@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                <h4 class="mb-sm-0">gallery List</h4>
+                                <h4 class="mb-sm-0">Gallery List</h4>
 
 
 
@@ -34,7 +34,9 @@
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Title</th>
+                                                <th>Emirates</th>
                                                 <th>Image</th>
+                                                <th>Url</th>
                                                 <th>Date Added</th>
                                                 <th>Action</th>
 
@@ -45,9 +47,11 @@
                                             @foreach ($galleries as $gallery)
                                                 <tr>
                                                     <td>{{ $gallery->id }}</td>
-                                                    <td>{{ $gallery->title }}</td>
+                                                    <td class="text-break" style="max-width:150px;">{{ $gallery->title }}</td>
+                                                    <td>{{ $gallery->emirate && $gallery->emirate->name ? $gallery->emirate->name : 'General' }}</td>
                                                     <td><img src="{{ $gallery->image }}" class="img-thumbnail"
                                                             style="height: 150px" alt="gallery"></td>
+                                                    <td class="text-break" style="max-width:150px;">{{ $gallery->url?? "-" }}</td>
                                                     <td>{{ $gallery->created_at->format('F j Y') }}</td>
                                                     <td>
 

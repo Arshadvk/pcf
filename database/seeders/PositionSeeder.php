@@ -19,11 +19,15 @@ class PositionSeeder extends Seeder
             ['name' => 'joint secretary', 'name_mal' => 'ജോ: സെക്രട്ടറിമാർ'],
             ['name' => 'vice president', 'name_mal' => 'വൈസ് പ്രസിഡന്റുമാർ'],
             ['name' => 'council member', 'name_mal' => 'കൗൺസിൽ അംഗങ്ങൾ'],
-            ['name' => 'secretariat member', 'name_mal' => 'സെക്രട്ടറിയേറ്റ് അംഗങ്ങൾ'],
+            ['name' => 'secretariat member', 'name_mal' => 'സെക്രട്ടറിയേറ്റ് അംഗങ്ങൾ'],            
+            ['name' => 'global member', 'name_mal' => 'ഗ്ലോബൽ അംഗങ്ങൾ'],         
+            ['name' => 'chairman', 'name_mal' => 'ചെയർമാൻ'],                     
+            ['name' => '"vice chairmen"', 'name_mal' => 'വൈസ് ചെയർമാൻമാർ'],         
+            ['name' => 'General Secretary', 'name_mal' => 'ജനറല്‍ സെക്രട്ടറിമാര്‍'],
         ];
 
         foreach ($positions as $position) {
-            Position::create($position);
+            Position::updateOrCreate($position);
         }
     }
 }
