@@ -415,33 +415,18 @@
             <div class="row">
                 <div class="col col-xs-12">
                     <div class="team-grids">
-                        @if(isset($members['global member']) && is_array($members['global member']))
-    <div class="row">
-        <div class="col col-lg-4 col-lg-offset-4 col-sm-6 col-sm-offset-3">
-            <div class="section-title-s4">
-                <h2 class="text-heading text-chilanka" style="padding-top: 20px;">ഗ്ലോബൽ&nbsp;അംഗങ്ങൾ</h2>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col col-xs-12">
-            <div class="team-grids">
-                @foreach ($members['global member'] as $member)
-                    <div class="grid">
-                        <div class="img-social">
-                            <div class="img-holder">
-                                <img class="about-img" style="border-radius:50%" src="{{ $member->image }}" alt="{{ $member->name }}">
+                        @foreach ($members['global member'] as $member)
+                            <div class="grid">
+                                <div class="img-social">
+                                    <div class="img-holder">
+                                        <img class="about-img" style="border-radius:50%"  src="{{ $member->image }}" alt="{{ $member->name }}">
+                                    </div>
+                                </div>
+                                <div class="details">
+                                    <h3>{{ $member->name }}</h3>
+                                </div>
                             </div>
-                        </div>
-                        <div class="details">
-                            <h3>{{ $member->name }}</h3>
-                        </div>
-                    </div>
-                @endforeach 
-            </div>
-        </div>
-    </div>
-@endif
+                        @endforeach 
                     
                     </div>
                 </div>
