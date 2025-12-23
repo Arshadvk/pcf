@@ -82,10 +82,9 @@
                 <h1 class="text-center text-chilanka" style="padding-bottom: 40px">വൈസ് ചെയർമാൻമാർ</h1>
 
                 <div class="row">
-
                     <div class="col col-xs-12">
                         <div class="team-grids">
-                            @foreach ($members['vice chairmen'] as $member)
+                            @foreach ($members['vice chairman'] as $member) 
                                 <div class="grid">
                                     <div class="img-social">
                                         <div class="img-holder">
@@ -113,6 +112,8 @@
                 <div class="row">
                     <div class="col col-xs-12">
                         <div class="team-grids">
+
+                            
                             @foreach ($members['General Secretary'] as $member)
                                 <div class="grid">
                                     <div class="img-social">
@@ -139,7 +140,7 @@
                         <div class="team-grids">
                             <h1 class="text-center text-chilanka" style="padding-bottom: 40px">സെക്രട്ടറിമാര്‍</h1>
                             <div style="display: flex;justify-content: center;">
-                                @foreach ($members['Secretary'] as $member)
+                                @foreach ($members['secretary'] as $member)
                                     <div style="padding-right: 40px" class="">
                                         <div class="img-social">
                                             <div class="img-holder">
@@ -167,7 +168,7 @@
                     <div class="col col-xs-12">
                         <div class="team-grids">
                             <h1 class="text-center text-chilanka" style="padding-bottom: 40px">ട്രഷറർ</h1>
-                            @foreach ($members['Treasurer'] as $member)
+                            @foreach ($members['treasurer'] as $member)
                                 <div class="">
                                     <div class="img-social">
                                         <div class="img-holder">
