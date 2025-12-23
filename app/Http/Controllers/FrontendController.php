@@ -48,9 +48,9 @@ class FrontendController extends Controller
 
         // Committees in this emirate
         $section_one = Committee::where('emirates', $id)
-            ->where('committee_type', 'emirate')
+            ->where('committee_type', 'emirates')
             ->whereIn('position_id', [1, 2, 3])
-            ->with('position')
+            ->with('position1')
             ->get();
 
 
@@ -59,12 +59,16 @@ class FrontendController extends Controller
 
         // Committees in this emirate with position_id = 11
         $section_two = Committee::where('emirates', $id)
+            ->where('committee_type', 'emirates')
             ->where('position_id', 11)
+            ->with('position1')
             ->get();
 
         // Committees in this emirate with position_id = 12
         $section_three = Committee::where('emirates', $id)
+            ->where('committee_type', 'emirates')
             ->where('position_id', 12)
+            ->with('position1')
             ->get();
 
             $gallery = Gallery::where('emirates', $id)->orderby('id', 'asc')->get();
@@ -86,6 +90,8 @@ class FrontendController extends Controller
                 ->groupBy(function ($member) {
                     return optional($member->position1)->name ?? 'Others';
                 });
+                
+        
         return view('new.site.team', compact('members'));
     }
 
